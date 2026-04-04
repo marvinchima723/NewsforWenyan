@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan • April 4, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-card: #1C1C1E;
+            --bg-elevated: #2C2C2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --text-tertiary: #636366;
+            --accent-blue: #0A84FF;
+            --accent-red: #FF453A;
+            --accent-green: #30D158;
+            --accent-orange: #FF9F0A;
+            --accent-purple: #BF5AF2;
+            --border-color: #38383A;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-top: 16px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .section-icon.geopolitics { background: rgba(255, 69, 58, 0.15); }
+        .section-icon.economy { background: rgba(48, 209, 88, 0.15); }
+        .section-icon.asia { background: rgba(10, 132, 255, 0.15); }
+        .section-icon.tech { background: rgba(191, 90, 242, 0.15); }
+        .section-icon.swf { background: rgba(255, 159, 10, 0.15); }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .card-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            color: var(--accent-blue);
+        }
+
+        .card-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .tag-critical { background: rgba(255, 69, 58, 0.2); color: var(--accent-red); }
+        .tag-high { background: rgba(255, 159, 10, 0.2); color: var(--accent-orange); }
+        .tag-medium { background: rgba(10, 132, 255, 0.2); color: var(--accent-blue); }
+        .tag-info { background: rgba(142, 142, 147, 0.2); color: var(--text-secondary); }
+
+        .card-source {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 12px;
+        }
+
+        .card-summary {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .card-summary strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .card-key-points {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .key-point {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .key-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-point::before {
+            content: "→";
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .summary-box h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .summary-box p {
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .footer-text a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .time-stamp {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .main-title {
+                font-size: 32px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <div class="logo">Daily Intelligence Briefing</div>
+                    <h1 class="main-title">News for Wenyan</h1>
+                    <p class="subtitle">穆巴达拉 · 亚太投资战略</p>
+                </div>
+                <div class="date">2026.04.04</div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Geopolitics Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon geopolitics">⚔️</div>
+                    <h2 class="section-title">Geopolitics & Conflict</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="summary-box">
+                    <h4>Executive Summary</h4>
+                    <p>伊朗战争进入第33天，特朗普首次就伊朗战争发表全国讲话。霍尔木兹海峡局势持续紧张，全球能源供应链面临重大威胁。海湾国家态度分化，阿联酋支持国际干预。</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.cnn.com/2026/04/01/world/live-news/iran-war-us-trump-oil" target="_blank">Trump: Iran War 'Nearing Completion' in Address to the Nation</a></h3>
+                        <span class="card-tag tag-critical">CRITICAL</span>
+                    </div>
+                    <div class="card-source">CNN • April 2, 2026</div>
+                    <div class="card-summary">
+                        <strong>特朗普首次就伊朗战争发表全国讲话</strong>，称战争"接近尾声"，但同时威胁要"摧毁伊朗的桥梁和发电厂"。法国总统马克龙呼吁特朗普"认真对待"停火谈判。伊朗方面坚持要求永久停火作为前提条件。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">特朗普声称伊朗新总统寻求停火，但遭伊朗外交部发言人否认</div>
+                        <div class="key-point">伊朗要求美以永久停止所有攻击，与美国立场存在根本矛盾</div>
+                        <div class="key-point">联合国秘书长古特雷斯警告：可能演变为"吞噬整个地区"的更大战争</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://apnews.com/article/iran-us-israel-trump-lebanon-april-3-2026-a6365c6123cc8a696474f576d4ce7668" target="_blank">2 US Aircraft Shot Down • 1 Crew Member Rescued in Iran</a></h3>
+                        <span class="card-tag tag-critical">CRITICAL</span>
+                    </div>
+                    <div class="card-source">AP News • April 3, 2026</div>
+                    <div class="card-summary">
+                        <strong>美军两架军机在伊朗被击落</strong>，这是冲突升级的重大信号。其中一架F-15战斗机被击落，飞行员被成功营救。事件发生在伊朗持续对海湾国家发动导弹和无人机袭击的背景下。
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://kalkine.ca/news/premium/strait-of-hormuz-crisis-2026-the-global-energy-shock-redefining-geopolitics-markets-and-the-future-of-oil" target="_blank">Strait of Hormuz Crisis: Largest Energy Supply Disruption in Modern History</a></h3>
+                        <span class="card-tag tag-critical">CRITICAL</span>
+                    </div>
+                    <div class="card-source">Kalkine • April 4, 2026</div>
+                    <div class="card-summary">
+                        <strong>霍尔木兹海峡危机已演变为现代史上最大能源供应中断事件。</strong>伊朗袭击了一艘卡塔尔国有能源公司租赁的油轮，展示了其封锁关键水道的能力。伊朗官员明确表示，计划在战争结束后利用海峡作为战略筹码换取让步。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">伊朗同时向阿联酋、科威特、沙特、卡塔尔发射无人机和导弹</div>
+                        <div class="key-point">阿联酋支持联合国授权"一切必要手段"保护海峡航运</div>
+                        <div class="key-point">以色列打击伊朗约15个武器生产基地和先进导弹研发设施</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.understandingwar.org/research/middle-east/iran-update-special-report-april-1-2026/" target="_blank">Iran IRGC Consolidating Control • Domestic Crackdowns Intensify</a></h3>
+                        <span class="card-tag tag-high">HIGH</span>
+                    </div>
+                    <div class="card-source">ISW/CTP • April 1, 2026</div>
+                    <div class="card-summary">
+                        <strong>伊朗伊斯兰革命卫队(IRGC)正在巩固对政治体系的控制</strong>，排挤佩泽希基扬总统的政府。伊朗同时进行大规模反情报行动，逮捕大量人员。以色列证实击毙了IRGC圣城旅黎巴嫩军团工程负责人。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Economy Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon economy">📊</div>
+                    <h2 class="section-title">Global Economy</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.imf.org/en/news/articles/2026/04/01/pr-26102-usa-imf-executive-board-concludes-2026-article-iv-consult" target="_blank">IMF: US Debt to Exceed 140% of GDP by 2031 • Calls for Urgent Fiscal Adjustment</a></h3>
+                        <span class="card-tag tag-high">HIGH</span>
+                    </div>
+                    <div class="card-source">IMF • April 2, 2026</div>
+                    <div class="card-summary">
+                        <strong>IMF执行董事会完成美国2026年第四条磋商</strong>，对持续高企的财政赤字和不断上升的债务水平表示严重关切。IMF预测美国一般政府债务将在2031年超过GDP的140%，构成美国和全球金融稳定的尾部风险。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">2025年美国GDP增长2%，2026年预计加速至2.4%</div>
+                        <div class="key-point">核心PCE通胀预计2027年上半年回归2%目标</div>
+                        <div class="key-point">IMF建议：前置财政调整 + 保持数据依赖性货币政策</div>
+                        <div class="key-point">关税政策不确定性可能减少美国经济活动并产生负面溢出效应</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.weforum.org/stories/2026/04/chief-economists-global-economic-outlook-march-2026/" target="_blank">WEF: Global Economists Warn of 'Higher Prices and Slower Growth'</a></h3>
+                        <span class="card-tag tag-medium">MEDIUM</span>
+                    </div>
+                    <div class="card-source">World Economic Forum • April 1, 2026</div>
+                    <div class="card-summary">
+                        <strong>达沃斯论坛首席经济学家警告：全球经济"所有道路都指向更高的价格和更慢的增长"。</strong>在地缘政治紧张加剧的背景下，企业和政策制定者面临前所未有的不确定性。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Asia Pacific Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon asia">🌏</div>
+                    <h2 class="section-title">Asia Pacific</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="summary-box">
+                    <h4>Investment Implication</h4>
+                    <p>海湾主权基金正在加速全球化布局，2026年预计资产规模将达到18万亿美元。中东主权基金在亚太区的投资将更加关注能源安全、科技和供应链重构领域。</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://atbcorporate.com/news/middle-east-sovereign-wealth-funds-accelerate-global-influence-in-2026/" target="_blank">Middle East SWFs Accelerate Global Influence • Assets to Reach $18TN by 2030</a></h3>
+                        <span class="card-tag tag-high">HIGH</span>
+                    </div>
+                    <div class="card-source">ATB Corporate • January 3, 2026</div>
+                    <div class="card-summary">
+                        <strong>中东主权基金正在以前所未有的速度扩大全球影响力</strong>，预计到2030年资产规模将达到18万亿美元。PIF、Mubadala、ADIA等主权基金正在从保守投资者转变为风险资本和全球并购的重要推动力。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">Gulf SWFs推动全球并购复苏，交易量超过3.5万亿美元</div>
+                        <div class="key-point">海湾投资者在亚洲的投资重点：科技、能源安全和供应链</div>
+                        <div class="key-point">PIF（沙特）管理资产超过7000亿美元</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.meed.com/meed-business-review-april-2026" target="_blank">MEED: Gulf States Arbitration Landscape Evolving</a></h3>
+                        <span class="card-tag tag-info">INFO</span>
+                    </div>
+                    <div class="card-source">MEED • April 2026</div>
+                    <div class="card-summary">
+                        <strong>海湾国家仲裁环境正在演变</strong>，本期MEED商业评论探讨该地区仲裁格局的变化，以及海湾国家在未来区域投资争端解决中的角色。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon tech">💻</div>
+                    <h2 class="section-title">Technology</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://amiko.consulting/en/summary-of-major-ai-news-for-the-week-of-march-29-april-4-2026/" target="_blank">AI Industry Enters Monetization Phase • From Race for Models to Sustainable Growth</a></h3>
+                        <span class="card-tag tag-medium">MEDIUM</span>
+                    </div>
+                    <div class="card-source">Amiko Consulting • April 4, 2026</div>
+                    <div class="card-summary">
+                        <strong>AI行业进入从"高性能模型竞赛"到" monetization策略"的转型阶段。</strong>过去一周的AI新闻显示，行业焦点已从单纯的技术突破转向如何将投资转化为可持续收入。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">OpenAI、Google、Anthropic继续主导模型发布</div>
+                        <div class="key-point">企业AI应用成为下一阶段增长重点</div>
+                        <div class="key-point">AI监管框架讨论持续深入</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://techstartups.com/2026/04/02/top-tech-news-today-april-2-2026/" target="_blank">Tech Startups: AI Money Still Flowing • But Cracks Appearing</a></h3>
+                        <span class="card-tag tag-medium">MEDIUM</span>
+                    </div>
+                    <div class="card-source">Tech Startups • April 2, 2026</div>
+                    <div class="card-summary">
+                        <strong>AI投资依然活跃，但裂缝开始显现。</strong>资本市场对AI初创公司的态度正在分化，部分投资者对高估值开始谨慎。
+                    </div>
+                </div>
+            </section>
+
+            <!-- SWF & Investment Section -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon swf">🏦</div>
+                    <h2 class="section-title">Sovereign Wealth & Investment</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://www.deloitte.com/middle-east/en/about/press-room/gulf-sovereign-wealth-funds-lead-global-growth-as-assets-forecast-to-reach-usd18-tn-by-2030.html" target="_blank">Deloitte: Gulf SWFs Lead Global Growth • Assets to Reach $18TN by 2030</a></h3>
+                        <span class="card-tag tag-high">HIGH</span>
+                    </div>
+                    <div class="card-source">Deloitte Middle East • March 2026</div>
+                    <div class="card-summary">
+                        <strong>德勤报告：海湾主权基金继续主导全球投资格局</strong>，预计资产到2030年将达到18万亿美元。报告强调了主权基金从传统资产配置向科技和新兴市场转型的趋势。
+                    </div>
+                    <div class="card-key-points">
+                        <div class="key-point">Mubadala、ADIA、PIF继续扩大全球直接投资</div>
+                        <div class="key-point">VC和成长型投资占比持续上升</div>
+                        <div class="key-point">亚太区：科技、医疗健康、可再生能源是重点方向</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><a href="https://fortune.com/asia/2025/04/20/middle-east-investors-china-hong-kong/" target="_blank">Middle East Investors Pivot to Asia • China & Hong Kong Attracting Gulf Capital</a></h3>
+                        <span class="card-tag tag-medium">MEDIUM</span>
+                    </div>
+                    <div class="card-source">Fortune Asia • April 2026</div>
+                    <div class="card-summary">
+                        <strong>中东投资者正在向亚太区倾斜</strong>，中国和香港作为连接点吸引越来越多的海湾资本。这一趋势在地缘政治重构的背景下更加明显。
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="footer-text">
+                Generated by AI • Sources: <a href="https://www.ft.com" target="_blank">FT</a>, <a href="https://www.cnn.com" target="_blank">CNN</a>, <a href="https://www.reuters.com" target="_blank">Reuters</a>, <a href="https://www.imf.org" target="_blank">IMF</a>, <a href="https://www.weforum.org" target="_blank">WEF</a>
+            </p>
+            <p class="time-stamp">Generated: 2026-04-04 10:33 CST</p>
+        </footer>
+    </div>
+</body>
+</html>
