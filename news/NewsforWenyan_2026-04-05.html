@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan · 2026年4月5日</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #22222e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent-red: #ff453a;
+            --accent-green: #32d74b;
+            --accent-blue: #0a84ff;
+            --accent-orange: #ff9f0a;
+            --border-color: #2c2c34;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-date { font-size: 18px; color: var(--text-secondary); }
+        .market-overview {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border-color);
+        }
+        .market-overview h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-tertiary);
+            margin-bottom: 20px;
+        }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .market-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .market-card h3 {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .indices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+        .index-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .index-item:last-child { border-bottom: none; }
+        .index-name { font-size: 13px; color: var(--text-secondary); }
+        .index-value { font-size: 14px; font-weight: 600; font-feature-settings: 'tnum'; }
+        .index-change { font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
+        .up { color: var(--accent-red); background: rgba(255,69,58,0.15); }
+        .down { color: var(--accent-green); background: rgba(50,215,75,0.15); }
+        .forex-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        .forex-item { text-align: center; padding: 12px 8px; }
+        .forex-flag { font-size: 24px; margin-bottom: 4px; }
+        .forex-pair { font-size: 12px; color: var(--text-tertiary); }
+        .forex-rate { font-size: 18px; font-weight: 600; font-feature-settings: 'tnum'; margin: 4px 0; }
+        .forex-unit { font-size: 11px; color: var(--text-tertiary); }
+        .chart-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border-color);
+        }
+        .chart-section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-tertiary);
+            margin-bottom: 20px;
+        }
+        .forex-charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .forex-chart-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .forex-chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .forex-chart-title { display: flex; align-items: center; gap: 10px; }
+        .forex-chart-flag { font-size: 28px; }
+        .forex-chart-name { font-size: 16px; font-weight: 600; }
+        .forex-chart-subtitle { font-size: 12px; color: var(--text-tertiary); }
+        .forex-chart-stats { text-align: right; }
+        .forex-current-rate { font-size: 24px; font-weight: 700; font-feature-settings: 'tnum'; }
+        .forex-change-badge { font-size: 12px; padding: 4px 10px; border-radius: 6px; }
+        .change-red { background: rgba(255,69,58,0.2); color: var(--accent-red); }
+        .change-green { background: rgba(50,215,75,0.2); color: var(--accent-green); }
+        .chart-container { position: relative; height: 160px; margin-bottom: 12px; }
+        .chart-metrics { display: flex; justify-content: space-around; padding-top: 12px; border-top: 1px solid var(--border-color); }
+        .metric-item { text-align: center; }
+        .metric-label { font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-value { font-size: 14px; font-weight: 600; font-feature-settings: 'tnum'; margin-top: 2px; }
+        .news-section { margin-bottom: 32px; }
+        .news-section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-tertiary);
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 3px solid var(--accent-blue);
+        }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px; }
+        .news-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+        .news-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .news-card a:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+        .news-source a:hover { color: var(--accent-blue) !important; }
+        .news-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .news-tag {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-geopolitics { background: rgba(255,69,58,0.2); color: var(--accent-red); }
+        .tag-economy { background: rgba(255,159,10,0.2); color: var(--accent-orange); }
+        .tag-asia { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .tag-tech { background: rgba(82,82,90,0.3); color: var(--text-secondary); }
+        .tag-fund { background: rgba(50,215,75,0.2); color: var(--accent-green); }
+        .tag-region { padding: 4px 10px; border-radius: 6px; font-size: 11px; background: var(--bg-secondary); color: var(--text-tertiary); }
+        .news-title { font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text-primary); }
+        .news-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .news-source { font-size: 12px; color: var(--text-tertiary); margin-top: 12px; }
+        .trump-section {
+            background: linear-gradient(135deg, #1a1a24 0%, #12121a 100%);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border-color);
+        }
+        .trump-section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trump-icon { width: 20px; height: 20px; background: #1d9bf0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+        .trump-signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .signal-item { background: var(--bg-card); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); }
+        .signal-keyword { font-size: 13px; font-weight: 600; color: var(--accent-blue); margin-bottom: 6px; }
+        .signal-impact { font-size: 14px; color: var(--text-primary); }
+        .signal-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; margin-top: 8px; }
+        .signal-bullish { background: rgba(50,215,75,0.15); color: var(--accent-green); }
+        .signal-bearish { background: rgba(255,69,58,0.15); color: var(--accent-red); }
+        .signal-neutral { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        .footer { text-align: center; padding: 32px 0; color: var(--text-tertiary); font-size: 12px; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 32px; }
+            .news-grid { grid-template-columns: 1fr; }
+            .market-grid { grid-template-columns: 1fr; }
+            .forex-charts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">🇨🇳 MUBADALA ASIA PACIFIC INVESTMENT</div>
+            <h1>News for Wenyan</h1>
+            <p class="header-date">2026年4月5日 · Sunday</p>
+        </header>
+
+        <!-- Market Overview -->
+        <section class="market-overview">
+            <h2>📊 全球市场数据一览</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>股票指数</h3>
+                    <div class="indices-grid">
+                        <div class="index-item">
+                            <span class="index-name">🇺🇸 S&P 500</span>
+                            <div><span class="index-value">5,682</span><span class="index-change up">▲</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇯🇵 日经225</span>
+                            <div><span class="index-value">51,890</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇰🇷 韩国Kospi</span>
+                            <div><span class="index-value">5,180</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇭🇰 恒生指数</span>
+                            <div><span class="index-value">23,540</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇨🇳 上证指数</span>
+                            <div><span class="index-value">3,845</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇦🇺 ASX 200</span>
+                            <div><span class="index-value">8,510</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇮🇳 Sensex</span>
+                            <div><span class="index-value">72,450</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇩🇪 DAX</span>
+                            <div><span class="index-value">23,050</span><span class="index-change down">▼</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>💱 外汇汇率 (USD基准)</h3>
+                    <div class="forex-grid">
+                        <div class="forex-item">
+                            <div class="forex-flag">🇨🇳</div><div class="forex-pair">CNY</div><div class="forex-rate">6.8850</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇯🇵</div><div class="forex-pair">JPY</div><div class="forex-rate">159.20</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇰🇷</div><div class="forex-pair">KRW</div><div class="forex-rate">1,518</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇮🇳</div><div class="forex-pair">INR</div><div class="forex-rate">93.20</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇪🇺</div><div class="forex-pair">EUR</div><div class="forex-rate">1.1520</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇬🇧</div><div class="forex-pair">GBP</div><div class="forex-rate">1.3210</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇦🇺</div><div class="forex-pair">AUD</div><div class="forex-rate">0.6890</div><div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇸🇬</div><div class="forex-pair">SGD</div><div class="forex-rate">1.2850</div><div class="forex-unit">per USD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forex Trend Charts -->
+        <section class="chart-section">
+            <h2>📈 外汇趋势 (3年) · 各货币独立走势</h2>
+            <div class="forex-charts-grid">
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇨🇳</span><div><div class="forex-chart-name">人民币 (CNY)</div><div class="forex-chart-subtitle">美元兑人民币</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">6.8850</div><span class="forex-change-badge change-green">▼ -0.5% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="cnyChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">7.34</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">6.72</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">9.2%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇯🇵</span><div><div class="forex-chart-name">日元 (JPY)</div><div class="forex-chart-subtitle">美元兑日元</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">159.20</div><span class="forex-change-badge change-red">▲ +6.1% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="jpyChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">161.8</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">127.5</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">26.9%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇰🇷</span><div><div class="forex-chart-name">韩元 (KRW)</div><div class="forex-chart-subtitle">美元兑韩元</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">1,518</div><span class="forex-change-badge change-red">▲ +4.3% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="krwChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">1,580</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">1,240</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">27.4%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇮🇳</span><div><div class="forex-chart-name">卢比 (INR)</div><div class="forex-chart-subtitle">美元兑卢比</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">93.20</div><span class="forex-change-badge change-red">▲ +7.7% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="inrChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">95.0</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">80.4</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">18.2%</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+            <h2>📰 今日要闻</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">⚔️ 地缘政治</span>
+                        <span class="tag-region">🌏 中东</span>
+                    </div>
+                    <a href="https://www.thomsonreuters.com/en-us/posts/corporates/iran-war-economic-business-impact/" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">原油飙升至$120/桶，创四年新高</h3>
+                    <p class="news-desc">中东紧张局势持续升级，布伦特原油突破120美元/桶，WTI原油触及104美元。霍尔木兹海峡通行问题持续影响全球20%石油供应。亚洲市场普遍承压下跌。</p>
+                    </a>
+                    <p class="news-source"><a href="https://www.thomsonreuters.com/en-us/posts/corporates/iran-war-economic-business-impact/" target="_blank" style="color:var(--text-tertiary);">Reuters · Apr 5, 2026 ↗</a></p>
+                </article>
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 全球经济</span>
+                        <span class="tag-region">🌐</span>
+                    </div>
+                    <a href="https://tradebrains.in/indian-rupee-falls-to-all-time-low-of-95-against-usd/" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">印度卢比跌破95关口，创十年来最弱水平</h3>
+                    <p class="news-desc">受石油进口成本飙升和外资源流出影响，印度卢比兑美元跌破95重要心理关口。印度央行已入场干预，但分析师预期卢比将进一步走弱至97。</p>
+                    </a>
+                    <p class="news-source"><a href="https://tradebrains.in/indian-rupee-falls-to-all-time-low-of-95-against-usd/" target="_blank" style="color:var(--text-tertiary);">Trade Brains · Apr 5, 2026 ↗</a></p>
+                </article>
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 亚太动态</span>
+                        <span class="tag-region">🇯🇵 日本</span>
+                    </div>
+                    <a href="https://tradingeconomics.com/japan/stock-market" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">日经指数周跌2.14%，创近两月最大跌幅</h3>
+                    <p class="news-desc">地缘政治风险叠加科技股抛售，日本股市本周大幅回调。日经225指数下跌2.14%，日元走弱至159附近，出口型企业承压明显。</p>
+                    </a>
+                    <p class="news-source"><a href="https://tradingeconomics.com/japan/stock-market" target="_blank" style="color:var(--text-tertiary);">Trading Economics · Apr 5, 2026 ↗</a></p>
+                </article>
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 亚太动态</span>
+                        <span class="tag-region">🇨🇳 中国</span>
+                    </div>
+                    <a href="https://www.globaltimes.cn/page/202603/1357930.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">中国两会后首份PMI，显示制造业企稳</h3>
+                    <p class="news-desc">3月官方制造业PMI录得50.5，连续第二个月处于扩张区间。新出口订单指数创年内新高，政策宽松效果逐步显现。</p>
+                    </a>
+                    <p class="news-source"><a href="https://www.globaltimes.cn/page/202603/1357930.shtml" target="_blank" style="color:var(--text-tertiary);">Global Times · Apr 4, 2026 ↗</a></p>
+                </article>
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-fund">🏦 主权基金</span>
+                        <span class="tag-region">🌏 海湾</span>
+                    </div>
+                    <a href="https://www.deloitte.com/middle-east/en/Industries/investment-management/research/gulf-swfs-look-to-ai-investments-in-diversification-competitiveness-push.html" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">海湾主权基金加速布局亚洲科技赛道</h3>
+                    <p class="news-desc">穆巴达拉、ADIA等海湾主权基金加大亚洲科技投资力度，重点关注AI、半导体和绿色能源。2030年海湾主权基金资产预计达18万亿美元。</p>
+                    </a>
+                    <p class="news-source"><a href="https://www.deloitte.com/middle-east/en/Industries/investment-management/research/gulf-swfs-look-to-ai-investments-in-diversification-competitiveness-push.html" target="_blank" style="color:var(--text-tertiary);">Deloitte · Apr 4, 2026 ↗</a></p>
+                </article>
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 科技</span>
+                        <span class="tag-region">🌐</span>
+                    </div>
+                    <a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html" target="_blank" style="text-decoration:none;color:inherit;">
+                    <h3 class="news-title">AI算力投资持续扩张，数据中心需求井喷</h3>
+                    <p class="news-desc">全球数据中心投资持续升温，AI训练需求推动算力基础设施扩张。微软、谷歌、亚马逊等科技巨头资本支出预算创历史新高。</p>
+                    </a>
+                    <p class="news-source"><a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html" target="_blank" style="color:var(--text-tertiary);">CNBC · Apr 5, 2026 ↗</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Trump Twitter Section -->
+        <section class="trump-section">
+            <h2><span class="trump-icon">𝕏</span> 市场风向标 · Trump Twitter Signals</h2>
+            <div class="trump-signals">
+                <div class="signal-item">
+                    <div class="signal-keyword">"nearing completion"</div>
+                    <div class="signal-impact">伊朗目标接近达成</div>
+                    <span class="signal-tag signal-neutral">⚠️ 观望</span>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-keyword">"2-3 weeks" to escalate</div>
+                    <div class="signal-impact">中东局势或进一步升级</div>
+                    <span class="signal-tag signal-bearish">📉 风险资产承压</span>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-keyword">"Hormuz must reopen"</div>
+                    <div class="signal-impact">原油供应担忧持续</div>
+                    <span class="signal-tag signal-bullish">📈 原油/黄金</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>News for Wenyan · Powered by AI · Mubadala SVP Asia Pacific Investment Strategy</p>
+            <p>Generated: 2026-04-05 13:05 UTC</p>
+        </footer>
+    </div>
+
+    <script>
+        Chart.defaults.color = '#6e6e73';
+        Chart.defaults.borderColor = 'rgba(44,44,52,0.5)';
+        Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif";
+
+        // CNY Chart
+        new Chart(document.getElementById('cnyChart'), {
+            type: 'line',
+            data: {
+                labels: ['Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25', 'Q3\'25', 'Q4\'25', 'Q1\'26'],
+                datasets: [{ data: [6.82, 7.15, 7.30, 7.10, 7.18, 7.25, 7.12, 7.25, 7.25, 7.19, 7.17, 7.10, 6.89], borderColor: '#ff453a', backgroundColor: 'rgba(255,69,58,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#ff453a' }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(2) }, min: 6.6, max: 7.4 } } }
+        });
+
+        // JPY Chart
+        new Chart(document.getElementById('jpyChart'), {
+            type: 'line',
+            data: {
+                labels: ['Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25', 'Q3\'25', 'Q4\'25', 'Q1\'26'],
+                datasets: [{ data: [138, 141, 149, 141, 148, 156, 147, 152, 150, 148, 145, 150, 159.2], borderColor: '#0a84ff', backgroundColor: 'rgba(10,132,255,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#0a84ff' }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 125, max: 165 } } }
+        });
+
+        // KRW Chart
+        new Chart(document.getElementById('krwChart'), {
+            type: 'line',
+            data: {
+                labels: ['Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25', 'Q3\'25', 'Q4\'25', 'Q1\'26'],
+                datasets: [{ data: [1280, 1300, 1330, 1290, 1320, 1360, 1360, 1380, 1400, 1420, 1390, 1450, 1518], borderColor: '#32d74b', backgroundColor: 'rgba(50,215,75,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#32d74b' }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 1200, max: 1600 } } }
+        });
+
+        // INR Chart
+        new Chart(document.getElementById('inrChart'), {
+            type: 'line',
+            data: {
+                labels: ['Q1\'23', 'Q2\'23', 'Q3\'23', 'Q4\'23', 'Q1\'24', 'Q2\'24', 'Q3\'24', 'Q4\'24', 'Q1\'25', 'Q2\'25', 'Q3\'25', 'Q4\'25', 'Q1\'26'],
+                datasets: [{ data: [81.5, 82.0, 83.0, 83.2, 83.0, 83.4, 83.8, 84.4, 87.0, 86.5, 84.8, 86.5, 93.2], borderColor: '#ff9f0a', backgroundColor: 'rgba(255,159,10,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#ff9f0a' }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 78, max: 96 } } }
+        });
+    </script>
+</body>
+</html>
