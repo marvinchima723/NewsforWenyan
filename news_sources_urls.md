@@ -14,3 +14,36 @@
 
 ---
 *URLs verified on 2026-04-05*
+
+---
+
+## 2026-04-06
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 伊朗战争进入第37天，美军飞行员获救，特朗普发出48小时最后通牒 | https://www.cnn.com/2026/04/05/world/live-news/iran-war-us-trump-oil | CNN |
+| ⚔️ 地缘政治 | 特朗普关税战持续，全球贸易版图重塑 | https://www.tradecomplianceresourcehub.com/2026/04/02/trump-2-0-tariff-tracker/ | Trade Compliance Hub |
+| 📊 全球经济 | IMF：全球经济"科技驱动增长"，但风险上升 | https://www.imf.org/en/blogs/articles/2026/01/19/global-economy-shakes-off-tariff-shock-amid-tech-driven-boom | IMF |
+| 🌏 亚太动态 | AI驱动"一人公司"在中国爆发式增长 | https://www.theborneopost.com/2026/04/06/ai-driven-one-person-company-sparks-new-entrepreneurial-boom/ | Borneo Post |
+| 🌏 亚太动态 | 2026亚洲股票展望：全球资本转移，布局中国科技复苏 | https://www.pinebridge.com/en/insights/2026-asia-equity-outlook | Pinebridge |
+| 💻 科技 | AI大模型最新动态：Gemma 4发布，Claude源代码泄露 | https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/ | humAI Blog |
+| 🌏 亚太动态 | 美印贸易关系趋紧，印度出口面临关税压力 | https://www.tradecomplianceresourcehub.com/2026/04/02/trump-2-0-tariff-tracker/ | Trade Compliance Hub |
+| 📊 全球经济 | OCBC：2026年4月全球市场展望，亚洲与美股分道扬镳 | https://www.minichart.com.sg/2026/04/06/global-market-pulse-april-2026-key-equity-trends-asia-us-market-insights-and-top-stock-picks-ocbc-research-summary/ | OCBC |
+| 🏦 穆巴达拉 | 穆巴达拉减持GLOBALFOUNDRIES股份，套现8.4亿美元 | https://simplywall.st/stocks/us/semiconductors/nasdaq-gfs/globalfoundries/news/what-globalfoundries-gfss-mubadala-secondary-sale-and-new-ip | Simply Wall St |
+| 🏦 穆巴达拉 | 穆巴达拉宣布加大医疗、AI、太空、数字基础设施投资 | https://www.agbi.com/companies/mubadala-investment-company/ | AGBI |
+
+*URLs verified on 2026-04-06*
+
+---
+
+## 穆巴达拉专栏 URL（持续更新）
+
+| 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
+|------|------|----------|------|----------|
+| 🏦 穆巴达拉 | 穆巴达拉2026战略：亚洲投资翻番，中国为核心 | https://www.mubadala.com/en/2026-letter-to-partners | 穆巴达拉官网 | 2026-01 |
+| 🏦 穆巴达拉 | 穆巴达拉计划将亚洲敞口翻倍至25%，目标860亿美元 | https://www.zawya.com/en/special-coverage/focus-global-wealth-funds/abu-dhabi-wealth-fund-mubadala-to-double-asia-exposure-to-25-of-portfolio-cuy7gq6t | Zawya | 2025-12-09 |
+| 🏦 穆巴达拉 | 穆巴达拉成立AI子公司MGX，数字基础设施成投资重点 | https://www.agbi.com/finance/2025/12/mubadala-maps-out-infrastructure-and-asia-plan/ | AGBI | 2025-12-15 |
+| 🏦 穆巴达拉 | 穆巴达拉押注亚洲：数字化与能源转型双轮驱动 | https://www.khaleejtelegraph.com/mubadala-eyes-major-expansion-in-asia-with-86-billion-target/ | Khaleej Telegraph | 2025-12-10 |
+| 🏦 穆巴达拉 | ADNOC计划100亿美元收购穆巴达拉能源资产（战略退出能源转向科技） | https://www.akm.ru/eng/news/emirati-adnoc-plans-to-acquire-mubadala-energy-assets/ | AK&M | 2026-04-05 |
+| 🏦 穆巴达拉 | 穆巴达拉7500万美元投资WHOOP，进军健康可穿戴领域 | https://secretabudhabi.ae/mubadala-invests-75-million-in-whoop/ | Secret Abu Dhabi | 2026-04-01 |
+| 🏦 穆巴达拉 | 穆巴达拉出售CoolIT少数股权给Ecolab，估值47.5亿美元 | https://www.mubadala.com/en/news/mubadala-agrees-to-sell-minority-stake-in-coolit-to-ecolab-in-kkr-led-4-75-billion-transaction | 穆巴达拉官网 | 2026-04-03 |
