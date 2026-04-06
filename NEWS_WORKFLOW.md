@@ -92,3 +92,38 @@
 ```
 
 > ⚠️ 更新 HTML 后同步更新 `news_sources_urls.md`
+
+---
+
+## ⚠️ 发布检查清单（必读）
+
+每次生成新闻后，必须逐项确认：
+
+### 链接验证
+- [ ] 所有外部链接已用 web_fetch 验证有效
+- [ ] 无未来日期的测试页（检查链接中的日期）
+- [ ] 优先使用权威来源（Xinhua > Borneo Post）
+
+### GitHub Pages
+- [ ] 新HTML文件已 git add → commit → push
+- [ ] `index.html` 已更新（添加新的历史简报入口）
+- [ ] 浏览器验证 https://marvinchima723.github.io/NewsforWenyan/ 正常显示
+
+### 邮件
+- [ ] 邮件发送成功（注意：需要VPN或手机热点）
+- [ ] 收件人：yoyozwy@gmail.com, marvin.cmma@gmail.com
+
+### 文档
+- [ ] `news_sources_urls.md` 已更新当日URL
+- [ ] 如有新问题，记录到 `BUG_TRACKING.md`
+
+---
+
+## 🐛 常见问题与解决方案
+
+| 问题 | 原因 | 解决 |
+|------|------|------|
+| GitHub Pages 404 | 缺少 index.html | 创建入口页面并推送 |
+| 链接无法访问 | 来源网站不稳定 | 换用Xinhua/Reuters等权威源 |
+| 邮件发送失败 | Gmail SMTP被封锁 | 启用VPN或手机热点 |
+| git push失败 | 远程有更新 | git pull --rebase 后再push |
