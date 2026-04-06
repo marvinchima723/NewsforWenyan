@@ -956,6 +956,15 @@
                         <canvas id="oilPriceChart"></canvas>
                     </div>
                 </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <div class="chart-title">霍尔木兹通行船只数量（实地调研）</div>
+                        <div class="chart-subtitle">Citrini Research 2026年4月3-4日调研数据</div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="vesselTrafficChart"></canvas>
+                    </div>
+                </div>
 
                 <div class="chart-container">
                     <div class="chart-header">
@@ -968,20 +977,77 @@
                 </div>
             </div>
 
+            <div class="analysis-box" style="border-left: 4px solid var(--accent-purple);">
+                <h3 style="font-size: 20px; margin-bottom: 16px;">🎯 实地调研独家数据（2026年4月3-4日）</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">
+                    <span style="background: rgba(191,90,242,0.15); padding: 4px 10px; border-radius: 4px; margin-right: 8px;">来源：Citrini Research 实地走访</span>
+                    调研地点：阿曼北部、Kumzar村、海上观察
+                </p>
+                <div class="analysis-grid">
+                    <div class="analysis-item" style="background: rgba(191,90,242,0.08);">
+                        <h4>📊 通行量恢复中</h4>
+                        <ul style="font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
+                            <li><strong style="color: var(--accent-red);">封锁初期</strong>（3月中）：仅<span style="color: var(--accent-red);">2-5艘/天</span></li>
+                            <li><strong style="color: var(--accent-orange);">4月2日</strong>：恢复至<span style="color: var(--accent-orange);">15艘+</span></li>
+                            <li><strong style="color: var(--accent-green);">4月3-4日</strong>：<span style="color: var(--accent-green);">15-18艘/天</span>，呈上升趋势</li>
+                            <li><strong>冲突前常态</strong>：超过<span style="color: var(--text-primary);">100艘/天</span></li>
+                        </ul>
+                    </div>
+                    <div class="analysis-item" style="background: rgba(191,90,242,0.08);">
+                        <h4>⚓ 伊朗"收费站"机制</h4>
+                        <ul style="font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
+                            <li>船只通过<span style="color: var(--accent-orange);">中间人</span>向伊朗提交申请</li>
+                            <li>支付方式：现金、加密货币或解冻资产</li>
+                            <li>获批后获得<span style="color: var(--accent-green);">通行码+护航</span></li>
+                            <li>审查标准：是否"亲美"，政治属性明显</li>
+                        </ul>
+                    </div>
+                    <div class="analysis-item" style="background: rgba(191,90,242,0.08);">
+                        <h4>🛢️ 通航船只类型</h4>
+                        <ul style="font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
+                            <li>以<span style="color: var(--accent-blue);">LPG船、Handy型油轮</span>为主</li>
+                            <li>VLCC超大型油轮<span style="color: var(--accent-red);">较少</span></li>
+                            <li>国籍：中国、印度、马来西亚、日本、希腊、法国、阿曼、土耳其</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; padding: 16px; background: rgba(48,209,88,0.1); border-radius: 12px; border-left: 4px solid var(--accent-green);">
+                    <h4 style="font-size: 15px; margin-bottom: 8px;">🔍 核心洞察</h4>
+                    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+                        <strong style="color: var(--text-primary);">海峡未完全关闭，也未完全开放。</strong>正从"美国保护下的默认开放"转向"<span style="color: var(--accent-orange);">伊朗主导的有条件通航</span>"。
+                        伊朗目标并非长期封锁，而是通过"有序管理"宣示主权——类似<span style="color: var(--accent-blue);">土耳其对博斯普鲁斯海峡的管理模式</span>。
+                    </p>
+                </div>
+                <div style="margin-top: 16px; padding: 16px; background: rgba(255,69,58,0.1); border-radius: 12px; border-left: 4px solid var(--accent-red);">
+                    <h4 style="font-size: 15px; margin-bottom: 8px;">⚠️ 市场误判纠正</h4>
+                    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+                        <strong style="color: var(--text-primary);">误判1：</strong>"海峡关闭＝油价暴涨"——实际仍有"暗航"通行，且通行量在恢复<br>
+                        <strong style="color: var(--text-primary);">误判2：</strong>"保险恢复＝航运恢复"——实际船东更担心<span style="color: var(--accent-red);">船只被击沉</span>造成的运力损失，而非保险费
+                    </p>
+                </div>
+                <div style="margin-top: 16px; padding: 16px; background: rgba(41,151,255,0.1); border-radius: 12px; border-left: 4px solid var(--accent-blue);">
+                    <h4 style="font-size: 15px; margin-bottom: 8px;">🌐 多国外交突围</h4>
+                    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+                        法国、日本、希腊等<span style="color: var(--accent-blue);">美国盟友正直接与伊朗谈判</span>通行安排，绕开美国。即使美军在Qeshm岛上空被击落、港口遭空袭，同日仍有船只通过。
+                        <span style="color: var(--accent-green);">商业系统在多极格局下会自适应冲突，形成新秩序。</span>
+                    </p>
+                </div>
+            </div>
+
             <div class="analysis-box">
-                <h3 style="font-size: 20px; margin-bottom: 16px;">💡 麦肯锡式分析：三种情景</h3>
+                <h3 style="font-size: 20px; margin-bottom: 16px;">💡 麦肯锡式分析：三种情景（已更新）</h3>
                 <div class="analysis-grid">
                     <div class="analysis-item">
-                        <h4>🔵 乐观情景（概率20%）</h4>
-                        <p>1个月内重开。油价维持在$95-100，GDP影响-0.2个百分点。伊朗-阿曼监测协议发挥作用，美国暂时克制。</p>
+                        <h4>🔵 乐观情景（概率25%）↑</h4>
+                        <p>美国默许伊朗管理机制。通行量恢复至50-70艘/天，油价$100-108。伊朗-阿曼协议正式化。</p>
                     </div>
                     <div class="analysis-item">
                         <h4>🟡 基准情景（概率50%）</h4>
-                        <p>持续2-3个月。油价升至$110-120，GDP影响-0.3至-0.5个百分点。绕行好望角成为常态，亚洲国家寻求替代供应。</p>
+                        <p>持续2-3个月，通行量维持在15-30艘/天。油价$110-120。绕行好望角+伊朗"收费站"双轨并行。</p>
                     </div>
                     <div class="analysis-item">
-                        <h4>🔴 悲观情景（概率30%）</h4>
-                        <p>持续半年以上。油价突破$130，GDP拖累-1.3个百分点。触发全球经济衰退，全球供应链重构加速。</p>
+                        <h4>🔴 悲观情景（概率25%）↓</h4>
+                        <p>美军强行打破伊朗管控，军事冲突升级。海峡彻底关闭，油价突破$140，全球衰退。</p>
                     </div>
                 </div>
             </div>
@@ -1376,19 +1442,7 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false },
-                    annotation: {
-                        annotations: {
-                            line1: {
-                                type: 'line',
-                                yMin: 100,
-                                yMax: 100,
-                                borderColor: '#ff453a',
-                                borderWidth: 2,
-                                borderDash: [6, 6]
-                            }
-                        }
-                    }
+                    legend: { display: false }
                 },
                 scales: {
                     y: {
@@ -1397,6 +1451,58 @@
                         max: 150,
                         ticks: {
                             callback: value => '$' + value
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.05)'
+                        }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Vessel Traffic Chart - Ground Survey Data
+        const vesselTrafficCtx = document.getElementById('vesselTrafficChart').getContext('2d');
+        new Chart(vesselTrafficCtx, {
+            type: 'line',
+            data: {
+                labels: ['冲突前\n(正常)', '3月中\n(封锁初期)', '4月2日', '4月3日', '4月4日', '预测\n(若稳定)'],
+                datasets: [{
+                    label: '日均通行船只数',
+                    data: [100, 3.5, 15, 16, 17, 25],
+                    borderColor: '#bf5af2',
+                    backgroundColor: 'rgba(191, 90, 242, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#bf5af2',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return '通行: ' + context.raw + ' 艘/天';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 120,
+                        ticks: {
+                            callback: value => value + '艘'
                         },
                         grid: {
                             color: 'rgba(255,255,255,0.05)'
