@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsforWenyan | 每日情报简报</title>
+    <style>
+        :root {
+            --bg-primary: #000;
+            --bg-card: #1c1c1e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --text-tertiary: #6e6e73;
+            --accent-blue: #2997ff;
+            --accent-red: #ff453a;
+            --accent-green: #30d158;
+            --accent-gold: #ff9f0a;
+            --border: rgba(255,255,255,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #86868b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .latest-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .latest-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .latest-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .latest-card .date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+
+        .latest-card .title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .latest-card .desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .latest-card .arrow {
+            color: var(--accent-gold);
+            font-size: 20px;
+            margin-top: 12px;
+        }
+
+        .archive-section {
+            margin-top: 50px;
+        }
+
+        .archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .archive-item {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .archive-item:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .archive-item .file-date {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .archive-item .file-link {
+            font-size: 13px;
+            color: var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            color: var(--text-tertiary);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📰 News for Wenyan</h1>
+            <p class="subtitle">每日情报简报 · 穆巴达拉亚太投资策略</p>
+        </header>
+
+        <section class="latest-section">
+            <div class="section-title">最新简报</div>
+            <a href="NewsforWenyan_2026-04-06.html" class="latest-card">
+                <div class="date">2026年4月6日 · 星期一</div>
+                <div class="title">穆巴达拉加大亚洲科技投资 · 伊朗战争第37天</div>
+                <div class="desc">穆巴达拉专栏首次加入 · 全球市场震荡 · Gemma 4发布</div>
+                <div class="arrow">→</div>
+            </a>
+        </section>
+
+        <section class="archive-section">
+            <div class="section-title">历史简报</div>
+            <div class="archive-list">
+                <a href="NewsforWenyan_2026-04-04_v6.html" class="archive-item">
+                    <span class="file-date">2026年4月4日</span>
+                    <span class="file-link">查看 →</span>
+                </a>
+                <a href="NewsforWenyan_2026-04-04_v5.html" class="archive-item">
+                    <span class="file-date">2026年4月4日 (v5)</span>
+                    <span class="file-link">查看 →</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>由 AI 自动生成 · 每日早上7点推送</p>
+            <p style="margin-top: 8px;">
+                <a href="https://github.com/marvinchima723/NewsforWenyan" target="_blank">GitHub 仓库</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
