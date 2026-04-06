@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻 · 2026年4月7日 · 霍尔木兹最后通牒日</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-card: #141418;
+            --bg-hover: #1a1a1f;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent-red: #ff4d6a;
+            --accent-orange: #ff9f0a;
+            --accent-green: #30d158;
+            --accent-blue: #0a84ff;
+            --border: rgba(255,255,255,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-red), #ff8c00);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, rgba(255,77,106,0.15), rgba(255,159,10,0.1));
+            border: 1px solid var(--accent-red);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .emergency-banner h2 {
+            color: var(--accent-red);
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .emergency-banner p {
+            color: var(--text-primary);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .countdown {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .countdown-item {
+            background: rgba(255,77,106,0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .countdown-item .num {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+        .countdown-item .label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+        .source-matrix h3 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .source-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .source-matrix th {
+            text-align: left;
+            color: var(--text-tertiary);
+            padding: 8px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 500;
+        }
+        .source-matrix td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .source-matrix tr:last-child td { border-bottom: none; }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge-a1 { background: rgba(48,209,88,0.2); color: var(--accent-green); }
+        .badge-a2 { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .badge-b1 { background: rgba(255,159,10,0.2); color: var(--accent-orange); }
+        /* Categories */
+        .category {
+            margin-bottom: 28px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .category-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .category-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+        /* News Item */
+        .news-item {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .news-item:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
+        .news-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        .news-content {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .news-source {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+        .news-source a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        .confidence {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-tertiary);
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .tag-red { background: rgba(255,77,106,0.15); color: var(--accent-red); }
+        .tag-orange { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        .tag-green { background: rgba(48,209,88,0.15); color: var(--accent-green); }
+        .tag-blue { background: rgba(10,132,255,0.15); color: var(--accent-blue); }
+        /* Prayer */
+        .prayer-box {
+            background: linear-gradient(135deg, rgba(10,132,255,0.1), rgba(48,209,88,0.05));
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 32px;
+            text-align: center;
+            border: 1px solid rgba(10,132,255,0.2);
+        }
+        .prayer-box .verse {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .prayer-box .ref {
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary);
+            font-size: 12px;
+        }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+        /* Utility */
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .mt-4 { margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="date-badge">📅 2026年4月7日</div>
+            <h1>每日新闻简报</h1>
+            <p class="subtitle">霍尔木兹最后通牒日 · 油价$113/桶 · 全球关注</p>
+        </div>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <h2>🚨 今日最大事件：特朗普最后通牒到期日</h2>
+            <p>今天是特朗普设定的最后期限——要求伊朗重新开放霍尔木兹海峡，否则将打击伊朗发电厂和桥梁。</p>
+            <p class="mt-4"><strong>截止时间：美东时间4月7日晚8点（北京时间4月8日上午8点）</strong></p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="num" id="hours">--</div>
+                    <div class="label">小时</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="num" id="minutes">--</div>
+                    <div class="label">分钟</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="num" id="seconds">--</div>
+                    <div class="label">秒</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source Matrix - Today's Verification -->
+        <div class="source-matrix">
+            <h3>📋 今日信息源矩阵（Source Matrix）</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>信息</th>
+                        <th>来源</th>
+                        <th>评级</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>特朗普最后通牒：4月7日为截止日</td>
+                        <td><a href="https://apnews.com/article/iran-us-israel-trump-lebanon-april-5-2026-pilot-cf4a792196259d6e9c066d0be1c57962" target="_blank">AP News</a></td>
+                        <td><span class="badge badge-a1">A1-可靠独立核实</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>油价4月6日：$113.27/桶（+1.55%，近一月+19.52%）</td>
+                        <td><a href="https://tradingeconomics.com/commodity/crude-oil" target="_blank">Trading Economics</a></td>
+                        <td><span class="badge badge-a2">A2-可靠</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>LNG运费：$300,000/天（涨600%）</td>
+                        <td><a href="https://globallnghub.com/lng-shipping-rates-surge-600-as-hormuz-risk-reshapes-global-gas-flows.html" target="_blank">Global LNG Hub</a></td>
+                        <td><span class="badge badge-a2">A2-可靠</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>美军飞行员获救（4月6日凌晨）</td>
+                        <td><a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/" target="_blank">CBS News</a></td>
+                        <td><span class="badge badge-a1">A1-可靠独立核实</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>伊朗拒绝最后通牒，威胁升级报复</td>
+                        <td><a href="https://www.independent.co.uk/news/world/middle-east/iran-us-war-live-trump-missing-pilot-strait-of-hormuz-b2952018.html" target="_blank">Independent</a></td>
+                        <td><span class="badge badge-a2">A2-可靠</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>伊朗提出"过路费+战争赔偿"条件</td>
+                        <td><a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/" target="_blank">CBS News</a></td>
+                        <td><span class="badge badge-a2">A2-可靠</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>MENA地区IT支出2026年将达$1690亿</td>
+                        <td><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-04-gartner-forecasts-mena-it-spending-to-reach-169-billion-us-dollars-in-2026" target="_blank">Gartner</a></td>
+                        <td><span class="badge badge-a1">A1-可靠独立核实</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                    <tr>
+                        <td>美国情报：伊朗不会轻易开放霍尔木兹</td>
+                        <td><a href="https://www.usnews.com/news/world/articles/2026-04-03/exclusive-us-intelligence-warns-iran-unlikely-to-ease-hormuz-strait-chokehold-soon-sources-say" target="_blank">US News</a></td>
+                        <td><span class="badge badge-a2">A2-可靠</span></td>
+                        <td>✅ 已核实</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Category: Geopolitics -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,77,106,0.15);">🌍</div>
+                <div class="category-title">地缘政治</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🚨 特朗普最后通牒今日到期：美东晚8点为截止时间</div>
+                <div class="news-content">
+                    特朗普在4月5日（周日）通过社交媒体发出强硬最后通牒，要求伊朗在<span class="highlight-red">4月7日（今天）</span>之前重新开放霍尔木兹海峡，否则将打击伊朗的<span class="highlight-red">每一座发电厂和桥梁</span>。他在帖子中写道："你们将生活在地狱中。"
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📰 <a href="https://apnews.com/article/iran-us-israel-trump-lebanon-april-5-2026-pilot-cf4a792196259d6e9c066d0be1c57962" target="_blank">AP News</a></span>
+                    <span class="confidence">A1评级 · 独立核实</span>
+                    <span class="tag tag-red">高置信度</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🇮🇷 伊朗强硬拒绝：副外长称特朗普"煽动恐怖主义"</div>
+                <div class="news-content">
+                    伊朗副外长回应称特朗普的威胁是<span class="highlight-orange">"煽动恐怖主义"和"意图犯战争罪"</span>。伊朗军方警告将进行<span class="highlight-red">"更毁灭性、更广泛的报复"</span>。伊朗同时提出重新开放的条件：需支付"过境费收入+战争赔偿"。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📰 <a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/" target="_blank">CBS News</a></span>
+                    <span class="confidence">A2评级 · 已核实</span>
+                    <span class="tag tag-red">高置信度</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🛩️ 美军飞行员全部获救："复活节奇迹"</div>
+                <div class="news-content">
+                    美军特种部队在4月6日凌晨成功救出最后一名被困伊朗的飞行员。行动出动了几十架飞机包括A-10攻击机掩护，深入伊朗山区进行营救。A-10攻击机在行动中被击伤。这是被称为"复活节奇迹"的重大营救成功。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📰 <a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/" target="_blank">CBS News</a></span>
+                    <span class="confidence">A1评级 · 独立核实</span>
+                    <span class="tag tag-green">已确认</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📊 美国情报评估：伊朗不会轻易开放霍尔木兹</div>
+                <div class="news-content">
+                    据<span class="highlight-orange">Exclusive</span>报道，美国情报机构评估伊朗不太可能轻易开放霍尔木兹。伊朗将海峡控制视为<span class="highlight-red">"核心战略资产"</span>。即使谈判，伊朗也会保留通行费机制（"收费站模式"）。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📰 <a href="https://www.usnews.com/news/world/articles/2026-04-03/exclusive-us-intelligence-warns-iran-unlikely-to-ease-hormuz-strait-chokehold-soon-sources-say" target="_blank">US News / Reuters</a></span>
+                    <span class="confidence">A2评级 · 独家</span>
+                    <span class="tag tag-orange">情报分析</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Global Economy -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,159,10,0.15);">💰</div>
+                <div class="category-title">全球经济</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🛢️ 油价突破$113/桶：4月6日+1.55%，近一月涨幅19.52%</div>
+                <div class="news-content">
+                    受霍尔木兹危机持续影响，布伦特原油价格升至<span class="highlight-red">$113.27/桶</span>。近一年涨幅达<span class="highlight-red">86.6%</span>。能源市场正在定价霍尔木兹持续关闭的溢价。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📊 <a href="https://tradingeconomics.com/commodity/crude-oil" target="_blank">Trading Economics</a></span>
+                    <span class="confidence">A2评级</span>
+                    <span class="tag tag-red">市场数据</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">⛽ LNG运费暴涨600%：$300,000/天</div>
+                <div class="news-content">
+                    霍尔木兹危机导致LNG运输船运费飙升至<span class="highlight-red">$300,000/天</span>，涨幅达600%。全球天然气市场正在经历前所未有的价格压力，中东至亚洲的LNG运输路线面临严峻挑战。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📊 <a href="https://globallnghub.com/lng-shipping-rates-surge-600-as-hormuz-risk-reshapes-global-gas-flows.html" target="_blank">Global LNG Hub</a></span>
+                    <span class="confidence">A2评级</span>
+                    <span class="tag tag-red">市场数据</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Asia Pacific -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(48,209,88,0.15);">🌏</div>
+                <div class="category-title">亚太</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🔍 伊朗分化策略：豁免伊拉克船只通过</div>
+                <div class="news-content">
+                    伊朗允许伊拉克船只<span class="highlight-green">不受限制通过</span>霍尔木兹，被视为分化美国盟友的策略。此举可能加剧海湾地区内部矛盾。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📰 <a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/" target="_blank">CBS News</a></span>
+                    <span class="confidence">A2评级</span>
+                    <span class="tag tag-orange">战略分析</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Technology & Sovereign Wealth -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(10,132,255,0.15);">🏦</div>
+                <div class="category-title">科技 & 主权基金投资</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🤖 MENA地区IT支出2026年将达$1690亿：AI驱动</div>
+                <div class="news-content">
+                    据Gartner预测，中东和北非IT支出2026年将达到<span class="highlight-green">$1690亿</span>，同比增长8.9%。<span class="highlight-green">AI采用和AI优化基础设施升级</span>是主要驱动力。微软已部署$73亿（包括对G42的$15亿股权投资）。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📊 <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-04-gartner-forecasts-mena-it-spending-to-reach-169-billion-us-dollars-in-2026" target="_blank">Gartner</a></span>
+                    <span class="confidence">A1评级</span>
+                    <span class="tag tag-blue">主权基金机会</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💻 中东AI投资爆发：2026年预计$146亿</div>
+                <div class="news-content">
+                    据IDC数据，中东、土耳其和非洲AI支出将从2024年的<span class="highlight-green">$45亿</span>飙升至2026年的<span class="highlight-green">$146亿</span>。数据中心和AI基础设施是核心投资方向。
+                </div>
+                <div class="news-meta">
+                    <span class="news-source">📊 <a href="https://my.idc.com/getdoc.jsp?containerId=prMETA53088825" target="_blank">IDC</a></span>
+                    <span class="confidence">A2评级</span>
+                    <span class="tag tag-blue">主权基金机会</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Watch -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,77,106,0.15);">👁️</div>
+                <div class="category-title">今日关键观察</div>
+            </div>
+
+            <div class="news-item" style="border-left: 3px solid var(--accent-red);">
+                <div class="news-title">⏰ 今晚8点（美东）= 明早8点（北京）：关注三件事</div>
+                <div class="news-content">
+                    <strong>1. 特朗普是否执行威胁？</strong><br>
+                    如打击发电厂和桥梁 → 全面战争风险升级<br><br>
+                    <strong>2. 伊朗如何回应？</strong><br>
+                    封锁升级/谈判信号/第三方调解<br><br>
+                    <strong>3. 外交窗口是否打开？</strong><br>
+                    联合国/欧盟/中俄是否介入斡旋
+                </div>
+                <div class="news-meta">
+                    <span class="confidence">⚠️ 今日最大不确定性事件</span>
+                    <span class="tag tag-red">高风险</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prayer -->
+        <div class="prayer-box">
+            <p class="verse">"耶和华在地上造了第①日，照亮人的路程。"</p>
+            <p class="ref">愿今日世界走向和平 🙏</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>📧 <a href="mailto:yoyozwy@gmail.com">yoyozwy@gmail.com</a> | 🌐 <a href="https://marvinchima723.github.io/NewsforWenyan/">NewsforWenyan</a></p>
+            <p style="margin-top: 8px;">每条新闻均标注来源和可信度评级（A1=独立核实，A2=可靠）</p>
+            <p style="margin-top: 4px; color: var(--accent-red);">⚡ 最后更新：2026-04-07 07:00 · 特朗普最后通牒日</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            // Deadline: April 7, 2026, 8:00 PM EST (New York)
+            const deadline = new Date('2026-04-07T20:00:00-05:00');
+            const now = new Date();
+            const diff = deadline - now;
+
+            if (diff > 0) {
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
