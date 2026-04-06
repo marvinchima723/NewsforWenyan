@@ -4,7 +4,44 @@ _最后更新: 2026-04-06_
 
 ---
 
+---
+
 ## 📋 问题记录
+
+### 2026-04-06 | 邮件链接路径错误
+
+**问题类型**: 邮件发送 / 链接路径
+**严重程度**: 🔴 高
+**状态**: ✅ 已修复
+
+**问题描述**:
+邮件中的链接错误指向 `news/NewsforWenyan_2026-04-06.html`，但该文件实际位于根目录。
+
+**根本原因**:
+`send_email.py` 第66行硬编码了 `news/` 子文件夹路径：
+```python
+news_url = f"https://marvinchima723.github.io/NewsforWenyan/news/NewsforWenyan_{news_date}.html"
+```
+
+**实际情况**:
+- `news/` 文件夹只包含 `NewsforWenyan_2026-04-05.html`
+- 4月6日文件 `NewsforWenyan_2026-04-06.html` 在根目录
+
+**错误链接**: `https://marvinchima723.github.io/NewsforWenyan/news/NewsforWenyan_2026-04-06.html` ❌
+**正确链接**: `https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_2026-04-06.html` ✅
+
+**解决方案**:
+修改 `send_email.py` 第66行，去掉 `news/` 路径：
+```python
+news_url = f"https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_{news_date}.html"
+```
+
+**预防措施**:
+- ✅ 所有新闻HTML文件都存放在根目录
+- ✅ `news/` 文件夹已废弃，不再使用
+- ✅ 邮件链接路径已修正
+
+---
 
 ### 2026-04-06 | GitHub Pages 404 问题
 
