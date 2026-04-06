@@ -63,6 +63,7 @@
 ## 注意事项
 - ⚠️ 每条新闻必须有原始链接，禁止只标注来源名称
 - ⚠️ 链接必须是可直接访问的 URL，不能是付费墙后的页面
+
 ### 穆巴达拉专栏 HTML 示例
 ```html
 <!-- 穆巴达拉专栏 -->
@@ -97,25 +98,66 @@
 
 ## ⚠️ 发布检查清单（必读）
 
-每次生成新闻后，必须逐项确认：
+每次生成新闻或深度专题后，必须逐项确认：
 
 ### 链接验证
 - [ ] 所有外部链接已用 web_fetch 验证有效
 - [ ] 无未来日期的测试页（检查链接中的日期）
 - [ ] 优先使用权威来源（Xinhua > Borneo Post）
 
-### GitHub Pages
+### GitHub Pages 同步（强制）
 - [ ] 新HTML文件已 git add → commit → push
-- [ ] `index.html` 已更新（添加新的历史简报入口）
-- [ ] 浏览器验证 https://marvinchima723.github.io/NewsforWenyan/ 正常显示
+- [ ] `index.html` 已更新（添加新的历史简报入口或深度专刊入口）
+- [ ] **⚠️ 验证推送结果（必须）：用 web_fetch 访问生成的URL，确认返回正常页面而非404**
+- [ ] 如返回404 → 进入Debug循环，继续修复直到验证通过
 
 ### 邮件
 - [ ] 邮件发送成功（注意：需要VPN或手机热点）
 - [ ] 收件人：yoyozwy@gmail.com, marvin.cmma@gmail.com
 
 ### 文档
-- [ ] `news_sources_urls.md` 已更新当日URL
+- [ ] `news_sources_urls.md` 已更新当日URL（如是每日简报）
 - [ ] 如有新问题，记录到 `BUG_TRACKING.md`
+
+---
+
+## 🔄 GitHub推送验证循环（强制执行）
+
+**每次推送后必须验证，验证失败必须Debug直到成功：**
+
+```
+推送 → 验证URL → 404? → 检查git状态 → 重新推送 → 再次验证 → 直到通过
+```
+
+### 第一步：推送
+```bash
+git add <文件> && git commit -m "描述" && git push
+```
+
+### 第二步：验证（推送后立即执行）
+用 web_fetch 访问生成的URL，例如：
+```
+https://marvinchima723.github.io/NewsforWenyan/Hormuz_Crisis_Report_v3_2026-04-06.html
+```
+
+### 第三步：如遇404，进入Debug循环
+1. 检查 `git status` — 确认文件是否在tracked列表
+2. 确认 `git log` — 确认commit是否存在
+3. 如是网络问题（HTTP2 framing layer / 连接超时）→ 需要VPN
+4. 重试推送，等待2-3秒后再次验证URL
+5. **持续循环直到验证通过，不轻易放弃**
+
+### 第四步：验证通过后
+- 继续下一步（发送邮件等）
+
+### 网络问题处理
+| 错误信息 | 原因 | 解决 |
+|---------|------|------|
+| `HTTP2 framing layer error` | 中国网络与GitHub不兼容 | 需要VPN |
+| `Failed to connect to github.com port 443` | 防火墙封锁 | 需要VPN |
+| `Could not resolve host` | DNS污染 | 尝试 `8.8.8.8` DNS或VPN |
+| `connection reset` | 连接被重置 | VPN + 重试 |
+| `anonymous base` | Git认证失效 | 检查token是否有效 |
 
 ---
 
@@ -123,7 +165,13 @@
 
 | 问题 | 原因 | 解决 |
 |------|------|------|
-| GitHub Pages 404 | 缺少 index.html | 创建入口页面并推送 |
+| GitHub Pages 404 | 文件未同步到仓库 | 确认git push成功，验证URL |
 | 链接无法访问 | 来源网站不稳定 | 换用Xinhua/Reuters等权威源 |
 | 邮件发送失败 | Gmail SMTP被封锁 | 启用VPN或手机热点 |
-| git push失败 | 远程有更新 | git pull --rebase 后再push |
+| git push失败 | 远程有更新或网络问题 | git pull --rebase 后再push；或VPN重试 |
+| 404但git显示已推送 | 浏览器缓存 | 硬刷新 Ctrl+Shift+R |
+| 404但git显示已推送 | GitHub Pages未更新 | 等待1-2分钟后再试 |
+
+---
+
+_此文档随每次问题发现而更新，确保工作流程持续改进。_

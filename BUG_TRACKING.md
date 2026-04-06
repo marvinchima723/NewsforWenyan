@@ -67,6 +67,34 @@ GitHub Pages 需要根目录有 `index.html` 文件作为入口。之前只推�
 
 ---
 
+### 2026-04-06 | v3深度报告404——文件未同步到GitHub
+
+**问题类型**: 基础设施 / GitHub Pages
+**严重程度**: 🔴 高
+**状态**: ⚠️ 待修复（网络问题阻塞）
+
+**问题描述**:
+访问 `https://marvinchima723.github.io/NewsforWenyan/Hormuz_Crisis_Report_v3_2026-04-06.html` 显示 GitHub Pages 404 错误。
+
+**根本原因**:
+创建了新的HTML文件后，没有同步推送到GitHub。每次创建新的HTML文件（无论是每日简报还是专题深度报告），都必须执行 `git add` → `git commit` → `git push` 流程，否则GitHub Pages无法访问。
+
+**解决方案**:
+需要VPN连接后执行：
+```bash
+cd /Users/mma/Dropbox/0-行研专家/NewsforWenyan
+git add Hormuz_Crisis_Report_v3_2026-04-06.html index.html
+git commit -m "feat: add Hormuz v3 report"
+git push
+```
+
+**预防措施**:
+- ✅ 每次创建新HTML文件后，立即执行完整git流程
+- ✅ 自动化任务清单已更新（见下方"同步Git"步骤）
+- ⚠️ GitHub推送需要VPN（与中国网络不兼容）
+
+---
+
 ### 2026-04-06 | 无效新闻链接
 
 **问题类型**: 内容质量 / 链接失效
@@ -113,14 +141,16 @@ GitHub Pages 需要根目录有 `index.html` 文件作为入口。之前只推�
 
 ## 🔧 自动化任务检查清单
 
-每次生成新闻后，确认以下步骤：
+每次生成新闻或深度专题后，确认以下步骤：
 
-- [ ] 生成当日 HTML 文件（例：`NewsforWenyan_YYYY-MM-DD.html`）
+- [ ] 生成当日 HTML 文件（例：`NewsforWenyan_YYYY-MM-DD.html`）或专题文件（例：`Hormuz_Crisis_Report_v3_YYYY-MM-DD.html`）
 - [ ] 验证所有外部链接可访问
-- [ ] 更新 `index.html` 的历史简报列表
-- [ ] 更新 `news_sources_urls.md` 记录当日 URL
-- [ ] `git add` → `git commit` → `git push origin main`
-- [ ] 发送邮件 `python3 send_email.py YYYY-MM-DD`
+- [ ] 更新 `index.html` 的历史简报列表或深度专刊入口
+- [ ] 更新 `news_sources_urls.md` 记录当日 URL（如适用）
+- [ ] **⚠️ 同步Git（必须）：** `git add` → `git commit` → `git push origin main`
+  - ⚠️ 需要VPN连接
+  - ⚠️ 深度专题文件（不是每日简报）也需要同步！不能只更新index.html
+- [ ] 发送邮件 `python3 send_email.py YYYY-MM-DD`（仅每日简报）
 - [ ] 在浏览器验证 GitHub Pages 显示正常
 
 ---
