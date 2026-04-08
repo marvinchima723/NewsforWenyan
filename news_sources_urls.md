@@ -36,6 +36,25 @@
 
 ---
 
+## 2026-04-08
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊达成两周停火协议，霍尔木兹海峡将重新开放 | https://apnews.com/live/iran-war-israel-trump-04-07-2026 | AP News |
+| ⚔️ 地缘政治 | 原油价格暴跌14.78%至$96/桶 | https://tradingeconomics.com/commodity/crude-oil | Trading Economics |
+| ⚔️ 地缘政治 | 以色列支持停火但继续在黎巴嫩行动 | https://www.cnn.com/2026/04/07/world/live-news/iran-war-trump-us-israel | CNN |
+| 🌏 亚太动态 | 日经指数暴涨5.28%至56,250点 | https://tradingeconomics.com/japan/stock-market | Trading Economics |
+| 🌏 亚太动态 | 亚洲市场风险情绪回升，恒生指数涨超2% | https://www.wsj.com/asia | WSJ |
+| 💻 科技 | OpenAI、Anthropic、Google首次联手反制中国AI蒸馏 | https://www.roborhythms.com/openai-anthropic-google-fight-chinese-ai-copying-2026/ | RoboRythms |
+| 💻 科技 | AI巨头联合打击模型蒸馏 | https://seekingalpha.com/news/4572880-anthropic-google-openai-team-up-to-fight-model-copying-in-china | Seeking Alpha |
+| 🏦 穆巴达拉 | 穆巴达拉2026战略：亚洲投资翻番 | https://www.mubadala.com/en/2026-letter-to-partners | 穆巴达拉官网 |
+| 🏦 穆巴达拉 | 穆巴达拉亚洲投资战略3300亿美元 | https://www.agbi.com/finance/2025/12/mubadala-maps-out-infrastructure-and-asia-plan/ | AGBI |
+| 🏦 穆巴达拉 | 穆巴达拉出售CoolIT少数股权 | https://www.mubadala.com/en/news/mubadala-agrees-to-sell-minority-stake-in-coolit-to-ecolab-in-kkr-led-4-75-billion-transaction | 穆巴达拉官网 |
+
+*URLs verified on 2026-04-08*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
