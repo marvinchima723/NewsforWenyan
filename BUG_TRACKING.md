@@ -1,12 +1,45 @@
 # NewsforWenyan Bug记录与问题追踪
 
-_最后更新: 2026-04-06_
-
----
+_最后更新: 2026-04-08_
 
 ---
 
 ## 📋 问题记录
+
+### 2026-04-08 | 邮件链接缺少news子目录路径
+
+**问题类型**: 邮件发送 / 链接路径
+**严重程度**: 🔴 高
+**状态**: ✅ 已修复
+
+**问题描述**:
+邮件中的链接错误，缺少 `news/` 子目录路径。
+
+**错误链接**: `https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_2026-04-08.html` ❌
+**正确链接**: `https://marvinchima723.github.io/NewsforWenyan/news/NewsforWenyan_2026-04-08.html` ✅
+
+**根本原因**:
+`send_email.py` 第66行硬编码的URL没有包含 `news/` 子目录：
+```python
+news_url = f"https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_{news_date}.html"
+```
+
+**实际情况**:
+- 4月8日起，所有新闻HTML文件都存放在 `news/` 子目录下
+
+**解决方案**:
+修改 `send_email.py` 第66行，添加 `news/` 路径：
+```python
+news_url = f"https://marvinchima723.github.io/NewsforWenyan/news/NewsforWenyan_{news_date}.html"
+```
+
+**预防措施**:
+- ✅ 已修复 `send_email.py`
+- ✅ 邮件链接路径与实际文件位置保持一致
+
+---
+
+
 
 ### 2026-04-06 | 邮件链接路径错误
 

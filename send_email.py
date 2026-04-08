@@ -63,7 +63,7 @@ def send_email(news_date=None, news_url=None):
     if news_date is None:
         news_date = datetime.now().strftime('%Y-%m-%d')
     if news_url is None:
-        news_url = f"https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_{news_date}.html"
+        news_url = f"https://marvinchima723.github.io/NewsforWenyan/news/NewsforWenyan_{news_date}.html"
     
     msg = MIMEMultipart('alternative')
     msg['Subject'] = f'☀️ News for Wenyan - {datetime.now().strftime("%Y年%m月%d日")}'
