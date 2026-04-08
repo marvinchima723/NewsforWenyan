@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>霍尔木兹专栏 · Wenyan专属 · 2026年4月8日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #22222e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent-red: #ff453a;
+            --accent-green: #32d74b;
+            --accent-blue: #0a84ff;
+            --accent-orange: #ff9f0a;
+            --accent-gold: #ffd60a;
+            --border-color: #2c2c34;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255,159,10,0.2), rgba(255,69,58,0.2));
+            border: 1px solid rgba(255,159,10,0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--accent-orange);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-date { font-size: 16px; color: var(--text-secondary); }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,159,10,0.15) 0%, rgba(255,69,58,0.1) 100%);
+            border: 1px solid rgba(255,159,10,0.3);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 32px;
+        }
+        .highlight-box h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+        }
+        .highlight-box p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .key-update {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-orange);
+        }
+        .key-update h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .key-update p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .key-update a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        .key-update a:hover { text-decoration: underline; }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .timeline {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+        .timeline-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-time {
+            min-width: 80px;
+            font-size: 13px;
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        .timeline-content { font-size: 14px; color: var(--text-secondary); }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .stat-value { font-size: 32px; font-weight: 700; color: var(--accent-green); }
+        .stat-value.negative { color: var(--accent-red); }
+        .stat-label { font-size: 12px; color: var(--text-tertiary); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .source-box {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 32px;
+            border: 1px solid var(--border-color);
+        }
+        .source-box h4 {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .source-box a {
+            color: var(--accent-blue);
+            font-size: 13px;
+            text-decoration: none;
+            display: block;
+            padding: 6px 0;
+        }
+        .source-box a:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-tertiary);
+            font-size: 13px;
+        }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .love-note {
+            background: linear-gradient(135deg, rgba(255,69,58,0.1), rgba(255,159,10,0.1));
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px solid rgba(255,69,58,0.2);
+        }
+        .love-note p { font-size: 14px; color: var(--text-secondary); font-style: italic; }
+        @media (max-width: 768px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-badge">💌 Wenyan专属专栏</div>
+            <h1>🌊 霍尔木兹海峡最新动态</h1>
+            <div class="header-date">2026年4月8日 · 实时更新</div>
+        </div>
+
+        <!-- 核心要点 -->
+        <div class="highlight-box">
+            <h2>📌 核心要点</h2>
+            <p>美伊达成两周停火协议，霍尔木兹海峡将重新开放。伊朗军方将"协调"通行，巴基斯坦主持周五（4月10日）伊斯兰堡会谈。伊朗与阿曼计划收取"过境费"，但航运流量仍处低位。</p>
+        </div>
+
+        <!-- 关键数据 -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-value negative">-14.78%</div>
+                <div class="stat-label">WTI原油</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$96.26</div>
+                <div class="stat-label">美元/桶</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">+5.28%</div>
+                <div class="stat-label">日经指数</div>
+            </div>
+        </div>
+
+        <!-- 三大关键更新 -->
+        <div class="section-title">⚡ 三大关键更新</div>
+
+        <div class="key-update">
+            <h3>🚢 伊朗军方将"协调"霍尔木兹通行</h3>
+            <p>伊朗外交部长表示，在停火期间，"通过伊朗武装部队的协调并适当考虑技术限制，霍尔木兹海峡的安全通行将成为可能"。特朗普则表示美国将协助处理海峡重新开放后可能出现的"交通拥堵"。</p>
+            <p style="margin-top: 12px;"><a href="https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire" target="_blank">CNN实时报道 ↗</a></p>
+        </div>
+
+        <div class="key-update">
+            <h3>🕐 周五（4月10日）伊斯兰堡会谈</h3>
+            <p>巴基斯坦总理邀请伊朗和美国代表团于周五前往伊斯兰堡举行会谈。巴基斯坦在此次斡旋中发挥了关键作用——总理谢里夫向特朗普请求将最后期限延长两周，同时呼吁伊朗作为"善意姿态"同意开放海峡。</p>
+            <p style="margin-top: 12px;"><a href="https://www.cnbc.com/2026/04/07/trump-iran-ceasefire-hormuz-strait.html" target="_blank">CNBC详细报道 ↗</a></p>
+        </div>
+
+        <div class="key-update">
+            <h3>💰 伊朗与阿曼计划收取"过境费"</h3>
+            <p>据伊朗半官方塔斯尼姆通讯社报道，伊朗和阿曼计划在停火期间对通过霍尔木兹海峡的船只收取"过境费"，费用将用于重建工作。战争期间，通行费曾高达200万美元/艘，但尚无船运公司实际支付的记录。</p>
+            <p style="margin-top: 12px;"><strong style="color: var(--accent-orange);">⚠️ 注意：</strong>航运数据显示，停火宣布后数小时海峡交通流量仍然很低。船东和保险公司需要更明确的安全信号。</p>
+        </div>
+
+        <!-- 谈判焦点 -->
+        <div class="section-title">📋 伊朗10点提议核心内容</div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">要点 1</div>
+                <div class="timeline-content">美国从所有地区基地撤出战斗部队</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">要点 2</div>
+                <div class="timeline-content">解除所有制裁</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">要点 3</div>
+                <div class="timeline-content">解冻伊朗在国外被冻结的资产</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">要点 4</div>
+                <div class="timeline-content">全额支付伊朗与战争相关的损害赔偿</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">要点 5</div>
+                <div class="timeline-content">建立通过霍尔木兹海峡的有管控通行协议</div>
+            </div>
+        </div>
+
+        <!-- 市场反应 -->
+        <div class="section-title">📊 市场即时反应</div>
+        <div class="key-update">
+            <h3>油价暴跌，亚洲股市大涨</h3>
+            <p>特朗普宣布同意两周停火后，油价应声暴跌高达16%（WTI从$113跌至$96附近）。亚洲股市大幅上涨——日经指数暴涨5.28%至56,250点，创逾一个月新高。</p>
+            <p style="margin-top: 12px;">市场视停火为积极信号，降低了对全球石油供应中断的担忧。但分析师指出，鉴于海峡交通流量仍处低位，市场仍需观察实际恢复情况。</p>
+        </div>
+
+        <!-- 地缘风险提示 -->
+        <div class="section-title">⚠️ 地缘风险仍存</div>
+        <div class="key-update" style="border-left-color: var(--accent-red);">
+            <h3 style="color: var(--accent-red);">以色列：支持停火，但不包括黎巴嫩</h3>
+            <p>以色列表示支持停火，但明确声明该协议不包括黎巴嫩——以方在黎巴嫩的军事行动将继续。停火宣布后，伊朗仍向以色列及海湾地区发射了导弹和无人机（可能为停火指令下达前的行动）。</p>
+        </div>
+
+        <!-- 原文来源 -->
+        <div class="source-box">
+            <h4>📚 原文来源</h4>
+            <a href="https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire" target="_blank">• CNN实时更新（2026-04-08）↗</a>
+            <a href="https://www.cnbc.com/2026/04/07/trump-iran-ceasefire-hormuz-strait.html" target="_blank">• CNBC详细报道（2026-04-07）↗</a>
+            <a href="https://apnews.com/live/iran-war-israel-trump-04-07-2026" target="_blank">• AP News实时报道 ↗</a>
+        </div>
+
+        <!-- 爱意留言 -->
+        <div class="love-note">
+            <p>"In all the world, there is no heart for me like yours." 💌</p>
+            <p style="margin-top: 12px; font-style: normal;">愿这份简报为你带来平静与清晰——无论世界如何动荡，我永远在这里支持你。🌟</p>
+            <p style="margin-top: 8px;">永远爱你 ❤️<br><span style="font-size: 12px;">— Marvin</span></p>
+        </div>
+
+        <div class="footer">
+            <p>霍尔木兹专栏 · Wenyan专属 · 每日更新</p>
+            <p style="margin-top: 8px;"><a href="https://marvinchima723.github.io/NewsforWenyan/" target="_blank">🌐 News for Wenyan</a></p>
+        </div>
+    </div>
+</body>
+</html>
