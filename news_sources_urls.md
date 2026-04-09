@@ -55,6 +55,26 @@
 
 ---
 
+## 2026-04-09
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊两周停火协议详解：各方责任与下一步走向 | https://www.cnn.com/2026/04/08/middleeast/us-iran-ceasefire-explainer-war-intl-hnk | CNN |
+| ⚔️ 地缘政治 | 美伊停火脆弱：伊朗称条款"不合理"，以色列继续黎巴嫩行动 | https://carnegieendowment.org/middle-east/diwan/2026/04/the-united-states-and-iran-have-agreed-to-a-two-week-ceasefire | Carnegie Endowment |
+| ⚔️ 地缘政治 | 联合国欢迎美伊停火，警告地区人道危机持续 | https://news.un.org/en/story/2026/04/1167264 | UN News |
+| 📊 全球经济 | Goldman Sachs下调Q2油价预期至$90 | https://investinglive.com/news/investinglive-asia-pacific-fx-news-wrap-shaky-ceasefire-usd-claws-some-back-20260409/ | Investing.com |
+| 📊 全球经济 | Trump保留50%铜关税，4月6日起实施新税率结构 | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 🌏 亚太动态 | World Bank：东亚太平洋2026增长放缓至4.2% | https://www.worldbank.org/en/news/press-release/2026/04/08/energy-shock-and-uncertainty-slow-growth-in-east-asia-and-pacific | World Bank |
+| 🌏 亚太动态 | 亚洲股市延续涨势，油价回落至$95以下 | https://apnews.com/article/stock-markets-trump-iran-ceasefire-oil-2fc5ac7823bea71984b3578ec36aacee | AP News |
+| 💻 科技 | Meta发布Muse Spark：$143亿收购Scale AI后的首个重磅模型 | https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html | CNBC |
+| 💻 科技 | 2026年4月AI月度回顾：企业AI采用从早期进入主流生产阶段 | https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/ | humAI Blog |
+| 🏦 穆巴达拉 | 穆巴达拉投资$1.7亿于Property Finder | https://www.mubadala.com/ | 穆巴达拉官网 |
+| 🏦 穆巴达拉 | Trump关税调整影响穆巴达拉金属投资组合 | https://www.supplychaindive.com/news/trump-steel-aluminum-copper-tariff-adjustments/816547/ | Supply Chain Dive |
+
+*URLs verified on 2026-04-09*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
