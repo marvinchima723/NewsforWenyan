@@ -95,6 +95,26 @@
 
 ---
 
+## 2026-04-11
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊第一轮正式谈判今日在伊斯兰堡举行 · JD Vance率团 | https://www.thenationalnews.com/news/mena/2026/04/09/us-iran-talks-in-islamabad-what-we-know/ | The National |
+| ⚔️ 地缘政治 | 伊朗指控以色列违反停火协议 · 霍尔木兹航运仍基本停滞 | https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire | CNN |
+| ⚔️ 地缘政治 | 谈判核心议题解析：核浓缩红线、制裁解除、霍尔木兹控制权 | https://www.livemint.com/news/world/what-to-expect-from-us-iran-ceasefire-talks-in-pakistan-nukes-sanctions-and-hormuz-on-the-table-11775628390685.html | Live Mint |
+| 📊 全球经济 | 油价从停火低点强劲反弹，WTI重返$99+/桶区间 | https://tradingeconomics.com/commodity/crude-oil | Trading Economics |
+| 📊 全球经济 | Trump维持铜关税50%新结构，4月6日起全面实施（全值计税） | https://www.tradecomplianceresourcehub.com/2026/04/08/trump-2-0-tariff-tracker/ | Trade Compliance Resource Hub |
+| 🌏 亚太动态 | 亚洲市场普涨：日经+1.72%领跑 · 恒生+1.02% · 上证+0.63% | https://tradingeconomics.com/japan/stock-market | Trading Economics |
+| 🌏 亚太动态 | IMF《世界经济展望》4月版：国防支出激增成为新兴市场新趋势 | https://www.crestwoodadvisors.com/april-2026-economic-and-market-update-geopolitics-at-the-forefront/ | Crestwood Advisors |
+| 💻 科技 | AI监管战升级：xAI起诉科罗拉多州 · 佛罗里达州调查OpenAI | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
+| 💻 科技 | Anthropic考虑自研AI芯片 · 年化收入已超300亿美元 | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
+| 💻 科技 | 犹他州允许AI自主续开处方 · AI企业主流化从尝鲜进入生产阶段 | https://af.net/realtime/ai-news-trends-april-2026-complete-monthly-digest/ | AIFOD |
+| 🏦 穆巴达拉 | 穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元创七年新高 | https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/ | AGBI |
+
+*URLs verified on 2026-04-11*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
