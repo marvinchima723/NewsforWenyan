@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan · 2026年4月10日</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24;
+            --bg-card-hover: #22222e; --text-primary: #f5f5f7; --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73; --accent-red: #ff453a; --accent-green: #32d74b;
+            --accent-blue: #0a84ff; --accent-orange: #ff9f0a; --border-color: #2c2c34;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        /* Header */
+        .header { text-align: center; margin-bottom: 48px; }
+        .header-badge { display: inline-block; background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 20px; font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; letter-spacing: 0.5px; }
+        .header h1 { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header-date { font-size: 18px; color: var(--text-secondary); }
+        /* Urgent Banner */
+        .urgent-banner { background: linear-gradient(135deg, #ff453a 0%, #ff6b35 100%); border-radius: 16px; padding: 20px 24px; margin-bottom: 24px; text-align: center; }
+        .urgent-banner .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+        .urgent-banner .headline { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .urgent-banner .subline { font-size: 13px; color: rgba(255,255,255,0.85); }
+        /* Market Data */
+        .market-overview { background: var(--bg-secondary); border-radius: 20px; padding: 24px; margin-bottom: 32px; border: 1px solid var(--border-color); }
+        .market-overview h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 20px; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .market-card { background: var(--bg-card); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); }
+        .market-card h3 { font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .indices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+        .index-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-color); }
+        .index-item:last-child { border-bottom: none; }
+        .index-name { font-size: 13px; color: var(--text-secondary); }
+        .index-value { font-size: 14px; font-weight: 600; font-feature-settings: 'tnum'; }
+        .index-change { font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
+        .up { color: var(--accent-red); background: rgba(255,69,58,0.15); }
+        .down { color: var(--accent-green); background: rgba(50,215,75,0.15); }
+        .forex-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        .forex-item { text-align: center; padding: 12px 8px; }
+        .forex-flag { font-size: 24px; margin-bottom: 4px; }
+        .forex-pair { font-size: 12px; color: var(--text-tertiary); }
+        .forex-rate { font-size: 18px; font-weight: 600; font-feature-settings: 'tnum'; margin: 4px 0; }
+        .forex-unit { font-size: 11px; color: var(--text-tertiary); }
+        /* Charts */
+        .chart-section { background: var(--bg-secondary); border-radius: 20px; padding: 24px; margin-bottom: 32px; border: 1px solid var(--border-color); }
+        .chart-section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 20px; }
+        .forex-charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .forex-chart-card { background: var(--bg-card); border-radius: 16px; padding: 20px; border: 1px solid var(--border-color); }
+        .forex-chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .forex-chart-title { display: flex; align-items: center; gap: 10px; }
+        .forex-chart-flag { font-size: 28px; }
+        .forex-chart-name { font-size: 16px; font-weight: 600; }
+        .forex-chart-subtitle { font-size: 12px; color: var(--text-tertiary); }
+        .forex-chart-stats { text-align: right; }
+        .forex-current-rate { font-size: 24px; font-weight: 700; font-feature-settings: 'tnum'; }
+        .forex-change-badge { font-size: 12px; padding: 4px 10px; border-radius: 6px; }
+        .change-red { background: rgba(255,69,58,0.2); color: var(--accent-red); }
+        .change-green { background: rgba(50,215,75,0.2); color: var(--accent-green); }
+        .chart-container { position: relative; height: 160px; margin-bottom: 12px; }
+        .chart-metrics { display: flex; justify-content: space-around; padding-top: 12px; border-top: 1px solid var(--border-color); }
+        .metric-item { text-align: center; }
+        .metric-label { font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-value { font-size: 14px; font-weight: 600; font-feature-settings: 'tnum'; margin-top: 2px; }
+        /* News */
+        .news-section { margin-bottom: 32px; }
+        .news-section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--accent-blue); }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 16px; }
+        .news-card { background: var(--bg-card); border-radius: 16px; padding: 20px; border: 1px solid var(--border-color); transition: all 0.2s; }
+        .news-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); }
+        .news-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .news-tag { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag-geopolitics { background: rgba(255,69,58,0.2); color: var(--accent-red); }
+        .tag-economy { background: rgba(255,159,10,0.2); color: var(--accent-orange); }
+        .tag-asia { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .tag-tech { background: rgba(82,82,90,0.3); color: var(--text-secondary); }
+        .tag-fund { background: rgba(50,215,75,0.2); color: var(--accent-green); }
+        .tag-mubadala { background: rgba(255,159,10,0.2); color: #FF9F0A; }
+        .tag-region { padding: 4px 10px; border-radius: 6px; font-size: 11px; background: var(--bg-secondary); color: var(--text-tertiary); }
+        .news-title { font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text-primary); }
+        .news-title a { color: inherit; text-decoration: none; }
+        .news-title a:hover { text-decoration: underline; }
+        .news-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .news-source { font-size: 12px; color: var(--text-tertiary); margin-top: 12px; }
+        .news-source a { color: var(--text-tertiary); text-decoration: none; }
+        .news-source a:hover { text-decoration: underline; }
+        .admiralty-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-right: 6px; }
+        .a1 { background: rgba(50,215,75,0.2); color: var(--accent-green); }
+        .a2 { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .b1 { background: rgba(255,159,10,0.2); color: var(--accent-orange); }
+        /* Trump Section */
+        .trump-section { background: linear-gradient(135deg, #1a1a24 0%, #12121a 100%); border-radius: 20px; padding: 24px; margin-bottom: 32px; border: 1px solid var(--border-color); }
+        .trump-section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .trump-icon { width: 20px; height: 20px; background: #1d9bf0; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+        .trump-signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .signal-item { background: var(--bg-card); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); }
+        .signal-keyword { font-size: 13px; font-weight: 600; color: var(--accent-blue); margin-bottom: 6px; }
+        .signal-impact { font-size: 14px; color: var(--text-primary); }
+        .signal-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; margin-top: 8px; }
+        .signal-bullish { background: rgba(50,215,75,0.15); color: var(--accent-green); }
+        .signal-bearish { background: rgba(255,69,58,0.15); color: var(--accent-red); }
+        .signal-neutral { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        /* Footer */
+        .footer { text-align: center; padding: 32px 0; color: var(--text-tertiary); font-size: 12px; }
+        /* Source Matrix */
+        .source-matrix { background: var(--bg-secondary); border-radius: 20px; padding: 24px; margin-bottom: 32px; border: 1px solid var(--border-color); overflow-x: auto; }
+        .source-matrix h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 20px; }
+        .source-matrix table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .source-matrix th { text-align: left; padding: 10px 12px; background: var(--bg-card); color: var(--text-tertiary); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; border-bottom: 1px solid var(--border-color); }
+        .source-matrix td { padding: 10px 12px; border-bottom: 1px solid rgba(44,44,52,0.5); color: var(--text-secondary); }
+        .source-matrix tr:last-child td { border-bottom: none; }
+        .source-matrix tr:hover td { background: var(--bg-card); }
+        .source-matrix .cat { font-weight: 600; }
+        .source-matrix .cat-geo { color: var(--accent-red); }
+        .source-matrix .cat-eco { color: var(--accent-orange); }
+        .source-matrix .cat-asia { color: var(--accent-blue); }
+        .source-matrix .cat-tech { color: var(--text-secondary); }
+        .source-matrix .cat-mub { color: #FF9F0A; }
+        @media (max-width: 768px) { .header h1 { font-size: 32px; } .news-grid { grid-template-columns: 1fr; } .market-grid { grid-template-columns: 1fr; } .forex-charts-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">☀️ MUBADALA ASIA PACIFIC INVESTMENT</div>
+            <h1>News for Wenyan</h1>
+            <p class="header-date">2026年4月10日 · Friday</p>
+        </header>
+
+        <!-- Urgent Banner: Ceasefire Day 3 / Critical countdown -->
+        <div class="urgent-banner">
+            <div class="label">⚠️ 紧急监控 · CEASEFIRE COUNTDOWN</div>
+            <div class="headline">美伊停火第3天 · 4月11日伊斯兰堡谈判在即</div>
+            <div class="subline">霍尔木兹航运仍基本停滞；伊朗指控以色列违反停火；停火有效期剩余约11天</div>
+        </div>
+
+        <!-- Market Overview -->
+        <section class="market-overview">
+            <h2>📊 全球市场数据一览</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>股票指数</h3>
+                    <div class="indices-grid">
+                        <div class="index-item">
+                            <span class="index-name">🇺🇸 S&P 500</span>
+                            <div><span class="index-value">5,730</span><span class="index-change up">▲</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇯🇵 日经225</span>
+                            <div><span class="index-value">56,895</span><span class="index-change up">▲ +1.79%</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇭🇰 恒生指数</span>
+                            <div><span class="index-value">22,950</span><span class="index-change down">▼ -0.41%</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇨🇳 上证指数</span>
+                            <div><span class="index-value">3,966</span><span class="index-change down">▼ -0.72%</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇰🇷 韩国Kospi</span>
+                            <div><span class="index-value">2,480</span><span class="index-change down">▼ -1.41%</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇮🇳 Sensex</span>
+                            <div><span class="index-value">72,800</span><span class="index-change down">▼</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇩🇪 DAX</span>
+                            <div><span class="index-value">23,500</span><span class="index-change up">▲</span></div>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-name">🇬🇧 FTSE 100</span>
+                            <div><span class="index-value">8,850</span><span class="index-change up">▲</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>💱 外汇汇率 (USD基准)</h3>
+                    <div class="forex-grid">
+                        <div class="forex-item">
+                            <div class="forex-flag">🇨🇳</div>
+                            <div class="forex-pair">CNY</div>
+                            <div class="forex-rate">6.8308</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇯🇵</div>
+                            <div class="forex-pair">JPY</div>
+                            <div class="forex-rate">159.21</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇰🇷</div>
+                            <div class="forex-pair">KRW</div>
+                            <div class="forex-rate">1,540</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇮🇳</div>
+                            <div class="forex-pair">INR</div>
+                            <div class="forex-rate">92.47</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇪🇺</div>
+                            <div class="forex-pair">EUR</div>
+                            <div class="forex-rate">1.1380</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                        <div class="forex-item">
+                            <div class="forex-flag">🇬🇧</div>
+                            <div class="forex-pair">GBP</div>
+                            <div class="forex-rate">1.3120</div>
+                            <div class="forex-unit">per USD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forex Trend Charts -->
+        <section class="chart-section">
+            <h2>📈 外汇趋势 (3年) · 各货币独立走势</h2>
+            <div class="forex-charts-grid">
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇨🇳</span><div><div class="forex-chart-name">人民币 (CNY)</div><div class="forex-chart-subtitle">美元兑人民币</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">6.8308</div><span class="forex-change-badge change-green">▼ -1.8% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="cnyChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">7.34</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">6.72</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">9.2%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇯🇵</span><div><div class="forex-chart-name">日元 (JPY)</div><div class="forex-chart-subtitle">美元兑日元</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">159.21</div><span class="forex-change-badge change-red">▲ +6.4% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="jpyChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">161.8</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">127.5</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">26.9%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇮🇳</span><div><div class="forex-chart-name">卢比 (INR)</div><div class="forex-chart-subtitle">美元兑卢比</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">92.47</div><span class="forex-change-badge change-red">▲ +7.1% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="inrChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">93.5</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">80.4</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">16.3%</div></div>
+                    </div>
+                </div>
+                <div class="forex-chart-card">
+                    <div class="forex-chart-header">
+                        <div class="forex-chart-title"><span class="forex-chart-flag">🇰🇷</span><div><div class="forex-chart-name">韩元 (KRW)</div><div class="forex-chart-subtitle">美元兑韩元</div></div></div>
+                        <div class="forex-chart-stats"><div class="forex-current-rate">1,540</div><span class="forex-change-badge change-red">▲ +4.0% YTD</span></div>
+                    </div>
+                    <div class="chart-container"><canvas id="krwChart"></canvas></div>
+                    <div class="chart-metrics">
+                        <div class="metric-item"><div class="metric-label">3年最高</div><div class="metric-value" style="color: var(--accent-red);">1,580</div></div>
+                        <div class="metric-item"><div class="metric-label">3年最低</div><div class="metric-value" style="color: var(--accent-green);">1,240</div></div>
+                        <div class="metric-item"><div class="metric-label">波动幅度</div><div class="metric-value">27.4%</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shanghai Composite -->
+        <section class="chart-section">
+            <h2>📈 上证指数走势 (1年)</h2>
+            <div class="chart-container" style="height: 280px;"><canvas id="shanghaiChart"></canvas></div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+            <h2>📰 今日要闻</h2>
+            <div class="news-grid">
+                <!-- Geopolitics 1 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">⚔️ 地缘政治</span>
+                        <span class="tag-region">🌏 中东</span>
+                        <span class="admiralty-badge a1">A1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire" target="_blank">美伊停火进入第3天：伊朗指控以色列违反协议，霍尔木兹航运仍基本停滞</a></h3>
+                    <p class="news-desc">伊朗革命卫队称，由于以色列空袭黎巴嫩（其视为违反停火），霍尔木兹海峡航运已暂停。4月11日，副总统JD Vance将率团赴巴基斯坦伊斯兰堡与伊朗谈判。停火协议极其脆弱，双方互信度极低。</p>
+                    <p class="news-source"><a href="https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire" target="_blank">CNN · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <!-- Geopolitics 2 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">⚔️ 地缘政治</span>
+                        <span class="tag-region">🌏 中东</span>
+                        <span class="admiralty-badge a1">A1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://apnews.com/live/iran-war-israel-trump-04-08-2026" target="_blank">伊朗：谈判条件"不合理"，美方要求铀浓缩完全停止</a></h3>
+                    <p class="news-desc">伊朗议会议长称美国违反协议框架，谈判基础"不合理"。美国要求伊朗完全放弃铀浓缩活动，伊朗则坚持和平利用核能权利。核心分歧未解，谈判前景不明。</p>
+                    <p class="news-source"><a href="https://apnews.com/live/iran-war-israel-trump-04-08-2026" target="_blank">AP News · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <!-- Economy 1 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 全球经济</span>
+                        <span class="tag-region">🛢️ 原油</span>
+                        <span class="admiralty-badge a2">A2</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.investingcube.com/commodities/current-price-of-oil-per-barrel-today-april-9-crude-stability-tested/" target="_blank">油价从停火低点强劲反弹，WTI重返$99上方</a></h3>
+                    <p class="news-desc">停火协议宣布后油价曾单日暴跌16%，但市场怀疑协议能否持久，油价迅速反弹至$99-100区间。WTI在$93-95关键支撑位获得支撑。4月11日美伊谈判结果是短期最大风险点。</p>
+                    <p class="news-source"><a href="https://www.investingcube.com/commodities/current-price-of-oil-per-barrel-today-april-9-crude-stability-tested/" target="_blank">InvestingCube · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <!-- Economy 2 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 全球经济</span>
+                        <span class="tag-region">🇺🇸 美国</span>
+                        <span class="admiralty-badge a1">A1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">Trump保留50%铜关税，4月6日起实施新税率结构</a></h3>
+                    <p class="news-desc">Trump政府4月2日签署公告，对铜进口维持50% Section 232关税，同时调整钢铝关税计算方式（改为全值征收而非加工增值部分），4月6日生效。此举将持续影响全球金属贸易流向。</p>
+                    <p class="news-source"><a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">White House · Apr 3, 2026 ↗</a></p>
+                </article>
+
+                <!-- Asia 1 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 亚太动态</span>
+                        <span class="tag-region">🌏 亚洲</span>
+                        <span class="admiralty-badge a2">A2</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.icmarkets-vnk.com/blog/thursday-9th-april-2026-asia-pacific-markets-fall-as-iran-accuses-u-s-of-ceasefire-breach-amid-rising-tensions/" target="_blank">亚洲市场分化：日经大涨+1.79%，恒生/上证小幅回落</a></h3>
+                    <p class="news-desc">日经225指数4月10日上涨1.79%至56,895点，受停火消息提振。但9日亚洲市场普遍下跌——恒生-0.41%、上证-0.72%、Kospi -1.41%。伊朗指控违约令投资者谨慎。</p>
+                    <p class="news-source"><a href="https://www.icmarkets-vnk.com/blog/thursday-9th-april-2026-asia-pacific-markets-fall-as-iran-accuses-u-s-of-ceasefire-breach-amid-rising-tensions/" target="_blank">IC Markets · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <!-- Tech 1 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 科技</span>
+                        <span class="tag-region">🌐</span>
+                        <span class="admiralty-badge b1">B1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://creati.ai/ai-news/2026-04-10/" target="_blank">xAI起诉科罗拉多州；Anthropic考虑自研芯片；OpenAI暂停英国Stargate</a></h3>
+                    <p class="news-desc">AI监管战升级：xAI起诉科罗拉多州新AI法；佛罗里达州对OpenAI展开调查。商业侧：Anthropic年收入超300亿美元，考虑自研芯片；OpenAI暂停英国Stargate项目（能源成本+监管障碍）；亚马逊芯片业务年收入已达200亿美元。</p>
+                    <p class="news-source"><a href="https://creati.ai/ai-news/2026-04-10/" target="_blank">Creati.ai · Apr 10, 2026 ↗</a></p>
+                </article>
+
+                <!-- Tech 2 -->
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 科技</span>
+                        <span class="tag-region">🤖 AI</span>
+                        <span class="admiralty-badge b1">B1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html" target="_blank">Meta发布Muse Spark：收购Scale AI后首个重磅模型</a></h3>
+                    <p class="news-desc">Meta在4月8日发布Muse Spark，为其以143亿美元收购Scale AI并引入Alexandr Wang后发布的首个重大AI模型。分析师认为此举标志着Meta从社交媒体向AI基础设施公司的战略转型进入新阶段。</p>
+                    <p class="news-source"><a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html" target="_blank">CNBC · Apr 8, 2026 ↗</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Mubadala Section -->
+        <section class="news-section">
+            <h2 style="border-left-color: #FF9F0A;">🏦 穆巴达拉投资动态</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🌏 亚洲</span>
+                        <span class="admiralty-badge a1">A1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元创七年新高</a></h3>
+                    <p class="news-desc">穆巴达拉2025年报：资管规模达3850亿美元（+17%），全年投资390亿美元（为2018年以来最高）。CEO哈勒敦·穆巴拉克强调"长期投资"战略。亚洲配置占比13%，目标5-10年内提升至25%。五年年化回报率10.7%。</p>
+                    <p class="news-source"><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">AGBI · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🇦🇪 阿联酋</span>
+                        <span class="admiralty-badge a1">A1</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.wam.ae/en/article/bzmolkv-mubadala-assets-under-management-grow-17-aed14" target="_blank">穆巴达拉2025年全球布局：美洲44%、阿联酋24%、欧洲15%、亚太13%</a></h3>
+                    <p class="news-desc">资产类别分布：私募投资42%、公开市场20%、房地产与基础设施17%、另类投资16%、信贷5%。穆巴达拉在全球50多个国家有业务，投资覆盖AI、医疗、先进制造、可再生能源等领域。</p>
+                    <p class="news-source"><a href="https://www.wam.ae/en/article/bzmolkv-mubadala-assets-under-management-grow-17-aed14" target="_blank">WAM · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🇨🇳 科技</span>
+                        <span class="admiralty-badge a2">A2</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.thenationalnews.com/business/economy/2026/04/09/mubadalas-asset-base-grows-17-to-385bn-in-2025-on-uae-portfolio-boost/" target="_blank">穆巴达拉投资G42等科技公司，AI与医疗健康成核心增长引擎</a></h3>
+                    <p class="news-desc">穆巴达拉在国内投资了阿联酋领先AI公司G42，同时在全球范围内布局AI基础设施、医疗健康、先进制造。科技领域（含G42等）被视为未来十年最核心的增长引擎，与亚洲数字化转型战略高度协同。</p>
+                    <p class="news-source"><a href="https://www.thenationalnews.com/business/economy/2026/04/09/mubadalas-asset-base-grows-17-to-385bn-in-2025-on-uae-portfolio-boost/" target="_blank">The National · Apr 9, 2026 ↗</a></p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🌏 亚洲</span>
+                        <span class="admiralty-badge a2">A2</span>
+                    </div>
+                    <h3 class="news-title"><a href="https://www.malaysiasun.com/news/278972714/mubadala-strengthens-global-presence-via-strategic-investments-international-partnerships" target="_blank">穆巴达拉2025年全球平台最活跃年份之一：加强北美、亚太布局</a></h3>
+                    <p class="news-desc">穆巴达拉全球投资平台在2025年创下多年来最活跃年份之一，在北美、亚太、欧洲均大幅加码。CEO表示亚洲是长期战略重点，但未透露具体交易细节。</p>
+                    <p class="news-source"><a href="https://www.malaysiasun.com/news/278972714/mubadala-strengthens-global-presence-via-strategic-investments-international-partnerships" target="_blank">Malaysia Sun · Apr 9, 2026 ↗</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Source Matrix -->
+        <section class="source-matrix">
+            <h2>📋 Source Matrix · 信息源评级表</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>Admiralty评级</th>
+                        <th>来源</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cat cat-geo">⚔️ 地缘政治</td>
+                        <td><span class="admiralty-badge a1">A1</span></td>
+                        <td>CNN</td>
+                        <td><a href="https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-geo">⚔️ 地缘政治</td>
+                        <td><span class="admiralty-badge a1">A1</span></td>
+                        <td>AP News</td>
+                        <td><a href="https://apnews.com/live/iran-war-israel-trump-04-08-2026" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-eco">📊 全球经济</td>
+                        <td><span class="admiralty-badge a2">A2</span></td>
+                        <td>InvestingCube</td>
+                        <td><a href="https://www.investingcube.com/commodities/current-price-of-oil-per-barrel-today-april-9-crude-stability-tested/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-eco">📊 全球经济</td>
+                        <td><span class="admiralty-badge a1">A1</span></td>
+                        <td>White House</td>
+                        <td><a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-asia">🌏 亚太动态</td>
+                        <td><span class="admiralty-badge a2">A2</span></td>
+                        <td>IC Markets</td>
+                        <td><a href="https://www.icmarkets-vnk.com/blog/thursday-9th-april-2026-asia-pacific-markets-fall-as-iran-accuses-u-s-of-ceasefire-breach-amid-rising-tensions/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-tech">💻 科技</td>
+                        <td><span class="admiralty-badge b1">B1</span></td>
+                        <td>Creati.ai</td>
+                        <td><a href="https://creati.ai/ai-news/2026-04-10/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-tech">💻 科技</td>
+                        <td><span class="admiralty-badge b1">B1</span></td>
+                        <td>CNBC</td>
+                        <td><a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-mub">🏦 穆巴达拉</td>
+                        <td><span class="admiralty-badge a1">A1</span></td>
+                        <td>AGBI</td>
+                        <td><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-mub">🏦 穆巴达拉</td>
+                        <td><span class="admiralty-badge a1">A1</span></td>
+                        <td>WAM</td>
+                        <td><a href="https://www.wam.ae/en/article/bzmolkv-mubadala-assets-under-management-grow-17-aed14" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-mub">🏦 穆巴达拉</td>
+                        <td><span class="admiralty-badge a2">A2</span></td>
+                        <td>The National</td>
+                        <td><a href="https://www.thenationalnews.com/business/economy/2026/04/09/mubadalas-asset-base-grows-17-to-385bn-in-2025-on-uae-portfolio-boost/" target="_blank">查看 ↗</a></td>
+                    </tr>
+                    <tr>
+                        <td class="cat cat-mub">🏦 穆巴达拉</td>
+                        <td><span class="admiralty-badge a2">A2</span></td>
+                        <td>Malaysia Sun</td>
+                        <td><a href="https://www.malaysiasun.com/news/278972714/mubadala-strengthens-global-presence-via-strategic-investments-international-partnerships" target="_blank">查看 ↗</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Trump Twitter Section -->
+        <section class="trump-section">
+            <h2><span class="trump-icon">𝕏</span> 市场风向标 · Trump Twitter Signals</h2>
+            <div class="trump-signals">
+                <div class="signal-item">
+                    <div class="signal-keyword">"ceasefire" / "positive"</div>
+                    <div class="signal-impact">美股期货/亚洲股市反弹</div>
+                    <span class="signal-tag signal-bullish">📈 利多风险资产</span>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-keyword">"unreasonable" / "violation"</div>
+                    <div class="signal-impact">市场避险情绪回升</div>
+                    <span class="signal-tag signal-bearish">📉 利空股市</span>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-keyword">"Pakistan talks" / "Vance"</div>
+                    <div class="signal-impact">4月11日谈判结果高度不确定</div>
+                    <span class="signal-tag signal-neutral">⚠️ 观望</span>
+                </div>
+                <div class="signal-item">
+                    <div class="signal-keyword">"50% copper" / "tariff"</div>
+                    <div class="signal-impact">铜价/金属板块支撑</div>
+                    <span class="signal-tag signal-neutral">⚠️ 金属板块震荡</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>News for Wenyan · Powered by AI · Mubadala SVP Asia Pacific Investment Strategy</p>
+            <p>Generated: 2026-04-10 08:40 UTC+8 · Admiralty Rating System Applied</p>
+        </footer>
+    </div>
+
+    <script>
+        Chart.defaults.color = '#6e6e73';
+        Chart.defaults.borderColor = 'rgba(44,44,52,0.5)';
+        Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif";
+
+        new Chart(document.getElementById('cnyChart'), {
+            type: 'line',
+            data: { labels: ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'], datasets: [{ data: [6.82,7.15,7.30,7.10,7.18,7.25,7.12,7.25,7.25,7.19,7.17,7.10,6.83], borderColor: '#ff453a', backgroundColor: 'rgba(255,69,58,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#ff453a' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(26,26,36,0.95)', borderColor: '#2c2c34', borderWidth: 1, callbacks: { label: ctx => 'CNY: ' + ctx.parsed.y.toFixed(4) } } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(2) }, min: 6.6, max: 7.4 } } }
+        });
+
+        new Chart(document.getElementById('jpyChart'), {
+            type: 'line',
+            data: { labels: ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'], datasets: [{ data: [138,141,149,141,148,156,147,152,150,148,145,150,159.2], borderColor: '#0a84ff', backgroundColor: 'rgba(10,132,255,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#0a84ff' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(26,26,36,0.95)', borderColor: '#2c2c34', borderWidth: 1, callbacks: { label: ctx => 'JPY: ' + ctx.parsed.y.toFixed(2) } } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 125, max: 165 } } }
+        });
+
+        new Chart(document.getElementById('inrChart'), {
+            type: 'line',
+            data: { labels: ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'], datasets: [{ data: [81.5,82.0,83.0,83.2,83.0,83.4,83.8,84.4,87.0,86.5,84.8,86.5,92.5], borderColor: '#ff9f0a', backgroundColor: 'rgba(255,159,10,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#ff9f0a' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(26,26,36,0.95)', borderColor: '#2c2c34', borderWidth: 1, callbacks: { label: ctx => 'INR: ' + ctx.parsed.y.toFixed(2) } } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 78, max: 96 } } }
+        });
+
+        new Chart(document.getElementById('krwChart'), {
+            type: 'line',
+            data: { labels: ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'], datasets: [{ data: [1280,1300,1330,1290,1320,1360,1360,1380,1400,1420,1390,1450,1540], borderColor: '#32d74b', backgroundColor: 'rgba(50,215,75,0.2)', borderWidth: 2.5, fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 7, pointBackgroundColor: '#32d74b' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(26,26,36,0.95)', borderColor: '#2c2c34', borderWidth: 1, callbacks: { label: ctx => 'KRW: ' + ctx.parsed.y.toFixed(0) } } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 10 }, callback: v => v.toFixed(0) }, min: 1200, max: 1600 } } }
+        });
+
+        new Chart(document.getElementById('shanghaiChart'), {
+            type: 'line',
+            data: { labels: ['Apr\'25','May\'25','Jun\'25','Jul\'25','Aug\'25','Sep\'25','Oct\'25','Nov\'25','Dec\'25','Jan\'26','Feb\'26','Mar\'26','Apr\'26'], datasets: [{ label: '上证指数', data: [3100,3200,3350,3380,3210,3100,3250,3400,3520,3680,3850,4100,3966], borderColor: '#ff453a', backgroundColor: 'rgba(255,69,58,0.15)', borderWidth: 3, fill: true, tension: 0.4, pointRadius: 5, pointHoverRadius: 9, pointBackgroundColor: '#ff453a' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(26,26,36,0.95)', borderColor: '#2c2c34', borderWidth: 1, callbacks: { label: ctx => '上证: ' + ctx.parsed.y.toLocaleString() } } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } }, y: { grid: { color: 'rgba(44,44,52,0.3)' }, ticks: { font: { size: 11 }, callback: v => v.toLocaleString() }, min: 2800, max: 4500 } } }
+        });
+    </script>
+</body>
+</html>

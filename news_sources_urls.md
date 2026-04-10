@@ -75,6 +75,26 @@
 
 ---
 
+## 2026-04-10
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊停火第3天：伊朗指控以色列违反协议，霍尔木兹航运仍基本停滞 | https://www.cnn.com/2026/04/08/world/live-news/iran-war-trump-us-ceasefire | CNN |
+| ⚔️ 地缘政治 | 伊朗：谈判条件"不合理"，美方要求铀浓缩完全停止 | https://apnews.com/live/iran-war-israel-trump-04-08-2026 | AP News |
+| 📊 全球经济 | 油价从停火低点强劲反弹，WTI重返$99上方 | https://www.investingcube.com/commodities/current-price-of-oil-per-barrel-today-april-9-crude-stability-tested/ | InvestingCube |
+| 📊 全球经济 | Trump保留50%铜关税，4月6日起实施新税率结构 | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 🌏 亚太动态 | 亚洲市场分化：日经大涨+1.79%，恒生/上证小幅回落 | https://www.icmarkets-vnk.com/blog/thursday-9th-april-2026-asia-pacific-markets-fall-as-iran-accuses-u-s-of-ceasefire-breach-amid-rising-tensions/ | IC Markets |
+| 💻 科技 | xAI起诉科罗拉多州；Anthropic考虑自研芯片；OpenAI暂停英国Stargate | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
+| 💻 科技 | Meta发布Muse Spark：收购Scale AI后首个重磅模型 | https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html | CNBC |
+| 🏦 穆巴达拉 | 穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元创七年新高 | https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/ | AGBI |
+| 🏦 穆巴达拉 | 穆巴达拉2025年全球布局：美洲44%、阿联酋24%、欧洲15%、亚太13% | https://www.wam.ae/en/article/bzmolkv-mubadala-assets-under-management-grow-17-aed14 | WAM |
+| 🏦 穆巴达拉 | 穆巴达拉投资G42等科技公司，AI与医疗健康成核心增长引擎 | https://www.thenationalnews.com/business/economy/2026/04/09/mubadalas-asset-base-grows-17-to-385bn-in-2025-on-uae-portfolio-boost/ | The National |
+| 🏦 穆巴达拉 | 穆巴达拉2025年全球平台最活跃年份之一：加强北美、亚太布局 | https://www.malaysiasun.com/news/278972714/mubadala-strengthens-global-presence-via-strategic-investments-international-partnerships | Malaysia Sun |
+
+*URLs verified on 2026-04-10*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
