@@ -115,6 +115,25 @@
 
 ---
 
+## 2026-04-12
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊第一轮正式谈判今日在伊斯兰堡举行（周六） | https://www.thenationalnews.com/news/mena/2026/04/09/us-iran-talks-in-islamabad-what-we-know/ | The National |
+| ⚔️ 地缘政治 | 伊朗代表团抵达伊斯兰堡，谈判今日举行 | https://www.nbcwashington.com/news/national-international/israel-us-iran-war-middle-east-april-10-2026-live-updates/4088816/ | NBC Washington |
+| ⚔️ 地缘政治 | 霍尔木兹航运仍基本停滞（正常水平10%） | https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-israel-ceasefire-talks/ | CBS News |
+| 📊 全球经济 | WTI原油$95.63/桶，布伦特$99.45/桶 | https://tradingeconomics.com/commodity/crude-oil | Trading Economics |
+| 📊 全球经济 | Trump维持50%铜关税（4月6日起全值计税） | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 🌏 亚太动态 | 日经225: 56,924点(+1.84%) · 恒生: 25,932点(+0.70%) | https://tradingeconomics.com/japan/stock-market | Trading Economics |
+| 🌏 亚太动态 | 上证指数: 3,986点(+0.51%) | https://tradingeconomics.com/shcomp:ind | Trading Economics |
+| 💻 科技 | AI模型4月密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro、Llama 4 | https://af.net/realtime/ai-models-in-april-2026-every-major-release-leak-and-future-developments/ | AF NET |
+| 💻 科技 | Anthropic年化收入超300亿美元，考虑自研AI芯片 | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
+| 🏦 穆巴达拉 | 穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元 | https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025 | 穆巴达拉官网 |
+
+*URLs verified on 2026-04-12*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
