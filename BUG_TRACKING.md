@@ -1,10 +1,36 @@
 # NewsforWenyan Bug记录与问题追踪
 
-_最后更新: 2026-04-08_
+_最后更新: 2026-04-12_
 
 ---
 
 ## 📋 问题记录
+
+### 2026-04-08 | 市场数据错误
+
+**问题类型**: 内容质量 / 数据准确性
+**严重程度**: 🔴 高
+**状态**: ✅ HTML已修正（待Git推送）
+
+**错误数据 vs 正确数据**：
+
+| 数据项 | 错误值 | 正确值 | 来源 |
+|--------|--------|--------|------|
+| 恒生指数 | 22,800 / -2.1% | 25,877 / +3.03% | Trading Economics |
+| 印度Sensex | 72,450 / -0.4% | 77,605 / +4.00% | LiveMint |
+| USD/CNY | 7.25 | 6.83 | exchangerate.guru |
+
+**修正位置**：
+- `/Users/mma/Dropbox/0-行研专家/NewsforWenyan/news/NewsforWenyan_2026-04-08.html`
+
+**预防措施**：
+- ✅ 所有市场数据必须使用当日实时数据
+- ✅ 优先使用权威来源：Trading Economics, LiveMint, Investing.com
+- ✅ USD/CNY应参考exchangerate.guru或wise.com
+
+---
+
+
 
 ### 2026-04-08 | 邮件链接缺少news子目录路径
 
@@ -73,6 +99,56 @@ news_url = f"https://marvinchima723.github.io/NewsforWenyan/NewsforWenyan_{news_
 - ✅ 所有新闻HTML文件都存放在根目录
 - ✅ `news/` 文件夹已废弃，不再使用
 - ✅ 邮件链接路径已修正
+
+---
+
+### 2026-04-12 | GitHub Pages 404 ——本地commits未推送 ⭐⭐⭐
+
+**问题类型**: 基础设施 / GitHub Pages
+**严重程度**: 🔴 极高
+**状态**: ✅ 已修复（手动执行git push）
+
+**问题描述**:
+访问 `https://marvinchima723.github.io/NewsforWenyan/` 出现 404 File Not Found 错误。
+
+**根本原因**:
+⚠️ **这是第4次出现同样的问题！**
+
+GitHub Pages显示404的原因是：**本地有commits未推送到GitHub**
+
+执行 `git status` 显示：
+```
+Your branch is ahead of 'origin/main' by 3 commits.
+```
+
+即使创建了index.html和所有HTML文件，如果这些变更没有推送到GitHub远程仓库，GitHub Pages就无法访问这些文件。
+
+**4次出现记录**：
+1. 2026-04-06：首次建立index.html，未推送
+2. 2026-04-06：v3深度报告，未推送
+3. 2026-04-10~11：多次简报累积，未推送
+4. 2026-04-12：再次累积3个commits未推送
+
+**解决方案**:
+```bash
+cd /Users/mma/Dropbox/0-行研专家/NewsforWenyan
+git status  # 检查是否有未推送的commits
+git push    # 推送到GitHub（可能需要VPN）
+```
+
+**根本原因分析**：
+GitHub Push因网络问题（HTTP2 framing layer error）频繁失败，但任务流程中未检测失败状态。错误被静默吞掉，导致本地认为"已同步"而实际GitHub端落后。
+
+**预防措施（必须执行）**：
+- ✅ **每次自动化任务最后，必须执行：`git status` 检查是否需要push**
+- ✅ **如果显示"ahead by X commits"，必须执行`git push`**
+- ✅ **如果`git push`失败（网络问题），记录到当日执行报告，提醒需要手动补推**
+- ✅ **自动化任务日志模板增加Git状态检查项**：
+  ```
+  Git Status: [检查结果]
+  Git Push: [成功/失败]
+  If Failed: [需要VPN手动推送]
+  ```
 
 ---
 
@@ -183,6 +259,9 @@ git push
 - [ ] **⚠️ 同步Git（必须）：** `git add` → `git commit` → `git push origin main`
   - ⚠️ 需要VPN连接
   - ⚠️ 深度专题文件（不是每日简报）也需要同步！不能只更新index.html
+- [ ] **⭐ Git最终检查（必须）：** 执行 `git status` 确认 "Your branch is ahead of 'origin/main' by 0 commits"
+  - 如果显示 "ahead by X commits"，必须再次执行 `git push`
+  - 如果push失败，记录"⚠️ GitHub未同步，需要VPN手动推送"
 - [ ] 发送邮件 `python3 send_email.py YYYY-MM-DD`（仅每日简报）
 - [ ] 在浏览器验证 GitHub Pages 显示正常
 
