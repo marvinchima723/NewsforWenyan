@@ -129,8 +129,36 @@
 | 💻 科技 | AI模型4月密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro、Llama 4 | https://af.net/realtime/ai-models-in-april-2026-every-major-release-leak-and-future-developments/ | AF NET |
 | 💻 科技 | Anthropic年化收入超300亿美元，考虑自研AI芯片 | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
 | 🏦 穆巴达拉 | 穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元 | https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025 | 穆巴达拉官网 |
+| 🏦 主权基金 | 主权基金AI基础设施投资数千亿美元 | https://www.computeforecast.com/long-reads/how-sovereign-wealth-funds-are-reshaping-ai-infrastructure-investment/ | Compute Forecast |
+| 🏦 主权基金 | OpenAI提议AI利润税+公共财富基金+四天工作制 | https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/ | TechCrunch |
+| 💻 科技 | OpenAI+Anthropic+Google联手反击中国AI蒸馏 | https://seekingalpha.com/news/4572880-anthropic-google-openai-team-up-to-fight-model-copying-in-china | Seeking Alpha |
+| 💻 科技 | Claude Mythos锁定50家公司防火墙，Zhipu AI同日向开源 | https://whatllm.org/blog/new-ai-models-april-2026 | whatllm.org |
+| 🌏 亚太 | World Bank：东亚太平洋2026增长放缓至4.2% | https://www.worldbank.org/en/news/press-release/2026/04/08/energy-shock-and-uncertainty-slow-growth-in-east-asia-and-pacific | World Bank |
+| 📈 市场 | 美伊停火催化全球股市上涨 | https://intellectia.ai/blog/us-iran-ceasefire-stock-market-rally-oil-prices-april-2026 | Intellectia AI |
+| 🏦 主权基金 | 挪威NBIM：AI辅助投资，保持人类最终决策 | https://thefuturemedia.eu/norways-sovereign-wealth-fund-integrates-ai-with-cautious-oversight/ | The Future Media EU |
 
 *URLs verified on 2026-04-12*
+
+---
+
+## 2026-04-13
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊谈判破裂 · 特朗普宣布霍尔木兹海峡海军封锁 | https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump | CNN |
+| ⚔️ 地缘政治 | 伊朗革命卫队警告：将打击接近海峡的外国军舰 | https://www.usatoday.com/story/news/world/2026/04/12/strait-hormuz-blockade-us-navy-trump/89578769007/ | USA Today |
+| ⚔️ 地缘政治 | 美伊谈判21小时未能达成协议 | https://abcnews.com/International/live-updates/iran-live-updates-casualties-reported-missile-strikes-israel/?id=131757074 | ABC News |
+| 📊 全球经济 | 特朗普维持50%铜关税 · 4月6日起全值计税 | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 📊 全球经济 | IMF警告：美伊战争将使美国通胀回落时间晚于预期 | https://www.imf.org/zh/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026 | IMF |
+| 🌏 亚太动态 | 亚洲开发银行上调中国2026年增长预期至4.6% | https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html | China Daily |
+| 🌏 亚太动态 | 日经225: 56,524点(-0.70%) · 恒生: 25,964点(+0.27%) | https://factnewsindia.com/business-news/asia-pacific-markets-today-nikkei-225-kospi-hang-seng-index/ | Factnews India |
+| 🌏 亚太动态 | WTI原油暴涨8.56%至$104.84/桶 | https://factnewsindia.com/business-news/asia-pacific-markets-today-nikkei-225-kospi-hang-seng-index/ | Factnews India |
+| 💻 科技 | 2026年4月AI月报：GPT-5.4、Claude Mythos、Gemini 3.1 Pro密集发布 | https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/ | humAI |
+| 💻 科技 | Anthropic年化收入超300亿美元 · 考虑自研AI芯片 | https://www.tldl.io/blog/ai-news-updates-2026 | tldl.io |
+| 🏦 穆巴达拉 | 穆巴达拉AUM增长17%至3850亿美元，2025年投资390亿美元创七年新高 | https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/ | AGBI |
+| 🏦 穆巴达拉 | 穆巴达拉崛起预示主权资本竞争新时代 | https://sdgnews.com/mubadalas-surge-signals-a-new-era-of-sovereign-capital-competition/ | SDG News |
+
+*URLs verified on 2026-04-13*
 
 ---
 

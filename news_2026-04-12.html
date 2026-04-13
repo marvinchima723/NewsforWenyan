@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻 · 2026年4月12日 · AI 24小时</title>
+    <style>
+        :root { --bg-primary: #0a0a0c; --bg-card: #141418; --text-primary: #f5f5f7; --text-secondary: #a1a1a6; --text-tertiary: #6e6e73; --accent-red: #ff4d6a; --accent-orange: #ff9f0a; --accent-green: #30d158; --accent-blue: #0a84ff; --accent-purple: #bf5af2; --border: rgba(255,255,255,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .date-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .source-matrix { background: var(--bg-card); border-radius: 16px; padding: 20px; margin-bottom: 24px; border: 1px solid var(--border); }
+        .source-matrix h3 { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase; }
+        .category { margin-bottom: 28px; }
+        .category-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .category-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .category-title { font-size: 17px; font-weight: 600; }
+        .news-item { background: var(--bg-card); border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid var(--border); }
+        .news-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+        .news-content { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5; }
+        .news-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .news-source { font-size: 12px; color: var(--text-tertiary); }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+        .tag-red { background: rgba(255,77,106,0.15); color: var(--accent-red); }
+        .tag-orange { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        .tag-green { background: rgba(48,209,88,0.15); color: var(--accent-green); }
+        .tag-blue { background: rgba(10,132,255,0.15); color: var(--accent-blue); }
+        .tag-purple { background: rgba(191,90,242,0.15); color: var(--accent-purple); }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-blue { color: var(--accent-blue); font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-red), var(--accent-orange)); color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 8px; }
+        .key-insight { background: linear-gradient(135deg, rgba(191,90,242,0.1), rgba(10,132,255,0.05)); border-left: 3px solid var(--accent-purple); padding: 16px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .key-insight-title { font-size: 13px; color: var(--accent-purple); font-weight: 600; margin-bottom: 8px; }
+        .key-insight-content { font-size: 14px; color: var(--text-primary); line-height: 1.6; }
+        .market-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+        .market-table th { text-align: left; font-size: 12px; color: var(--text-tertiary); padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 500; }
+        .market-table td { font-size: 14px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .market-table tr:last-child td { border-bottom: none; }
+        .up { color: var(--accent-green); }
+        .down { color: var(--accent-red); }
+        .footer { text-align: center; padding: 30px 0; margin-top: 40px; border-top: 1px solid var(--border); color: var(--text-tertiary); font-size: 12px; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+        .swf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+        .swf-card { background: rgba(10,132,255,0.08); border: 1px solid rgba(10,132,255,0.2); border-radius: 10px; padding: 14px; }
+        .swf-card-title { font-size: 13px; font-weight: 600; color: var(--accent-blue); margin-bottom: 6px; }
+        .swf-card-amount { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .swf-card-desc { font-size: 12px; color: var(--text-secondary); }
+        .mubadala-box { background: linear-gradient(135deg, rgba(191,90,242,0.08), rgba(10,132,255,0.08)); border: 1px solid rgba(191,90,242,0.2); border-radius: 12px; padding: 16px; margin-top: 16px; }
+        .mubadala-title { font-size: 14px; font-weight: 600; color: var(--accent-purple); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date-badge">🤖 AI 24小时</div>
+            <h1>每日新闻简报</h1>
+            <p class="subtitle">2026年4月12日 · AI驱动世界</p>
+        </div>
+
+        <div class="source-matrix">
+            <h3>📋 信息源矩阵</h3>
+            <p style="font-size:13px; color: var(--text-secondary);">来源：Creati.ai · Seeking Alpha · CNBC · AGBI · Compute Forecast · Trading Economics | A1=独立核实，A2=可靠</p>
+        </div>
+
+        <div class="key-insight">
+            <div class="key-insight-title">💡 核心洞察</div>
+            <div class="key-insight-content">
+                <strong>主权基金AI基础设施军备竞赛：</strong>阿联酋MGX与贝莱德、微软、英伟达组建AI基础设施联盟，沙特1000亿美元AI基金呼之欲出，海湾主权资本正以国家战略逻辑重塑全球AI算力版图；美伊谈判在伊斯兰堡启动，霍尔木兹航运仍处停摆状态。
+            </div>
+        </div>
+
+        <!-- 地缘政治 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,77,106,0.15);">🔥</div>
+                <div class="category-title">地缘政治</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🇵🇰 美伊第一轮正式谈判在伊斯兰堡举行<span class="hot-badge">头条</span></div>
+                <div class="news-content">美伊第一轮正式谈判于4月11日（周六）在伊斯兰堡举行，<span class="highlight-red">JD Vance率美国代表团</span>出席，伊朗代表团已抵达。谈判核心议题：铀浓缩红线、制裁解除路径、霍尔木兹海峡控制权。伊朗称美方要求"完全停止铀浓缩"条款"不合理"。</div>
+                <div class="news-meta">
+                    <span class="news-source">The National · A2</span>
+                    <span class="tag tag-red">美伊谈判</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🚢 霍尔木兹航运仍处停摆状态，伊朗指控以色列违反停火</div>
+                <div class="news-content">停火协议生效第三天，霍尔木兹海峡航运量仍维持在正常水平的<span class="highlight-red">~10%</span>，伊朗指控以色列在黎巴嫩继续行动违反停火协议。美国表示伊朗需先完全执行协议才能获得制裁减免。</div>
+                <div class="news-meta">
+                    <span class="news-source">CBS News · A2</span>
+                    <span class="tag tag-red">霍尔木兹</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📊 美伊停火催化全球股市上涨，油价重返$95+区间</div>
+                <div class="news-content">美伊达成两周停火协议后，全球风险资产大涨：日经指数单日+5.28%，亚洲市场普涨延续至本周。WTI原油从$96低点反弹至<span class="highlight-orange">$95.63/桶</span>，布伦特$99.45/桶。</div>
+                <div class="news-meta">
+                    <span class="news-source">Intellectia AI · A1</span>
+                    <span class="tag tag-orange">市场</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全球经济 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,159,10,0.15);">📊</div>
+                <div class="category-title">全球经济</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🔶 Trump维持50%铜关税，4月6日起全值计税</div>
+                <div class="news-content">白宫确认Trump新税率结构：铜进口关税维持<span class="highlight-orange">50%</span>（按全值计税，非价值增值部分），4月6日起全面实施。分析师警告这将显著推高美国制造业成本，影响全球铜贸易流向。</div>
+                <div class="news-meta">
+                    <span class="news-source">White House · A1</span>
+                    <span class="news-source">Trade Compliance Resource Hub · A2</span>
+                    <span class="tag tag-orange">关税</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🌏 World Bank：东亚太平洋2026增长放缓至4.2%</div>
+                <div class="news-content">世界银行4月8日发布报告，受能源价格冲击和全球不确定性影响，<span class="highlight-orange">东亚太平洋地区2026年增长预期下调至4.2%</span>（2025年：4.5%）。中东冲突持续对地区供应链和贸易通道构成下行风险。</div>
+                <div class="news-meta">
+                    <span class="news-source">World Bank · A1</span>
+                    <span class="tag tag-orange">宏观</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📈 4月12日全球市场一览</div>
+                <table class="market-table">
+                    <tr><th>指数</th><th>点位</th><th>涨跌</th></tr>
+                    <tr><td>日经225</td><td>56,924</td><td class="up">+1.84%</td></tr>
+                    <tr><td>恒生指数</td><td>25,932</td><td class="up">+0.70%</td></tr>
+                    <tr><td>上证指数</td><td>3,986</td><td class="up">+0.51%</td></tr>
+                    <tr><td>WTI原油</td><td>$95.63</td><td class="up">+回升</td></tr>
+                    <tr><td>布伦特原油</td><td>$99.45</td><td class="up">+回升</td></tr>
+                </table>
+                <div class="news-meta">
+                    <span class="news-source">Trading Economics · A2</span>
+                    <span class="tag tag-green">市场</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 亚太动态 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(48,209,88,0.15);">🌏</div>
+                <div class="category-title">亚太动态</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🇯🇵 日经周涨+1.79%领跑亚洲，亚洲市场分化延续</div>
+                <div class="news-content">亚洲市场在美伊停火利好下延续分化格局：<span class="highlight-green">日经+1.79%</span>领跑，恒生+1.02%，上证+0.63%。日本市场受益于避险情绪消退和日元相对稳定，继续吸引外资流入。</div>
+                <div class="news-meta">
+                    <span class="news-source">Trading Economics · A2</span>
+                    <span class="tag tag-green">市场</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🏛️ IMF《亚太经济展望》4月版即将发布</div>
+                <div class="news-content">IMF将于4月16日发布《亚太地区经济展望》4月版简报，由亚太区主任Krishna Srinivasan主持发布会。市场关注焦点：中美贸易紧张局势对亚太供应链的传导效应，以及AI驱动的生产率提升能否对冲关税冲击。</div>
+                <div class="news-meta">
+                    <span class="news-source">IMF · A1</span>
+                    <span class="tag tag-blue">宏观</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">⚔️ 美印贸易关系趋紧，亚洲出口面临关税压力</div>
+                <div class="news-content">Trump 2.0关税战持续影响亚太主要出口国。印度出口面临额外关税压力，亚洲供应链重构加速，部分制造商将产能转移至第三国以规避美国关税壁垒。</div>
+                <div class="news-meta">
+                    <span class="news-source">Trade Compliance Resource Hub · A2</span>
+                    <span class="tag tag-red">关税</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 科技 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(10,132,255,0.15);">💻</div>
+                <div class="category-title">科技</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🤖 GPT-5.4、Claude Mythos、Gemini 3.1 Pro、Llama 4 — 4月模型密集发布<span class="hot-badge">重磅</span></div>
+                <div class="news-content">2026年4月成为AI模型发布最密集月份：<span class="highlight-blue">GPT-5.4</span>（OpenAI代号Spud）、<span class="highlight-blue">Claude Mythos</span>（Anthropic确认锁定在50家公司防火墙后）、<span class="highlight-blue">Gemini 3.1 Pro</span>（Google）、<span class="highlight-blue">Llama 4</span>（Meta）相继亮相。Anthropic已明确不会对外大规模发布Claude Mythos，仅限企业客户。同一日，中国Zhipu AI宣布开源多款模型，中美AI竞争进入新阶段。</div>
+                <div class="news-meta">
+                    <span class="news-source">AF NET · A2</span>
+                    <span class="news-source">whatllm.org · A2</span>
+                    <span class="tag tag-blue">大模型</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💰 Anthropic年化收入超300亿美元，考虑自研AI芯片</div>
+                <div class="news-content">Anthropic年化收入已突破<span class="highlight-green">300亿美元</span>，正在评估自研AI芯片的战略选项，以减少对英伟达和博通的依赖。Claude订阅收入和企业API为增长主驱动力，安全性和长上下文窗口能力获企业客户青睐。</div>
+                <div class="news-meta">
+                    <span class="news-source">Creati.ai · A2</span>
+                    <span class="tag tag-green">商业</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🛡️ OpenAI、Anthropic、Google首次联手：通过Frontier Model Forum反制中国AI蒸馏</div>
+                <div class="news-content">美国三大AI巨头首次联合行动，通过<span class="highlight-blue">Frontier Model Forum</span>（行业非营利组织，2023年由OpenAI、Anthropic、Google与微软共同创立）共享情报，打击中国竞争对手通过<span class="highlight-blue">模型蒸馏（Model Distillation）</span>技术提取其AI能力的行为。三方已成立"AI Frontier Fund"，耗资数十亿美元旨在建立行业护城河。据估算，中国AI公司的蒸馏行为每年给美国AI企业造成数十亿美元损失。</div>
+                <div class="news-meta">
+                    <span class="news-source">Seeking Alpha · A2</span>
+                    <span class="news-source">The Decoder · A2</span>
+                    <span class="tag tag-blue">AI治理</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💊 犹他州允许AI自主续开处方，AI主流化里程碑</div>
+                <div class="news-content">犹他州立法允许AI医疗助手在无人类医生直接参与的情况下为患者<span class="highlight-green">续开处方</span>，这标志着AI从"尝鲜"进入<span class="highlight-green">生产级医疗应用</span>阶段。业界预期更多州将跟进，AI驱动"一人公司"在医疗领域加速普及。</div>
+                <div class="news-meta">
+                    <span class="news-source">AIFOD · A2</span>
+                    <span class="tag tag-green">AI应用</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主权基金投资 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(191,90,242,0.15);">🏦</div>
+                <div class="category-title">主权基金投资</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🌐 主权基金AI基础设施军备竞赛：规模数千亿美元<span class="hot-badge">头条</span></div>
+                <div class="news-content">主权财富基金正以国家战略逻辑主导全球AI基础设施投资。仅2025年前8个月，主权基金已在AI领域投入<span class="highlight-purple">460亿美元</span>，总承诺金额已达数千亿美元级别。这一趋势正在重绘全球AI算力版图。</div>
+                <div class="news-meta">
+                    <span class="news-source">Compute Forecast · A2</span>
+                    <span class="tag tag-purple">主权基金</span>
+                </div>
+            </div>
+
+            <div class="swf-grid">
+                <div class="swf-card">
+                    <div class="swf-card-title">🇦🇪 MGX（阿联酋）</div>
+                    <div class="swf-card-amount">$1000亿</div>
+                    <div class="swf-card-desc">目标AI基础设施+半导体总投资；阿布扎比26平方公里、5GW AI园区（美国以外最大）；参与贝莱德AI联盟</div>
+                </div>
+                <div class="swf-card">
+                    <div class="swf-card-title">🇸🇦 PIF HUMAIN（沙特）</div>
+                    <div class="swf-card-amount">$400亿+</div>
+                    <div class="swf-card-desc">已宣布400亿美元AI技术投资基金；2030年目标1000亿美元；已与Google Cloud、高通建立合作</div>
+                </div>
+                <div class="swf-card">
+                    <div class="swf-card-title">🇶🇦 QIA（卡塔尔）</div>
+                    <div class="swf-card-amount">$200亿</div>
+                    <div class="swf-card-desc">与博枫（Brookfield）2025年底成立AI基础设施合资企业</div>
+                </div>
+                <div class="swf-card">
+                    <div class="swf-card-title">🇸🇬 淡马锡+新加坡政府投资公司</div>
+                    <div class="swf-card-amount">选择性参与</div>
+                    <div class="swf-card-desc">采取战略耐心模式，参与大型联盟以获得曝光度，而非追求全栈控制</div>
+                </div>
+            </div>
+
+            <div class="mubadala-box">
+                <div class="mubadala-title">💜 穆巴达拉 · 2025年度业绩</div>
+                <div style="font-size:14px; color: var(--text-secondary); line-height: 1.6;">
+                    <strong style="color: var(--text-primary);">AUM：</strong><span class="highlight-purple">$3850亿美元</span>（+17%）<br>
+                    <strong style="color: var(--text-primary);">2025年投资：</strong>$390亿美元（七年新高）<br>
+                    <strong style="color: var(--text-primary);">地理分布：</strong>美洲44% · 阿联酋24% · 欧洲15% · <span class="highlight-blue">亚太13%（目标扩至25%）</span><br>
+                    <strong style="color: var(--text-primary);">退出：</strong>出售CoolIT少数股权（Ecolab+KKR主导，估值47.5亿美元）；减持GlobalFoundries套现8.4亿美元<br>
+                    <strong style="color: var(--text-primary);">战略重点：</strong>AI与医疗健康为核心增长引擎；ADNOC拟100亿美元收购穆巴达拉能源资产（战略退出能源，转向科技）
+                </div>
+            </div>
+
+            <div class="news-item" style="margin-top: 16px;">
+                <div class="news-title">🏛️ 挪威主权基金NBIM：AI辅助投资，保持人类最终决策</div>
+                <div class="news-content">全球最大主权基金（<span class="highlight-blue">$2.1万亿美元</span>，挪威政府养老金）正在测试AI工具以辅助投资决策，但明确表示保持<span class="highlight-green">人类最终决策权</span>。这一"审慎AI整合"路线与海湾主权基金的激进AI投资形成对比。</div>
+                <div class="news-meta">
+                    <span class="news-source">The Future Media EU · A2</span>
+                    <span class="tag tag-blue">主权基金</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📋 OpenAI提议：AI利润税 + 公共财富基金 + 四天工作制</div>
+                <div class="news-content">OpenAI向美国政府提出全面AI经济改革方案：<span class="highlight-orange">对AI利润征税</span>（用于资助公共财富基金）、<span class="highlight-orange">仿效挪威石油基金</span>模式建立国家级AI财富基金（由AI企业注资种子基金，投资AI公司及部署AI的企业）、<span class="highlight-green">四天工作制</span>应对AI失业问题。该方案旨在解决AI带来的就业替代和不平等问题。</div>
+                <div class="news-meta">
+                    <span class="news-source">TechCrunch · A2</span>
+                    <span class="news-source">Unite.AI · A2</span>
+                    <span class="tag tag-purple">政策</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🔗 贝莱德AI基础设施联盟：$300亿初始股权 + $400亿收购Aligned Data Centers</div>
+                <div class="news-content">贝莱德、Global Infrastructure Partners、阿布扎比<span class="highlight-purple">MGX</span>、微软和英伟达组成的AI基础设施联盟完成<span class="highlight-purple">$400亿</span>收购Aligned Data Centers交易，初始股权承诺<span class="highlight-blue">300亿美元</span>。科威特KIA和新加坡淡马锡也参与该交易，成为AI算力基础设施领域迄今最大规模的私募资本整合。</div>
+                <div class="news-meta">
+                    <span class="news-source">Compute Forecast · A1</span>
+                    <span class="tag tag-purple">基础设施</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📅 生成时间：2026年4月12日 08:00 · NewsforWenyan</p>
+            <p>🔗 GitHub: <a href="https://github.com/marvinchima723/NewsforWenyan">marvinchima723/NewsforWenyan</a> · Pages: <a href="https://marvinchima723.github.io/NewsforWenyan/">在线浏览</a></p>
+        </div>
+    </div>
+</body>
+</html>

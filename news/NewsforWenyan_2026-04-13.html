@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan - 2026年4月13日</title>
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #242424;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1a6;
+            --accent-red: #ff453a;
+            --accent-orange: #ff9f0a;
+            --accent-blue: #0a84ff;
+            --accent-green: #30d158;
+            --accent-yellow: #ffd60a;
+            --accent-purple: #bf5af2;
+            --border-color: #38383a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .greeting {
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Love Quote */
+        .love-quote {
+            background: linear-gradient(135deg, rgba(255,159,10,0.15), rgba(255,214,10,0.1));
+            border: 1px solid rgba(255,159,10,0.3);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .love-quote-text {
+            font-size: 18px;
+            color: var(--accent-yellow);
+            font-style: italic;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .love-quote-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Prayer */
+        .prayer {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .prayer-title {
+            font-size: 12px;
+            color: var(--accent-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .prayer-text {
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        /* Breaking News Banner */
+        .breaking-banner {
+            background: linear-gradient(135deg, var(--accent-red), #ff6b6b);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .breaking-icon {
+            font-size: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .breaking-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Market Summary */
+        .market-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .market-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .market-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .market-value {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .market-change {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .up { color: var(--accent-red); }
+        .down { color: var(--accent-green); }
+
+        /* Section */
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* News Card */
+        .news-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.2s;
+        }
+
+        .news-card:hover {
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .news-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .news-title a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .news-summary a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .news-source a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .news-source a:hover {
+            color: var(--accent-blue);
+        }
+
+        .admiralty-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .A1 { background: rgba(48,209,88,0.2); color: #30d158; }
+        .A2 { background: rgba(10,132,255,0.2); color: #0a84ff; }
+        .B1 { background: rgba(255,159,10,0.2); color: #ff9f0a; }
+
+        /* Charts Section */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chart-title {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .chart-canvas {
+            width: 100%;
+            height: 120px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .matrix-title {
+            font-size: 13px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        td a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Tag styles */
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        .tag-geo { background: rgba(255,69,58,0.2); color: #ff453a; }
+        .tag-economy { background: rgba(255,159,10,0.2); color: #ff9f0a; }
+        .tag-asia { background: rgba(48,209,88,0.2); color: #30d158; }
+        .tag-tech { background: rgba(10,132,255,0.2); color: #0a84ff; }
+        .tag-fund { background: rgba(191,90,242,0.2); color: #bf5af2; }
+        .tag-mubadala { background: rgba(255,159,10,0.2); color: #FF9F0A; }
+
+        /* Trump Signal */
+        .trump-signal {
+            background: linear-gradient(135deg, rgba(191,90,242,0.15), rgba(191,90,242,0.05));
+            border: 1px solid rgba(191,90,242,0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+
+        .trump-signal-title {
+            font-size: 12px;
+            color: var(--accent-purple);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trump-signal-content {
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .trump-signal-content a {
+            color: var(--accent-purple);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="date">Monday, April 13, 2026</div>
+            <div class="greeting">☀️ Good Morning, Wenyan</div>
+            <div class="subtitle">Your Daily Intelligence Briefing</div>
+        </div>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <div class="love-quote-text">"The greatest thing you'll ever learn is just to love and be loved in return."</div>
+            <div class="love-quote-source">— Eden Ahbez</div>
+        </div>
+
+        <!-- Prayer -->
+        <div class="prayer">
+            <div class="prayer-title">✝️ Numbers 6:24-26</div>
+            <div class="prayer-text">
+                "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."
+            </div>
+        </div>
+
+        <!-- Breaking News Banner -->
+        <div class="breaking-banner">
+            <div class="breaking-icon">🚨</div>
+            <div class="breaking-text">BREAKING: US-Iran Talks Fail · Trump Orders Hormuz Blockade · Oil Surges 8%</div>
+        </div>
+
+        <!-- Market Summary -->
+        <div class="market-summary">
+            <div class="market-card">
+                <div class="market-label">WTI原油</div>
+                <div class="market-value">$104.84</div>
+                <div class="market-change up">+8.56% ↑</div>
+            </div>
+            <div class="market-card">
+                <div class="market-label">日经225</div>
+                <div class="market-value">56,524</div>
+                <div class="market-change down">-0.70% ↓</div>
+            </div>
+            <div class="market-card">
+                <div class="market-label">恒生指数</div>
+                <div class="market-value">25,964</div>
+                <div class="market-change up">+0.27% ↑</div>
+            </div>
+            <div class="market-card">
+                <div class="market-label">上证指数</div>
+                <div class="market-value">3,986</div>
+                <div class="market-change down">-0.23% ↓</div>
+            </div>
+        </div>
+
+        <!-- Trump Twitter Signal -->
+        <div class="trump-signal">
+            <div class="trump-signal-title">🐦 Trump Signal</div>
+            <div class="trump-signal-content">
+                "We will blockade the Strait of Hormuz. Iran cannot be allowed to hold the world's oil hostage."
+                <br><span style="color: var(--text-secondary); font-size: 12px;">— Trump, Truth Social · April 12, 2026</span>
+            </div>
+        </div>
+
+        <!-- Geopolitics -->
+        <div class="section">
+            <div class="section-title">🌍 地缘政治</div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump" target="_blank">美伊谈判破裂 · 特朗普宣布霍尔木兹海峡海军封锁</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump" target="_blank">4月11日美伊在巴基斯坦伊斯兰堡举行的和平谈判以失败告终。特朗普随后宣布将对霍尔木兹海峡实施海军封锁，拦截任何向伊朗支付"通行费"的船舶。封锁于4月13日EDT上午10点生效。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump" target="_blank">CNN · Apr 12 ↗</a></span>
+                    <span class="admiralty-badge A1">A1</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.usatoday.com/story/news/world/2026/04/12/strait-hormuz-blockade-us-navy-trump/89578769007/" target="_blank">伊朗革命卫队警告：将打击接近海峡的外国军舰</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.usatoday.com/story/news/world/2026/04/12/strait-hormuz-blockade-us-navy-trump/89578769007/" target="_blank">伊朗伊斯兰革命卫队发出警告，称任何以任何借口接近霍尔木兹海峡的军用船只都将被视为违反停火协议，并将受到"严厉和果断的"打击。英国表示不会参与美国主导的封锁行动。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.usatoday.com/story/news/world/2026/04/12/strait-hormuz-blockade-us-navy-trump/89578769007/" target="_blank">USA Today · Apr 12 ↗</a></span>
+                    <span class="admiralty-badge A1">A1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Economy -->
+        <div class="section">
+            <div class="section-title">💰 全球经济</div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">特朗普维持50%铜关税 · 4月6日起全值计税</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">白宫4月2日发布情况说明书，确认维持铜进口50%基础税率。衍生产品25%，特定工业设备15%（2027年前），使用美国原产铜的产品10%。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">White House · Apr 2 ↗</a></span>
+                    <span class="admiralty-badge A1">A1</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.imf.org/zh/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">IMF警告：美伊战争将使美国通胀回落时间晚于预期</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.imf.org/zh/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">IMF在4月《世界经济展望》中警告，中东冲突将导致能源价格持续高企，美国通胀回落至2%目标的时间可能晚于预期。同时，地缘政治紧张正推动全球国防支出大规模激增。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.imf.org/zh/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">IMF · Apr 14 ↗</a></span>
+                    <span class="admiralty-badge A2">A2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asia Pacific -->
+        <div class="section">
+            <div class="section-title">🌏 亚太动态</div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html" target="_blank">亚洲开发银行上调中国2026年增长预期至4.6%</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html" target="_blank">亚开行在4月旗舰报告中将中国2026年增长预期从4.3%上调至4.6%，2027年为4.5%。主要驱动因素：出口强劲和高科技投资增加。消费仍疲软，地缘政治风险是主要下行风险。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html" target="_blank">China Daily · Apr 10 ↗</a></span>
+                    <span class="admiralty-badge A1">A1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology -->
+        <div class="section">
+            <div class="section-title">🤖 科技动态</div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">2026年4月AI月报：GPT-5.4、Claude Mythos、Gemini 3.1 Pro密集发布</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">4月AI领域密集发布：OpenAI GPT-5.4主打多模态推理能力；Anthropic Claude Mythos展现创意写作突破；Google Gemini 3.1 Pro聚焦企业市场；Meta推出Muse Spark AI。行业正从增长模式转向变现策略。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">humAI · Apr 6 ↗</a></span>
+                    <span class="admiralty-badge B1">B1</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.tldl.io/blog/ai-news-updates-2026" target="_blank">Anthropic年化收入超300亿美元 · 考虑自研AI芯片</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.tldl.io/blog/ai-news-updates-2026" target="_blank">Anthropic ARR已超300亿美元，正在考虑自研AI芯片以减少对NVIDIA的依赖。Google与Broadcom的TPU合作持续深化，Jeff Bezos从xAI招聘人才，AI芯片竞争白热化。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.tldl.io/blog/ai-news-updates-2026" target="_blank">tldl.io · Apr 10 ↗</a></span>
+                    <span class="admiralty-badge B1">B1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sovereign Wealth Fund -->
+        <div class="section">
+            <div class="section-title">🏦 主权基金投资动态</div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">穆巴达拉AUM增长17%至3850亿美元 · 2025年投资390亿美元创七年新高</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://www.agadala-assets-under-management-rise-to-385bn/" target="_blank">阿布扎比主权基金穆巴达拉2025年AUM增长17%至3850亿美元，全球第15大主权财富基金。2025年投资390亿美元（自2018年以来最高），年化五年期回报率10.7%。私募投资占42%，北美占44%。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">AGBI · Apr 9 ↗</a></span>
+                    <span class="admiralty-badge A2">A2</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">
+                    <a href="https://sdgnews.com/mubadalas-surge-signals-a-new-era-of-sovereign-capital-competition/" target="_blank">穆巴达拉崛起预示主权资本竞争新时代的到来</a>
+                </div>
+                <div class="news-summary">
+                    <a href="https://sdgnews.com/mubadalas-surge-signals-a-new-era-of-sovereign-capital-competition/" target="_blank">穆巴达拉17%的增长不仅是数字信号，更预示着主权财富基金正进入影响力新阶段——资本、战略与地缘政治的深度融合。CEO Khaldoon Al Mubarak强调长期投资战略。</a>
+                </div>
+                <div class="news-meta">
+                    <span class="news-source"><a href="https://sdgnews.com/mubadalas-surge-signals-a-new-era-of-sovereign-capital-competition/" target="_blank">SDG News · Apr 11 ↗</a></span>
+                    <span class="admiralty-badge B1">B1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-container">
+            <div class="chart-card">
+                <div class="chart-title">📈 上证指数走势 (1年)</div>
+                <div class="chart-canvas">
+                    <svg width="100%" height="100" viewBox="0 0 300 80" preserveAspectRatio="none">
+                        <polyline fill="none" stroke="#30d158" stroke-width="2" points="
+                            0,60 30,55 60,58 90,50 120,45 150,48 180,40 210,35 240,38 270,30 300,32
+                        "/>
+                    </svg>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">💱 美元/人民币 (USD/CNY)</div>
+                <div class="chart-canvas">
+                    <svg width="100%" height="100" viewBox="0 0 300 80" preserveAspectRatio="none">
+                        <polyline fill="none" stroke="#0a84ff" stroke-width="2" points="
+                            0,40 30,42 60,45 90,44 120,46 150,48 180,50 210,52 240,50 270,48 300,46
+                        "/>
+                    </svg>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">🇯🇵 日经225指数</div>
+                <div class="chart-canvas">
+                    <svg width="100%" height="100" viewBox="0 0 300 80" preserveAspectRatio="none">
+                        <polyline fill="none" stroke="#ff453a" stroke-width="2" points="
+                            0,70 30,65 60,60 90,55 120,50 150,45 180,40 210,38 240,35 270,32 300,34
+                        "/>
+                    </svg>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">🛢️ WTI原油价格 (USD/桶)</div>
+                <div class="chart-canvas">
+                    <svg width="100%" height="100" viewBox="0 0 300 80" preserveAspectRatio="none">
+                        <polyline fill="none" stroke="#ff9f0a" stroke-width="2" points="
+                            0,30 30,35 60,40 90,45 120,40 150,35 180,45 210,40 240,35 270,25 300,15
+                        "/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source Matrix -->
+        <div class="source-matrix">
+            <div class="matrix-title">📋 Source Matrix</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>来源</th>
+                        <th>评级</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>地缘政治</td>
+                        <td>CNN</td>
+                        <td><span class="admiralty-badge A1">A1</span></td>
+                        <td><a href="https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>地缘政治</td>
+                        <td>USA Today</td>
+                        <td><span class="admiralty-badge A1">A1</span></td>
+                        <td><a href="https://www.usatoday.com/story/news/world/2026/04/12/strait-hormuz-blockade-us-navy-trump/89578769007/" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>关税政策</td>
+                        <td>White House</td>
+                        <td><span class="admiralty-badge A1">A1</span></td>
+                        <td><a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>全球经济</td>
+                        <td>IMF</td>
+                        <td><span class="admiralty-badge A2">A2</span></td>
+                        <td><a href="https://www.imf.org/zh/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>亚洲经济</td>
+                        <td>China Daily</td>
+                        <td><span class="admiralty-badge A1">A1</span></td>
+                        <td><a href="https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>AI科技</td>
+                        <td>humAI</td>
+                        <td><span class="admiralty-badge B1">B1</span></td>
+                        <td><a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">链接</a></td>
+                    </tr>
+                    <tr>
+                        <td>穆巴达拉</td>
+                        <td>AGBI</td>
+                        <td><span class="admiralty-badge A2">A2</span></td>
+                        <td><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">链接</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            News for Wenyan · Generated April 13, 2026 · 08:03<br>
+            Made with ❤️ for my love
+        </div>
+    </div>
+</body>
+</html>

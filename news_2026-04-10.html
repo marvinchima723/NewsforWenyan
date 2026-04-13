@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻 · 2026年4月10日 · AI 24小时</title>
+    <style>
+        :root { --bg-primary: #0a0a0c; --bg-card: #141418; --text-primary: #f5f5f7; --text-secondary: #a1a1a6; --text-tertiary: #6e6e73; --accent-red: #ff4d6a; --accent-orange: #ff9f0a; --accent-green: #30d158; --accent-blue: #0a84ff; --accent-purple: #bf5af2; --border: rgba(255,255,255,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .date-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .source-matrix { background: var(--bg-card); border-radius: 16px; padding: 20px; margin-bottom: 24px; border: 1px solid var(--border); }
+        .source-matrix h3 { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .badge-a2 { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .category { margin-bottom: 28px; }
+        .category-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .category-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .category-title { font-size: 17px; font-weight: 600; }
+        .news-item { background: var(--bg-card); border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid var(--border); }
+        .news-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+        .news-content { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5; }
+        .news-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .news-source { font-size: 12px; color: var(--text-tertiary); }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+        .tag-red { background: rgba(255,77,106,0.15); color: var(--accent-red); }
+        .tag-orange { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        .tag-green { background: rgba(48,209,88,0.15); color: var(--accent-green); }
+        .tag-blue { background: rgba(10,132,255,0.15); color: var(--accent-blue); }
+        .tag-purple { background: rgba(191,90,242,0.15); color: var(--accent-purple); }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-blue { color: var(--accent-blue); font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-red), var(--accent-orange)); color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 8px; }
+        .key-insight { background: linear-gradient(135deg, rgba(191,90,242,0.1), rgba(10,132,255,0.05)); border-left: 3px solid var(--accent-purple); padding: 16px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .key-insight-title { font-size: 13px; color: var(--accent-purple); font-weight: 600; margin-bottom: 8px; }
+        .key-insight-content { font-size: 14px; color: var(--text-primary); line-height: 1.6; }
+        .prayer-box { background: linear-gradient(135deg, rgba(10,132,255,0.1), rgba(48,209,88,0.05)); border-radius: 16px; padding: 24px; margin-top: 32px; text-align: center; border: 1px solid rgba(10,132,255,0.2); }
+        .prayer-box .verse { font-size: 16px; font-style: italic; color: var(--text-primary); margin-bottom: 8px; }
+        .prayer-box .ref { font-size: 13px; color: var(--accent-blue); font-weight: 500; }
+        .footer { text-align: center; padding: 30px 0; margin-top: 40px; border-top: 1px solid var(--border); color: var(--text-tertiary); font-size: 12px; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date-badge">🤖 AI 24小时</div>
+            <h1>每日新闻简报</h1>
+            <p class="subtitle">2026年4月10日 · AI重塑世界</p>
+        </div>
+
+        <div class="source-matrix">
+            <h3>📋 信息源矩阵</h3>
+            <p style="font-size:13px; color: var(--text-secondary);">来源：Creati.ai · AIbase · 昇腾AI · 新浪AI | A1=独立核实，A2=可靠</p>
+        </div>
+
+        <div class="key-insight">
+            <div class="key-insight-title">💡 核心洞察</div>
+            <div class="key-insight-content">
+                <strong>监管风暴来袭：</strong>xAI起诉科罗拉多州AI监管法，佛州调查OpenAI；国内工信部十部门伦理审查落地 + 教育部"AI+教育"行动启动。GPT-6倒计时4天（4月14日），Anthropic营收突破300亿美元正在考虑自研芯片。
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,77,106,0.15);">🔥</div>
+                <div class="category-title">本期最重磅</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">⚖️ xAI起诉科罗拉多州：阻止州级AI监管法<span class="hot-badge">头条</span></div>
+                <div class="news-content">Elon Musk的xAI已提起诉讼，旨在阻止科罗拉多州执行新出台的<span class="highlight-red">AI监管法</span>，这加剧了关于州级AI治理的全国性辩论。AI监管权力边界成焦点。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-red\">监管</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🚨 佛州总检察长调查OpenAI：涉嫌伤害未成年人与国家安全</div>
+                <div class="news-content">佛罗里达州总检察长James Uthmeier启动对<span class="highlight-red">OpenAI</span>的调查，理由是ChatGPT涉嫌被用于策划FSU枪击案，并可能对未成年人和国家安全构成威胁。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-red\">监管</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💰 OpenAI暂停英国Stargate项目：能源成本+监管障碍</div>
+                <div class="news-content">OpenAI已暂停其具有里程碑意义的<span class="highlight-orange">英国Stargate AI基础设施项目</span>，这对英国的AI雄心是一个打击，原因涉及能源成本和监管问题。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-orange\">国际</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(48,209,88,0.15);">💰</div>
+                <div class="category-title">商业与市场</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💎 亚马逊CEO辩护2000亿美元AI支出：芯片业务年收入超200亿</div>
+                <div class="news-content">亚马逊CEO安迪·贾西在致股东信中为其<span class="highlight-green">2000亿美元AI基础设施支出</span>辩护，并披露其定制芯片业务年收入已超过<span class="highlight-green">200亿美元</span>。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-green\">商业</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🧠 Anthropic营收突破300亿美元：正在考虑自研AI芯片</div>
+                <div class="news-content"><span class="highlight-green">Anthropic</span>正在权衡开发专有AI芯片，因其Claude模型需求激增，年度经常性收入现已超过<span class="highlight-green">300亿美元</span>。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-green\">商业</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📈 OpenAI推出ChatGPT Pro新套餐：100美元/月</div>
+                <div class="news-content">OpenAI推出新的<span class="highlight-blue">100美元/月的ChatGPT Pro</span>套餐，提供Codex编码助手使用量增加5倍，填补了20美元和200美元套餐之间的空白。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-blue">产品</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🤝 谷歌与Intel扩大AI芯片合作：下一代数据中心</div>
+                <div class="news-content"><span class="highlight-blue">谷歌</span>已承诺在其AI数据中心部署多代搭载定制IPU的Intel至强CPU，双方扩大了多年的合作伙伴关系。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-blue">合作</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(10,132,255,0.15);">🇨🇳</div>
+                <div class="category-title">中国AI动态</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🏭 中国具身智能大会：工信部发布产业化路径报告</div>
+                <div class="news-content">4月10日第三届中国具身智能大会在合肥开幕，<span class="highlight-blue">工信部发布《具身智能产业创新发展趋势及路径研究》</span>报告，政府层面正式认可具身智能进入产业化阶段。</div>
+                <div class="news-meta"><span class="news-source">昇腾AI · A2</span><span class="tag tag-blue\">政策</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📚 教育部启动"人工智能+教育"行动计划</div>
+                <div class="news-content"><span class="highlight-green">教育部</span>召开新闻发布会，启动"人工智能+教育"行动计划，明确"十五五"期间将促进全社会AI通识教育。北京市教委主任介绍相关进展。</div>
+                <div class="news-meta"><span class="news-source">新浪 · A1</span><span class="tag tag-green">政策</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💳 微信支付AI接入工具箱上线：一句话快速收款</div>
+                <div class="news-content">微信支付的<span class="highlight-green">AI接入工具箱</span>正式上线，用户可通过一句话指令快速实现收款功能，AI赋能支付体验升级。</div>
+                <div class="news-meta"><span class="news-source">AIbase · A2</span><span class="tag tag-green">产品</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🚫 微信公众号重拳打击"套壳"AI：非真人写作将被处置</div>
+                <div class="news-content"><span class="highlight-orange">微信公众号平台</span>采取措施，严厉打击非真人操作的自动化写作行为（"套壳"AI），规范内容生态。</div>
+                <div class="news-meta"><span class="news-source">AIbase · A2</span><span class="tag tag-orange\">监管</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,159,10,0.15);">📊</div>
+                <div class="category-title">政策与监管</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">📋 工信部等十部门：AI科技伦理审查制度正式落地</div>
+                <div class="news-content">工信部等十部门联合印发《人工智能科技伦理审查与服务办法（试行）》，明确<span class="highlight-orange">七大伦理原则</span>和三类高风险活动须经专家复核，标志我国AI伦理治理进入制度化阶段。</div>
+                <div class="news-meta"><span class="news-source">昇腾AI · A1</span><span class="tag tag-red\">监管</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">⚖️ 科罗拉多州AI监管法：各州AI治理分歧加剧</div>
+                <div class="news-content"><span class="highlight-red">xAI起诉科罗拉多州</span>阻止新AI监管法，佛州调查OpenAI——各州对AI监管态度分化，AI治理进入"战国时代"。</div>
+                <div class="news-meta"><span class="news-source">Creati.ai · A2</span><span class="tag tag-red\">监管</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(191,90,242,0.15);">🔬</div>
+                <div class="category-title">技术回顾：昨日要点</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🚀 GPT-6倒计时：4月14日发布</div>
+                <div class="news-content">OpenAI确认GPT-6（代号"Spud"）将于<span class="highlight-purple">4月14日</span>发布，性能较GPT-5.4提升40%，上下文窗口扩展至200万Token。</div>
+                <div class="news-meta"><span class="news-source">昇腾AI · A2</span><span class="tag tag-purple\">重磅</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">💎 Meta Muse Spark：150亿美元转型闭源</div>
+                <div class="news-content"><span class="highlight-green">Meta发布Muse Spark</span>，综合测评52分跻身全球第一梯队。彻底放弃开源路线，核心架构、训练数据全部不公开。</div>
+                <div class="news-meta"><span class="news-source">昇腾AI · A2</span><span class="tag tag-green">技术</span></div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">🦾 智元GO-2：具身大模型98.5%成功率</div>
+                <div class="news-content"><span class="highlight-green">智元机器人GO-2</span>引入"动作思维链"，在LIBERO基准测试中成功率达<span class="highlight-green">98.5%</span>。</div>
+                <div class="news-meta"><span class="news-source">AIbase · A2</span><span class="tag tag-green">技术</span></div>
+            </div>
+        </div>
+
+        <div class="prayer-box">
+            <p class="verse">"你们是世上的光。城造在山上是不能隐藏的。"</p>
+            <p class="ref">愿今日世界走向和平 🙏</p>
+        </div>
+
+        <div class="footer">
+            <p>📧 <a href="mailto:yoyozwy@gmail.com">yoyozwy@gmail.com</a> | 🌐 <a href="https://marvinchima723.github.io/NewsforWenyan/">NewsforWenyan</a></p>
+            <p style="margin-top: 8px;">每条新闻均标注来源和可信度评级（A1=独立核实，A2=可靠）</p>
+            <p style="margin-top: 4px; color: var(--accent-purple);">⚡ 更新：2026-04-10 · GPT-6倒计时4天</p>
+        </div>
+    </div>
+</body>
+</html>
