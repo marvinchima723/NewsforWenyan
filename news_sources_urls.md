@@ -162,6 +162,66 @@
 
 ---
 
+## 2026-04-15
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊谈判破裂 · 特朗普宣布霍尔木兹海军封锁 | https://www.cnn.com/2026/04/12/world/live-news/iran-us-war-talks-trump | CNN |
+| ⚔️ 地缘政治 | 特朗普暗示新一轮谈判 · 巴基斯坦提议美伊再次对话 | https://www.usnews.com/news/world/articles/2026-04-14/the-latest-pakistan-proposes-new-us-iran-talks-as-vance-and-trump-hint-at-progress | U.S. News |
+| ⚔️ 地缘政治 | 沙特、科威特遭无人机袭击 · 中东紧张局势外溢 | https://www.hstoday.us/subject-matter-areas/maritime-security/iran-tightens-grip-on-strait-of-hormuz-as-shipping-forced-into-controlled-routes/ | HSToday |
+| 💻 科技 | GPT-6今日发布：代号Spud，200万Token上下文，性能暴涨40% | https://zhuanlan.zhihu.com/p/2024970852341426129 | 知乎 |
+| 💻 科技 | 斯坦福HAI《AI Index 2026》：中美AI性能差距缩小至2.7% | https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf | Stanford HAI |
+| 💻 科技 | 斯坦福HAI报告：中美AI模型性能差距接近消失 | https://www.caixinglobal.com/2026-04-14/us-and-china-reach-near-parity-in-ai-model-performance-report-finds-102434062.html | Caixin Global |
+| 💻 科技 | 2026年4月AI月报：企业AI采用进入主流生产阶段 | https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/ | humAI Blog |
+| 💻 科技 | Anthropic考虑自研AI芯片 · 年化收入超300亿美元 | https://www.tldl.io/blog/ai-news-updates-2026 | tldl.io |
+| 📊 全球经济 | IMF下调全球增长预期 · 中东石油冲击威胁全球经济 | https://gulfnews.com/business/economy/imf-lowers-2026-global-growth-forecast-as-war-threatens-oil-supply-inflation-1.500506782 | Gulf News |
+| 📊 全球经济 | WTI原油重返$104+区间 · 霍尔木兹封锁持续推高能源价格 | https://factnewsindia.com/business-news/asia-pacific-markets-today-nikkei-225-kospi-hang-seng-index/ | Factnews India |
+| 📊 全球经济 | 全球市场反弹：风险情绪改善亚太股市普涨 | https://www.stl.news/global-markets-rebound-overnight-april-14-2026/ | STL.News |
+| 📊 全球经济 | Oil Surge Reshapes Global Markets | https://www.wbn.digital/wbn-breaking-news-april-14-2026-oil-shock-reshapes-global-policy-and-market-outlook/ | wbn.digital |
+| 📊 全球经济 | 亚洲开发银行：东亚太平洋2026年增长放缓至4.2% | https://www.adb.org/outlook/editions/april-2026 | ADB |
+| 🌏 亚太动态 | 亚洲市场普涨：日经+1.94%领跑，KOSPI恒生跟涨 | https://www.chinastockinfo.com/en/news/20260414_093506 | China Stock Info |
+| 🌏 亚太动态 | Kospi, Nikkei 225 lead Asian markets higher | https://invezz.com/news/2026/04/14/kospi-nikkei-225-lead-asian-markets-higher-as-oil-eases-on-iran-hopes/ | Invezz |
+| 🌏 亚太动态 | 亚洲开发银行上调中国2026年增长预期至4.6% | https://www.chinadaily.com.cn/a/202604/10/WS69d85ef0a310d6866eb42b16.html | China Daily |
+| 🏦 主权基金 | 挪威NBIM解除叙利亚债券投资禁令 | https://uk.finance.yahoo.com/news/exclusive-norway-lift-ban-wealth-171021635.html | Reuters/Yahoo Finance |
+| 🏦 主权基金 | OpenAI提议机器人税+公共财富基金+四天工作制 | https://www.unite.ai/openai-proposes-robot-taxes-public-wealth-fund-and-four-day-work-week/ | Unite.AI |
+| 🏦 主权基金 | 主权基金AI基础设施投资数千亿美元 | https://www.computeforecast.com/long-reads/sovereign-wealth-fund-ai-infrastructure-investment/ | Compute Forecast |
+| 🏦 主权基金 | 挪威NBIM：AI辅助投资，保持人类最终决策 | https://thefuturemedia.eu/norways-sovereign-wealth-fund-integrates-ai-with-cautious-oversight/ | The Future Media EU |
+| 🏦 主权基金 | 澳大利亚Future Fund：科技相关岗位裁员 | https://www.canberratimes.com.au/story/9222511/future-fund-set-to-join-tech-related-jobs-cull/ | Canberra Times |
+
+*URLs verified on 2026-04-15*
+
+---
+
+## 2026-04-16
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊停火脆弱延续 · 霍尔木兹仅11艘/日通过 | https://www.shipfinder.com/special/hormuz | ShipFinder / Xinhua |
+| ⚔️ 地缘政治 | 美国政府将Anthropic列入实体清单 · 伊朗轰炸AWS数据中心 | https://press.airstreet.com/p/state-of-ai-april-2026-newsletter | Airstreet.com |
+| ⚔️ 地缘政治 | IMF《世界经济展望》4月版 · 警告全球增长下调 | https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026 | IMF |
+| 💻 科技 | DeepSeek V4即将发布 · 全面押注华为芯片 | https://findskill.ai/blog/deepseek-v4-release-date-specs/ | Findskill.ai |
+| 💻 科技 | DeepSeek V4将运行在华为芯片上 · GLM-5.1已发布 | https://www.bighatgroup.com/blog/china-ai-weekly-2026-04-11/ | Bighat Group |
+| 💻 科技 | Anthropic Claude Mythos锁定50家公司 · Zhipu同日向开源 | https://whatllm.org/blog/new-ai-models-april-2026 | whatllm.org |
+| 💻 科技 | OpenAI+Anthropic+Google联手反击中国AI蒸馏攻击 | https://seekingalpha.com/news/4572880-anthropic-google-openai-team-up-to-fight-model-copying-in-china | Seeking Alpha |
+| 💻 科技 | Google开源Gemma 4系列 · 基准测试提升12% | https://blog.csdn.net/internetear/article/details/160074235 | CSDN |
+| 💻 科技 | Anthropic年化收入超300亿美元 · 考虑自研AI芯片 | https://creati.ai/ai-news/2026-04-10/ | Creati.ai |
+| 📊 全球经济 | WTI原油跌至$90.91/桶 · 霍尔木兹暂时畅通 | https://tradingeconomics.com/commodity/crude-oil | Trading Economics |
+| 📊 全球经济 | UNCTAD Q1 2026全球贸易更新 · 价格上涨驱动增长 | https://unctad.org/system/files/official-document/ditcinf2026d4_en.pdf | UNCTAD |
+| 📊 全球经济 | 日经指数年初至今累涨71.89% · 收益率创1997年新高 | https://tradingeconomics.com/japan/stock-market | Trading Economics |
+| 🌏 亚太动态 | 亚洲SWF AI投资：236笔交易 · $101亿资本流入 | https://inforcapital.com/blog/2026-04-06-236-deals-10-billion-asia-pacific-private-capital-four-stories/ | Infor Capital |
+| 🌏 亚太动态 | ADB/APEC：APEC 2026增长3.1% · AI准备度差距持续 | https://www.adb.org/sites/default/files/publication/1135881/ado-april-2026-special-topic.pdf | ADB |
+| 🌏 亚太动态 | Kearney 2026 FDI信心指数 · 亚太占10/25席历史首次 | https://businessdailymedia.com/business-news/news-from-asia/49161-asia-pacific-dominates-top-rankings-in-kearney-s-2026-fdi-confidence-index-amid-global-geopolitical-tension-and-industrial-policy-expansion | Business Daily Media |
+| 🌏 亚太动态 | 微软宣布未来3年对日投资$100亿 | https://www.cnbc.com/2026/04/03/sakura-internet-microsoft-ai-japan-softbank-investment.html | CNBC |
+| 🏦 主权基金 | 挪威NBIM解除叙利亚债券禁令 · $2.2万亿首次涉足叙利亚 | https://uk.finance.yahoo.com/news/exclusive-norway-lift-ban-wealth-171021635.html | Reuters/Yahoo Finance |
+| 🏦 主权基金 | 新加坡GIC首次投资Notion · $2.7亿@$110亿估值 | https://dominance.sg/posts/gic-notion-investment-singapore-2026.html | Dominance Singapore |
+| 🏦 主权基金 | OpenAI提议AI利润税+公共财富基金+四天工作制 | https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/ | TechCrunch |
+| 🏦 主权基金 | 澳大利亚Future Fund科技岗位裁员 | https://www.canberratimes.com.au/story/9222511/future-fund-set-to-join-tech-related-jobs-cull/ | Canberra Times |
+| 🏦 主权基金 | 主权基金AI基础设施投资数千亿美元 | https://www.computeforecast.com/long-reads/how-sovereign-wealth-funds-are-reshaping-ai-infrastructure-investment/ | Compute Forecast |
+
+*URLs verified on 2026-04-16*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |

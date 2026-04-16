@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻 · 2026年4月16日 · AI 24小时</title>
+    <style>
+        :root { --bg-primary: #0a0a0c; --bg-card: #141418; --text-primary: #f5f5f7; --text-secondary: #a1a1a6; --text-tertiary: #6e6e73; --accent-red: #ff4d6a; --accent-orange: #ff9f0a; --accent-green: #30d158; --accent-blue: #0a84ff; --accent-purple: #bf5af2; --border: rgba(255,255,255,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .date-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .source-matrix { background: var(--bg-card); border-radius: 16px; padding: 20px; margin-bottom: 24px; border: 1px solid var(--border); }
+        .source-matrix h3 { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase; }
+        .category { margin-bottom: 28px; }
+        .category-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .category-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .category-title { font-size: 17px; font-weight: 600; }
+        .news-item { background: var(--bg-card); border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid var(--border); }
+        .news-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+        .news-content { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5; }
+        .news-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .news-source { font-size: 12px; color: var(--text-tertiary); }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+        .tag-red { background: rgba(255,77,106,0.15); color: var(--accent-red); }
+        .tag-orange { background: rgba(255,159,10,0.15); color: var(--accent-orange); }
+        .tag-green { background: rgba(48,209,88,0.15); color: var(--accent-green); }
+        .tag-blue { background: rgba(10,132,255,0.15); color: var(--accent-blue); }
+        .tag-purple { background: rgba(191,90,242,0.15); color: var(--accent-purple); }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-blue { color: var(--accent-blue); font-weight: 600; }
+        .hot-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-red), var(--accent-orange)); color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 8px; }
+        .key-insight { background: linear-gradient(135deg, rgba(191,90,242,0.1), rgba(10,132,255,0.05)); border-left: 3px solid var(--accent-purple); padding: 16px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .key-insight-title { font-size: 13px; color: var(--accent-purple); font-weight: 600; margin-bottom: 8px; }
+        .key-insight-content { font-size: 14px; color: var(--text-primary); line-height: 1.6; }
+        .market-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+        .market-table th { text-align: left; font-size: 12px; color: var(--text-tertiary); padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 500; }
+        .market-table td { font-size: 14px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .market-table tr:last-child td { border-bottom: none; }
+        .up { color: var(--accent-green); }
+        .down { color: var(--accent-red); }
+        .footer { text-align: center; padding: 30px 0; margin-top: 40px; border-top: 1px solid var(--border); color: var(--text-tertiary); font-size: 12px; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+        .ai-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-red), var(--accent-orange)); color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date-badge">AI · 24小时</div>
+            <h1>每日新闻精读</h1>
+            <div class="subtitle">2026年4月16日 08:00 · 地缘政治 · 全球经济 · 亚太 · 科技 · 主权基金</div>
+        </div>
+
+        <!-- 关键数据 -->
+        <div class="source-matrix">
+            <h3>📊 关键数据</h3>
+            <table class="market-table">
+                <tr><th>品种</th><th>最新价</th><th>日内变化</th></tr>
+                <tr><td>WTI 原油</td><td><span class="highlight-orange">$90.91</span>/桶</td><td class="down">-0.40%</td></tr>
+                <tr><td>布伦特原油</td><td><span class="highlight-orange">$94.36</span>/桶</td><td class="down">-0.35%</td></tr>
+                <tr><td>日经225</td><td>58,306点</td><td class="up">+0.74%</td></tr>
+                <tr><td>韩国KOSPI</td><td>约2,700点</td><td class="up">+0.75%</td></tr>
+                <tr><td>恒生指数</td><td>约26,200点</td><td class="up">+0.38%</td></tr>
+                <tr><td>上证综指</td><td>约3,100点</td><td class="up">+0.20%</td></tr>
+            </table>
+        </div>
+
+        <!-- 地缘政治 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,77,106,0.15);">⚔️</div>
+                <div class="category-title">地缘政治</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">美伊停火脆弱延续 · 霍尔木兹仅11艘船/日通过，双方互指违约<span class="hot-badge">持续</span></div>
+                <div class="news-content">美伊两国虽维持停火状态，但霍尔木兹海峡航运量仍维持在正常水平的<span class="highlight-orange">约10-11艘/日</span>（含AIS发射船只），远低于正常水平。美国与伊朗互相指责对方违反停火协议核心条款。4月14日，至少两艘船只成功通过海峡驶往伊朗港口。外交渠道仍在运作，但进展缓慢。</div>
+                <div class="news-meta">
+                    <span class="tag tag-red">霍尔木兹</span>
+                    <span class="news-source">ShipFinder / Xinhua · 4月15日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">美国政府将Anthropic列入实体清单 · 伊朗轰炸AWS数据中心<span class="hot-badge">重大</span></div>
+                <div class="news-content">美国政府将AI公司Anthropic列入出口管制实体清单。同时，伊朗军事行动波及AWS数据中心。这一事件使AI主权与地缘政治的交织进入新阶段。分析认为，美国将AI能力视为与军事实力同等重要的战略资产，伊朗攻击云基础设施的举动可能改变未来AI防护标准。</div>
+                <div class="news-meta">
+                    <span class="tag tag-red">AI地缘政治</span>
+                    <span class="tag tag-red">云基础设施</span>
+                    <span class="news-source">Airstreet.com / Air Street Capital · 4月14日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">IMF《世界经济展望》发布 · 中东冲击与关税压力并存</div>
+                <div class="news-content">IMF于4月14日发布《世界经济展望》4月版，警告美伊战争及持续的中东紧张局势将推迟美国通胀回落时间。同时，全球增长预期面临下调压力。IMF特别指出，2026年全球增长面临的最大下行风险来自能源价格持续高企及全球贸易碎片化加速。</div>
+                <div class="news-meta">
+                    <span class="tag tag-orange">IMF预警</span>
+                    <span class="news-source">IMF · 4月14日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 科技 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(10,132,255,0.15);">💻</div>
+                <div class="category-title">科技 · AI</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">DeepSeek V4即将发布：全面押注华为芯片，$0.30/百万Token<span class="ai-badge">即将发布</span></div>
+                <div class="news-content">DeepSeek V4预计于4月第三周发布，核心亮点：① 采用华为昇腾AI芯片生态，不再依赖英伟达CUDA；② 定价<span class="highlight-blue">$0.30/百万Token</span>，极具竞争力；③ 参数量达1万亿级别。DeepSeek V4将完全在华为芯片上运行，被视为中国AI自主可控战略的重要里程碑。同时，智谱AI发布GLM-5.1并开源，阿里秘密视频模型登顶全球多个榜单。</div>
+                <div class="news-meta">
+                    <span class="tag tag-blue">DeepSeek V4</span>
+                    <span class="tag tag-blue">华为芯片</span>
+                    <span class="news-source">Findskill.ai / Techxplore · 4月5-15日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">Anthropic Claude Mythos锁定50家公司 · Zhipu GLM-5.1同日向开源<span class="hot-badge">重磅</span></div>
+                <div class="news-content">Anthropic正式确认Claude Mythos模型的存在，并将其锁定在仅限<span class="highlight-purple">50家合作伙伴</span>的企业防火墙内，拒绝大规模公开调用。同日，智谱AI（Zhipu）宣布开源GLM-5.1，形成鲜明对比。这一策略分化意味着Anthropic选择高端封闭路线，中国AI公司则以开源生态抢占全球开发者市场。</div>
+                <div class="news-meta">
+                    <span class="tag tag-purple">Claude Mythos</span>
+                    <span class="tag tag-blue">GLM-5.1</span>
+                    <span class="news-source">whatllm.org / Bighat Group · 4月7-15日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">OpenAI、Anthropic、Google联手反击中国AI"蒸馏"攻击<span class="hot-badge">持续</span></div>
+                <div class="news-content">OpenAI、Google与Anthropic三家AI巨头正式成立"前沿模型论坛"（Frontier Model Forum），联合反击中国AI公司通过"蒸馏"技术提取美国顶尖AI模型能力的行为。三家公司宣布共享检测蒸馏攻击的技术标准，并对违规方采取联合抵制措施。首次联合行动于4月7日宣布。</div>
+                <div class="news-meta">
+                    <span class="tag tag-blue">AI安全</span>
+                    <span class="tag tag-red">中美AI战</span>
+                    <span class="news-source">Seeking Alpha / Gadgets 360 · 4月7日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">Google开源Gemma 4系列：27B参数，基准测试提升12%</div>
+                <div class="news-content">Google于4月11日正式发布Gemma 4开源模型系列，包含2B、7B、27B三个规格。在MMLU基准测试中提升<span class="highlight-green">12%</span>，首次在同尺寸开源模型中实现领先性能。Gemma 4系列的发布加剧了开源AI模型的全球竞争格局。</div>
+                <div class="news-meta">
+                    <span class="tag tag-blue">Gemma 4</span>
+                    <span class="tag tag-blue">Google</span>
+                    <span class="news-source">CSDN / AI Portal · 4月11日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">Anthropic年化收入超300亿美元 · 考虑自研AI芯片</div>
+                <div class="news-content">Anthropic年化收入已突破<span class="highlight-orange">300亿美元</span>，成为全球增长最快的AI公司之一。公司正在评估自研AI推理芯片，以降低对英伟达的依赖。这将使Anthropic与Google（TPU）、Amazon（Trainium）一样，成为拥有自研芯片的AI公司。</div>
+                <div class="news-meta">
+                    <span class="tag tag-blue">Anthropic</span>
+                    <span class="news-source">Creati.ai / 新浪AI · 4月7-10日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全球经济 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(255,159,10,0.15);">📊</div>
+                <div class="category-title">全球经济</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">WTI原油跌回$90区间 · 霍尔木兹暂时畅通压低油价</div>
+                <div class="news-content">WTI原油价格回落至<span class="highlight-orange">$90.91/桶</span>（4月15日），较上月高点累计下跌约2.77%。霍尔木兹海峡维持有限通行（每日11艘船），暂时缓解了石油供应中断的极端预期。但美伊停火协议仍然脆弱，任何破裂都将使油价快速反弹。</div>
+                <div class="news-meta">
+                    <span class="tag tag-green">油价回落</span>
+                    <span class="news-source">Trading Economics / ShipFinder · 4月15日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">UNCTAD《全球贸易更新》：Q1 2026贸易增长由价格驱动而非量驱动</div>
+                <div class="news-content">联合国贸易和发展会议（UNCTAD）4月发布的《全球贸易更新》显示，2025年Q4全球贸易通胀有所回落，但2026年Q1反弹至近<span class="highlight-orange">1.5%</span>（环比），显示部分贸易增长由价格上涨而非数量增长驱动。东亚和非洲贸易表现强劲，南南贸易超平均水平。Trump关税政策持续影响全球贸易流向。</div>
+                <div class="news-meta">
+                    <span class="tag tag-orange">UNCTAD</span>
+                    <span class="tag tag-red">贸易碎片化</span>
+                    <span class="news-source">UNCTAD · 4月7日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">日经指数年初至今累涨71.89% · 日本债市收益率创1997年来新高</div>
+                <div class="news-content">日经225指数4月15日收于<span class="highlight-green">58,306点</span>（+0.74%），年初至今累计涨幅高达71.89%。然而，日本10年期国债收益率升至2.48%，创1997年以来最高水平，反映市场对日本央行货币政策正常化的担忧。亚洲其他市场小幅跟涨，恒生指数约26,200点（+0.38%）。</div>
+                <div class="news-meta">
+                    <span class="tag tag-green">日经+71.89%</span>
+                    <span class="tag tag-red">日本债市</span>
+                    <span class="news-source">Trading Economics / Invezz · 4月15日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 亚太 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(48,209,88,0.15);">🌏</div>
+                <div class="category-title">亚太动态</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">亚洲主权财富基金AI投资：236笔交易，$1010亿资本流入<span class="hot-badge">重大</span></div>
+                <div class="news-content">2026年4月前30天，亚太地区13个市场共录得<span class="highlight-green">236笔私募股权交易</span>，总资本流入达<span class="highlight-blue">$101亿</span>（10.1 billion）。亚洲主权基金正成为全球AI基础设施投资的核心力量，其中新加坡GIC、日本政府养老金投资基金（GPIF）以及海湾主权基金在亚太的AI投资均创历史新高。</div>
+                <div class="news-meta">
+                    <span class="tag tag-green">亚洲SWF</span>
+                    <span class="tag tag-blue">$101亿</span>
+                    <span class="news-source">Infor Capital · 4月6日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">亚洲开发银行：APAC 2026增长3.1% · AI准备度差距持续</div>
+                <div class="news-content">亚洲开发银行（ADB）在最新报告中指出，2026年亚太地区增长预计为<span class="highlight-orange">3.1%</span>（2025年为3.2%）。AI准备度指标显示发达与发展中经济体之间存在显著差距，数字基础设施成为关键约束。ADB上调中国2026年增长预期至4.6%，但警告外部冲击（中东石油中断）仍是主要下行风险。</div>
+                <div class="news-meta">
+                    <span class="tag tag-orange">ADB</span>
+                    <span class="news-source">APEC / ADB · 4月9日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title"> Kearney 2026 FDI信心指数：亚太占10/25席，历史首次</div>
+                <div class="news-content">Kearney《2026年外国直接投资（FDI）信心指数》显示，亚太地区首次在排名市场中占据<span class="highlight-green">10/25席</span>，创十年来历史新高。日本、中国、新加坡、韩国和印度均榜上有名。亚太在全球地缘政治紧张和产业政策扩张背景下，仍然是全球资本流入的首选目的地。</div>
+                <div class="news-meta">
+                    <span class="tag tag-green">FDI</span>
+                    <span class="tag tag-blue">Kearney</span>
+                    <span class="news-source">Business Daily Media · 4月8日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">微软宣布未来3年对日投资$100亿 · 软银合作AI基础设施</div>
+                <div class="news-content">微软于4月3日宣布，计划于2026-2029年期间在日本投资<span class="highlight-blue">$100亿美元</span>，用于建设AI数据中心和数字基础设施。这笔投资将通过与软银集团的合作实现，使日本成为美国科技巨头在亚洲AI布局的核心节点。日本政府同时推出60亿美元"主权AI"计划，以减少对海外AI算力的依赖。</div>
+                <div class="news-meta">
+                    <span class="tag tag-blue">微软</span>
+                    <span class="tag tag-purple">日本AI</span>
+                    <span class="news-source">CNBC · 4月3日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主权基金投资 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon" style="background: rgba(191,90,242,0.15);">🏦</div>
+                <div class="category-title">主权基金投资</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">挪威NBIM解除叙利亚债券禁令 · $2.2万亿主权基金首次涉足叙利亚<span class="hot-badge">重大</span></div>
+                <div class="news-content">挪威央行投资管理公司（NBIM）正式将叙利亚从债券排除名单中移除，允许对叙利亚政府债券进行投资。这是<span class="highlight-blue">$2.2万亿挪威主权财富基金</span>历史上首次投资叙利亚主权债券。分析师认为此举反映了挪威对中东重建浪潮的战略预判，也是该基金"从防御转向机会"的重要标志。同时，NBIM正在评估取消武器投资禁令的方案，以应对Trump政府压力。</div>
+                <div class="news-meta">
+                    <span class="tag tag-purple">NBIM</span>
+                    <span class="tag tag-blue">$2.2万亿</span>
+                    <span class="news-source">Reuters / Yahoo Finance · 4月14日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">新加坡GIC投资Notion：首次涉足AI生产力工具</div>
+                <div class="news-content">新加坡主权财富基金GIC参与了AI生产力工具公司Notion的<span class="highlight-green">$2.7亿美元</span>员工股份出售轮次，估值达$110亿美元。GIC首次投资Notion，标志着新加坡主权基金对AI原生应用公司的关注度显著提升。此举与GIC此前对数据中心、AI基础设施的投资形成互补。</div>
+                <div class="news-meta">
+                    <span class="tag tag-purple">GIC</span>
+                    <span class="tag tag-green">Notion</span>
+                    <span class="news-source">Dominance Singapore · 3月15日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">OpenAI提议AI利润税+公共财富基金+四天工作制</div>
+                <div class="news-content">OpenAI在4月6日发布的AI经济蓝图中，提出征收AI利润税以补贴被AI替代的劳动者，并建议设立国家级<span class="highlight-purple">AI公共财富基金</span>，由AI公司注资，投资于多元化长期资产。基金由国家管理，为AI驱动经济转型提供社会保障网络。OpenAI同时提议推广四天工作制，以应对AI对就业市场的冲击。</div>
+                <div class="news-meta">
+                    <span class="tag tag-purple">OpenAI</span>
+                    <span class="tag tag-purple">政策建议</span>
+                    <span class="news-source">TechCrunch · 4月6日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">澳大利亚Future Fund：科技相关岗位裁员，主权基金拥抱AI效率化</div>
+                <div class="news-content">澳大利亚主权财富基金Future Fund宣布启动科技相关岗位裁员，成为首家在金融行业AI替代浪潮中进行主动裁员的主权基金。此举表明，即使是以长期稳定著称的政府投资机构，也难以抵挡AI带来的效率提升压力。分析认为，Future Fund的裁员可能引发全球其他主权基金的类似行动。</div>
+                <div class="news-meta">
+                    <span class="tag tag-orange">Future Fund</span>
+                    <span class="news-source">Canberra Times · 4月14日</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">主权基金AI基础设施军备竞赛：数千亿美元押注算力</div>
+                <div class="news-content">MGX（穆巴达拉AI子公司）、PIF沙特主权基金、HUMAIN等海湾主权基金，正与贝莱德等机构联合部署数千亿美元于AI数据中心和算力基础设施。主权利投资者正在从传统的房地产和能源投资，转向数字化基础设施这一新的核心资产类别。海湾三國（沙特、阿联酋、卡塔尔）的主权基金被视为这场AI算力竞赛的最大外部资金来源。</div>
+                <div class="news-meta">
+                    <span class="tag tag-purple">主权基金</span>
+                    <span class="tag tag-blue">AI基础设施</span>
+                    <span class="news-source">Compute Forecast · 4月2日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 关键洞察 -->
+        <div class="key-insight">
+            <div class="key-insight-title">💡 本期关键洞察</div>
+            <div class="key-insight-content">
+                <strong>1. AI主权化加速：DeepSeek V4押注华为芯片，Anthropic转向封闭</strong><br>
+                DeepSeek V4全面转向华为昇腾芯片，象征中国AI"去英伟达化"战略迈出关键一步。同期Anthropic Claude Mythos锁定50家公司，Google开源Gemma 4，形成"封闭高端"vs"开源普惠"的两极分化格局。美国将Anthropic列入实体清单、伊朗轰炸AWS数据中心，标志着AI正式成为地缘政治核心战场。<br><br>
+                <strong>2. 霍尔木兹困局暂时缓和：油价回落至$90+，但停火仍脆弱</strong><br>
+                霍尔木兹海峡维持每日11艘船通行，暂时避免了极端石油断供情景（WTI回落至$90.91）。然而，美伊互相指责对方违反停火协议，谈判进展有限。任何协议破裂都将使油价快速反弹至$100+。IMF警告全球增长面临下调压力。<br><br>
+                <strong>3. 主权基金"破冰"与"转向"并行：挪威首投叙利亚，GIC布局Notion</strong><br>
+                挪威$2.2万亿主权基金首次投资叙利亚债券，是中东重建浪潮的重要信号。GIC首次投资Notion，显示亚洲主权基金正从基础设施向AI应用层延伸。微软宣布$100亿日本AI投资，亚洲SWF在APAC地区单季度投入$101亿——主权资本正在重塑全球AI投资版图。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>NewsforWenyan · AI 24小时 · 每日早8点发送</p>
+            <p>GitHub: <a href="https://github.com/marvinchima723/NewsforWenyan">marvinchima723/NewsforWenyan</a> · Pages: <a href="https://marvinchima723.github.io/NewsforWenyan/">在线阅读</a></p>
+            <p>发送至: yoyozwy@gmail.com / marvin.cmma@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>
