@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan - 2026年4月17日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1C1C1E;
+            --bg-tertiary: #2C2C2E;
+            --accent-blue: #007AFF;
+            --accent-green: #30D158;
+            --accent-red: #FF453A;
+            --accent-orange: #FF9F0A;
+            --accent-purple: #BF5AF2;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --border-color: #38383A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #FF9F0A, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .date {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Love Quote */
+        .love-quote {
+            background: linear-gradient(135deg, rgba(255, 159, 10, 0.1), rgba(255, 107, 0, 0.05));
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .love-quote .quote {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .love-quote .author {
+            font-size: 14px;
+            color: var(--accent-orange);
+        }
+
+        /* Prayer */
+        .prayer {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .prayer .verse {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .prayer .text {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        /* Market Section */
+        .market-section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .market-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .chart-placeholder {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .market-item {
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .market-item .label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .market-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .market-item .change {
+            font-size: 12px;
+        }
+
+        .market-item .change.up { color: var(--accent-red); }
+        .market-item .change.down { color: var(--accent-green); }
+
+        /* News Section */
+        .news-section {
+            margin-bottom: 30px;
+        }
+
+        .news-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-blue);
+            display: inline-block;
+        }
+
+        .news-card {
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .news-card .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .tag-geopolitics { background: rgba(191, 90, 242, 0.2); color: #BF5AF2; }
+        .tag-economy { background: rgba(0, 122, 255, 0.2); color: #007AFF; }
+        .tag-asia { background: rgba(48, 209, 88, 0.2); color: #30D158; }
+        .tag-tech { background: rgba(255, 159, 10, 0.2); color: #FF9F0A; }
+        .tag-fund { background: rgba(255, 69, 58, 0.2); color: #FF453A; }
+        .tag-mubadala { background: rgba(255, 159, 10, 0.2); color: #FF9F0A; }
+
+        .news-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .news-card h3 a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-card .description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .news-card .source {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .news-card .source a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .news-card .source a:hover {
+            text-decoration: underline;
+        }
+
+        /* Admiralty Rating */
+        .admiralty {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        .admiralty.A1 { background: rgba(48, 209, 88, 0.2); color: #30D158; }
+        .admiralty.A2 { background: rgba(0, 122, 255, 0.2); color: #007AFF; }
+        .admiralty.B1 { background: rgba(255, 159, 10, 0.2); color: #FF9F0A; }
+        .admiralty.C1 { background: rgba(142, 142, 147, 0.2); color: #8E8E93; }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .source-matrix h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .source-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .source-matrix th, .source-matrix td {
+            padding: 10px 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .source-matrix th {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .source-matrix tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .footer .tagline {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .footer .copyright {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 16px; }
+            .header h1 { font-size: 24px; }
+            .market-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>☀️ News for Wenyan</h1>
+            <p class="date">2026年4月17日 · Friday</p>
+        </header>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <p class="quote">"The greatest happiness of life is the conviction that we are loved."</p>
+            <p class="author">— Victor Hugo</p>
+        </div>
+
+        <!-- Prayer -->
+        <div class="prayer">
+            <p class="verse">Numbers 6:24-26</p>
+            <p class="text">"The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."</p>
+        </div>
+
+        <!-- Market Section -->
+        <section class="market-section">
+            <h2>📈 Market Data</h2>
+            <div class="chart-placeholder">
+                [SSE Index Chart - 1 Year Trend]
+            </div>
+            <div class="market-grid">
+                <div class="market-item">
+                    <div class="label">上证指数</div>
+                    <div class="value">3,255.55</div>
+                    <div class="change up">▲ 0.70%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">日经225</div>
+                    <div class="value">29,518.34</div>
+                    <div class="change up">▲ 2.40%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">恒生指数</div>
+                    <div class="value">26,394.26</div>
+                    <div class="change up">▲ 1.60%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">印度SENSEX</div>
+                    <div class="value">77,988.69</div>
+                    <div class="change down">▼ 0.20%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">道琼斯</div>
+                    <div class="value">48,578.72</div>
+                    <div class="change up">▲ 0.03%</div>
+                </div>
+                <div class="market-item">
+                    <div class="label">标普500</div>
+                    <div class="value">7,041.28</div>
+                    <div class="change up">▲ 0.26%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geopolitics -->
+        <section class="news-section">
+            <h2>🌍 地缘政治</h2>
+
+            <article class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <h3><a href="https://www.timesofisrael.com/liveblog-april-16-2026/" target="_blank">以色列与哈马斯达成停火协议框架 — 内塔尼亚胡称"历史性"机会</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">据《以色列时报》实时报道，以色列总理内塔尼亚胡向部长们表示，他是从媒体得知停火协议的，称这是在特朗普请求下达成的。内塔尼亚胡表示以色列拥有"历史性"的和平机会，反对派议员则批评政府决策过程混乱。</p>
+                <p class="source"><a href="https://www.timesofisrael.com/liveblog-april-16-2026/" target="_blank">Times of Israel · April 16, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <h3><a href="https://www.ey.com/en_gl/insights/geostrategy/geostrategic-analysis" target="_blank">EY发布2026年4月地缘战略分析 — 全球格局深度解读</a> <span class="admiralty A2">A2</span></h3>
+                <p class="description">EY发布最新地缘战略分析报告，涵盖2026年地缘政治发展对国际商业环境的影响。报告指出地缘政治波动将持续，企业需要重新评估供应链韧性和市场布局策略。</p>
+                <p class="source"><a href="https://www.ey.com/en_gl/insights/geostrategy/geostrategic-analysis" target="_blank">EY Geostrategy · April 10, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <h3><a href="https://www.crestwoodadvisors.com/april-2026-economic-and-market-update-geopolitics-at-the-forefront/" target="_blank">2026年4月经济与市场展望 — 地缘政治成为焦点</a> <span class="admiralty B1">B1</span></h3>
+                <p class="description">Crestwood Advisors发布4月报告，指出美伊冲突从地缘风险演变为真实供应中断。2月底冲突升级导致市场出现广泛风险规避情绪，股债双双承压。</p>
+                <p class="source"><a href="https://www.crestwoodadvisors.com/april-2026-economic-and-market-update-geopolitics-at-the-forefront/" target="_blank">Crestwood Advisors · April 8, 2026 ↗</a></p>
+            </article>
+        </section>
+
+        <!-- Global Economy -->
+        <section class="news-section">
+            <h2>💰 全球经济</h2>
+
+            <article class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <h3><a href="https://unctad.org/publication/global-trade-update-april-2026-global-trade-growth-continues-fragility-rises" target="_blank">UNCTAD全球贸易更新2026年4月 — 增长持续但脆弱性上升</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">联合国贸发会议报告显示，2025年的强劲贸易增长延续至2026年初。但中东冲突和霍尔木兹海峡航运中断预计将在今年余下时间拖累全球贸易。2026年第一季度贸易增长保持稳健，但风险上升。</p>
+                <p class="source"><a href="https://unctad.org/publication/global-trade-update-april-2026-global-trade-growth-continues-fragility-rises" target="_blank">UNCTAD · April 7, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <h3><a href="https://news.cgtn.com/news/2026-04-15/China-s-Q1-economy-posts-strong-recovery-driving-global-growth-1MmAl8VnGTK/p.html" target="_blank">中国一季度经济强劲复苏 — 推动全球增长</a> <span class="admiralty A2">A2</span></h3>
+                <p class="description">CGTN报道，中国经济在2026年第一季度实现强劲开局，消费反弹、投资稳健、外贸韧性强，为全球增长提供新动力。报道称中国经济"开门红"有望延续全年。</p>
+                <p class="source"><a href="https://news.cgtn.com/news/2026-04-15/China-s-Q1-economy-posts-strong-recovery-driving-global-growth-1MmAl8VnGTK/p.html" target="_blank">CGTN · April 15, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-economy">中国经济</span>
+                <h3><a href="https://english.www.gov.cn/english.www.gov.cn/news/202604/14/content_WS69de2561c6d00ca5f9a0a656.html" target="_blank">中国一季度外贸数据巩固"稳定器"角色</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">中国国务院新闻办公室发布一季度外贸数据，实现强劲双位数增长，凸显经济韧性。中国外贸的"稳定器"作用进一步强化，为全球供应链提供关键支撑。</p>
+                <p class="source"><a href="https://english.www.gov.cn/english.www.gov.cn/news/202604/14/content_WS69de2561c6d00ca5f9a0a656.html" target="_blank">中国国务院新闻办公室 · April 14, 2026 ↗</a></p>
+            </article>
+        </section>
+
+        <!-- Technology -->
+        <section class="news-section">
+            <h2>⚡ 科技动态</h2>
+
+            <article class="news-card">
+                <span class="tag tag-tech">AI</span>
+                <h3><a href="https://theaitrack.com/ai-news-april-2026-in-depth-and-concise/" target="_blank">2026年4月AI行业深度盘点 — 主要公司进展与投资趋势</a> <span class="admiralty B1">B1</span></h3>
+                <p class="description">OpenAI连续发布GPT-5.3和GPT-5.4版本，Google在Workspace全面整合Gemini，Meta收购AI社交平台Moltbook。Yann LeCun新创公司AMI获10亿美元融资，Mira Murati的Thinking Machines Lab与Nvidia达成合作。Anthropic因美国防部"风险"标签起诉，引发行业争议。</p>
+                <p class="source"><a href="https://theaitrack.com/ai-news-april-2026-in-depth-and-concise/" target="_blank">The AI Track · April 16, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-tech">AI</span>
+                <h3><a href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank">斯坦福AI指数报告2026 — 行业状态全面解读</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">IEEE Spectrum报道，2026年斯坦福AI指数揭示AI在推理、编程、科学领域的进展加速，但也伴随高昂成本和日益加剧的公众信任焦虑。报告指出AI正从增长模式转向变现策略，企业采用率持续攀升。</p>
+                <p class="source"><a href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank">IEEE Spectrum · April 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-tech">AI</span>
+                <h3><a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">AI新闻与趋势2026年4月完整月度摘要</a> <span class="admiralty C1">C1</span></h3>
+                <p class="description">humAI Blog发布月度摘要，追踪AI平台从增长模式向变现策略的转变，企业级AI工作流采用率持续上升，成为行业主流。</p>
+                <p class="source"><a href="https://www.humai.blog/ai-news-trends-april-2026-complete-monthly-digest/" target="_blank">humAI Blog · April 14, 2026 ↗</a></p>
+            </article>
+        </section>
+
+        <!-- Sovereign Wealth Fund -->
+        <section class="news-section">
+            <h2>🏦 主权基金投资动态</h2>
+
+            <article class="news-card">
+                <span class="tag tag-mubadala">🏦 穆巴达拉</span>
+                <h3><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">穆巴达拉资管规模增长17%至3850亿美元 — 2025年投资390亿美元</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">阿布扎比主权财富基金穆巴达拉2025年底资管规模达3850亿美元，同比增长17%（2024年底为3300亿美元）。2025年总投资额390亿美元，高于2024年的320亿美元，为2018年以来年度最高。资产配置：私募42%、公开市场20%、房地产与基础设施17%、另类16%、信贷5%。地区分布：北美44%、阿联酋24%、欧洲15%、亚太13%。</p>
+                <p class="source"><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">AGBI · April 9, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-fund">主权基金</span>
+                <h3><a href="https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/" target="_blank">战争持续下海湾主权基金保持投资 — 但策略开始转变</a> <span class="admiralty B1">B1</span></h3>
+                <p class="description">EnterpriseAM报道，尽管中东冲突持续，海湾主权基金（含穆巴达拉、PIF、QIA）2026年Q1仍部署约250亿美元。穆巴达拉已完成第三只巴西基金募集（9亿美元，超额完成）。若战争持续，穆巴达拉可能放缓海外投资转向国内关键产业；同时可能利用市场波动进行机会性收购。阿布扎比投资局(ADIA)增加对欧洲和亚洲私募信贷的曝光。</p>
+                <p class="source"><a href="https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/" target="_blank">EnterpriseAM · April 14, 2026 ↗</a></p>
+            </article>
+
+            <article class="news-card">
+                <span class="tag tag-fund">主权基金</span>
+                <h3><a href="https://www.mubadala.com/" target="_blank">穆巴达拉官网最新动态 — 170亿美元投资Property Finder</a> <span class="admiralty A1">A1</span></h3>
+                <p class="description">穆巴达拉官网披露最新投资：2月12日宣布Property Finder获1.7亿美元投资，由穆巴达拉领投，UAE主权财富基金和BECO Capital参与跟投。穆巴达拉持续布局房地产科技领域。</p>
+                <p class="source"><a href="https://www.mubadala.com/" target="_blank">Mubadala · February 12, 2026 ↗</a></p>
+            </article>
+        </section>
+
+        <!-- Source Matrix -->
+        <div class="source-matrix">
+            <h3>📋 Source Matrix</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>来源</th>
+                        <th>Admiralty评级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>地缘政治</td>
+                        <td><a href="https://www.timesofisrael.com/liveblog-april-16-2026/" target="_blank">Times of Israel</a></td>
+                        <td><span class="admiralty A1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>地缘政治</td>
+                        <td><a href="https://www.ey.com/en_gl/insights/geostrategy/geostrategic-analysis" target="_blank">EY Geostrategy</a></td>
+                        <td><span class="admiralty A2">A2</span></td>
+                    </tr>
+                    <tr>
+                        <td>全球经济</td>
+                        <td><a href="https://unctad.org/publication/global-trade-update-april-2026-global-trade-growth-continues-fragility-rises" target="_blank">UNCTAD</a></td>
+                        <td><span class="admiralty A1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>中国经济</td>
+                        <td><a href="https://english.www.gov.cn/english.www.gov.cn/news/202604/14/content_WS69de2561c6d00ca5f9a0a656.html" target="_blank">中国国务院新闻办公室</a></td>
+                        <td><span class="admiralty A1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>科技/AI</td>
+                        <td><a href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank">IEEE Spectrum</a></td>
+                        <td><span class="admiralty A1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>🏦 穆巴达拉</td>
+                        <td><a href="https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/" target="_blank">AGBI</a></td>
+                        <td><span class="admiralty A1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>🏦 穆巴达拉</td>
+                        <td><a href="https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/" target="_blank">EnterpriseAM</a></td>
+                        <td><span class="admiralty B1">B1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="tagline">☀️ News for Wenyan — 每日为您精心筛选</p>
+            <p class="copyright">Generated on 2026-04-17 · Built with ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>
