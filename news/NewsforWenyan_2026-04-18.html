@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for Wenyan - 2026年4月18日</title>
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #242424;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1a6;
+            --accent-red: #ff453a;
+            --accent-orange: #ff9f0a;
+            --accent-blue: #0a84ff;
+            --accent-green: #30d158;
+            --accent-yellow: #ffd60a;
+            --accent-purple: #bf5af2;
+            --border-color: #38383a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .greeting {
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .subtitle { font-size: 15px; color: var(--text-secondary); font-style: italic; }
+
+        .love-quote {
+            background: linear-gradient(135deg, rgba(255,159,10,0.15), rgba(255,214,10,0.1));
+            border: 1px solid rgba(255,159,10,0.3);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .love-quote-text {
+            font-size: 18px;
+            color: var(--accent-yellow);
+            font-style: italic;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .love-quote-source { font-size: 13px; color: var(--text-secondary); }
+
+        .prayer {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .prayer-text { font-size: 15px; color: var(--accent-blue); line-height: 1.8; }
+        .prayer-ref { font-size: 12px; color: var(--text-secondary); margin-top: 8px; }
+
+        /* Breaking Banner */
+        .breaking-banner {
+            background: linear-gradient(135deg, rgba(255,69,58,0.2), rgba(255,69,58,0.1));
+            border: 1px solid rgba(255,69,58,0.4);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .breaking-tag {
+            background: var(--accent-red);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 1px;
+        }
+
+        .breaking-text { font-size: 14px; color: var(--text-primary); }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border-color);
+        }
+
+        .source-matrix h3 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+        .matrix-table th {
+            text-align: left;
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .matrix-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(56,56,58,0.5);
+        }
+
+        .matrix-table tr:last-child td { border-bottom: none; }
+
+        .rating-a1 { color: var(--accent-green); font-weight: 600; }
+        .rating-a2 { color: var(--accent-blue); font-weight: 600; }
+        .rating-b1 { color: var(--accent-yellow); font-weight: 600; }
+        .rating-c1 { color: var(--text-secondary); }
+
+        /* Section */
+        .section { margin-bottom: 32px; }
+
+        .section-title {
+            font-size: 12px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .news-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+
+        .news-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.1); }
+
+        .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-red { background: rgba(255,69,58,0.2); color: var(--accent-red); }
+        .tag-orange { background: rgba(255,159,10,0.2); color: var(--accent-orange); }
+        .tag-blue { background: rgba(10,132,255,0.2); color: var(--accent-blue); }
+        .tag-green { background: rgba(48,209,88,0.2); color: var(--accent-green); }
+        .tag-yellow { background: rgba(255,214,10,0.2); color: var(--accent-yellow); }
+        .tag-purple { background: rgba(191,90,242,0.2); color: var(--accent-purple); }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .card-title a:hover { color: var(--accent-blue); text-decoration: underline; }
+
+        .card-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+
+        .card-source {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .card-source a { color: var(--text-secondary); text-decoration: none; }
+        .card-source a:hover { color: var(--accent-blue); }
+
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chart-title {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .chart-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .chart-change { font-size: 13px; font-weight: 500; }
+        .positive { color: var(--accent-red); }
+        .negative { color: var(--accent-green); }
+
+        .chart-canvas { width: 100%; height: 80px; margin-top: 12px; }
+
+        /* Market Table */
+        .market-table {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border-color);
+        }
+
+        .market-table h4 {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .market-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(56,56,58,0.5);
+        }
+
+        .market-row:last-child { border-bottom: none; }
+
+        .market-name { font-size: 14px; color: var(--text-primary); }
+        .market-value { font-size: 14px; font-weight: 600; }
+        .market-change { font-size: 13px; margin-left: 8px; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .footer-text { font-size: 12px; color: var(--text-secondary); }
+        .footer-text a { color: var(--accent-blue); }
+
+        @media (max-width: 600px) {
+            .charts-grid { grid-template-columns: 1fr; }
+            .container { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="date">Saturday · April 18, 2026</div>
+        <div class="greeting">☀️ News for Wenyan</div>
+        <div class="subtitle">Your daily briefing from WorkBuddy</div>
+    </div>
+
+    <!-- Love Quote -->
+    <div class="love-quote">
+        <div class="love-quote-text">
+            "The greatest thing you'll ever learn is just to love and be loved in return."
+        </div>
+        <div class="love-quote-source">— Nat King Cole, "Nature Boy"</div>
+    </div>
+
+    <!-- Prayer -->
+    <div class="prayer">
+        <div class="prayer-text">
+            愿耶和华使祂的脸光照你，赐恩给你。<br>
+            愿耶和华向你仰脸，赐你平安。
+        </div>
+        <div class="prayer-ref">— Numbers 6:24-26</div>
+    </div>
+
+    <!-- Breaking Banner -->
+    <div class="breaking-banner">
+        <div class="breaking-tag">🚨 BREAKING</div>
+        <div class="breaking-text">
+            <strong>以色列-黎巴嫩停火生效 · 霍尔木兹海峡宣布"完全开放" · 原油暴跌10%
+        </div>
+    </div>
+
+    <!-- Source Matrix -->
+    <div class="source-matrix">
+        <h3>📊 Source Matrix · 信息源评级</h3>
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th>分类</th>
+                    <th>来源</th>
+                    <th>评级</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>⚔️ 地缘政治</td>
+                    <td><a href="https://apnews.com/live/iran-war-israel-trump-04-16-2026">AP News</a></td>
+                    <td class="rating-a1">A1</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>⚔️ 地缘政治</td>
+                    <td><a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">CBS News</a></td>
+                    <td class="rating-a1">A1</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>📊 全球经济</td>
+                    <td><a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026">IMF WEO</a></td>
+                    <td class="rating-a1">A1</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>📊 全球经济</td>
+                    <td><a href="https://tradingeconomics.com/commodity/brent-crude-oil">Trading Economics</a></td>
+                    <td class="rating-a2">A2</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>🌏 亚太市场</td>
+                    <td><a href="https://www.cnbc.com/2026/04/17/asia-markets-today-nikkei225-hang-seng-sensex-asx-ceasefire-oil.html">CNBC Asia</a></td>
+                    <td class="rating-a1">A1</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>💻 科技</td>
+                    <td><a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">Air Street Press</a></td>
+                    <td class="rating-a2">A2</td>
+                    <td>✅ 核实</td>
+                </tr>
+                <tr>
+                    <td>🏦 穆巴达拉</td>
+                    <td><a href="https://gulfnews.com/business/markets/mubadala-aum-hits-dh14-trillion-uae-investments-drive-growth-1.500501295">Gulf News</a></td>
+                    <td class="rating-a2">A2</td>
+                    <td>✅ 核实</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Market Indices -->
+    <div class="charts-grid">
+        <div class="chart-card">
+            <div class="chart-title">🇯🇵 日经225</div>
+            <div class="chart-value" style="color: var(--accent-red);">58,475</div>
+            <div class="chart-change negative">-1.75% ▼</div>
+            <canvas class="chart-canvas" id="chart-nikkei"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">🇭🇰 恒生指数</div>
+            <div class="chart-value" style="color: var(--accent-red);">~25,700</div>
+            <div class="chart-change negative">-1.01% ▼</div>
+            <canvas class="chart-canvas" id="chart-hangsung"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">🇨🇳 上证指数</div>
+            <div class="chart-value" style="color: var(--accent-red);">~3,250</div>
+            <div class="chart-change negative">-0.17% ▼</div>
+            <canvas class="chart-canvas" id="chart-shanghai"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">🇮🇳 印度Nifty 50</div>
+            <div class="chart-value" style="color: var(--accent-green);">~22,800</div>
+            <div class="chart-change positive">+0.34% ▲</div>
+            <canvas class="chart-canvas" id="chart-nifty"></canvas>
+        </div>
+    </div>
+
+    <!-- FX Rates -->
+    <div class="market-table">
+        <h4>💱 外汇汇率 (April 17)</h4>
+        <div class="market-row">
+            <span class="market-name">USD/JPY</span>
+            <span><span class="market-value">158.65</span><span class="market-change neutral">—</span></span>
+        </div>
+        <div class="market-row">
+            <span class="market-name">USD/KRW</span>
+            <span><span class="market-value">1,464.49</span><span class="market-change negative">-1.02% ▼</span></span>
+        </div>
+        <div class="market-row">
+            <span class="market-name">WTI原油</span>
+            <span><span class="market-value">$93.49</span><span class="market-change negative">-1.27% ▼</span></span>
+        </div>
+        <div class="market-row">
+            <span class="market-name">布伦特原油</span>
+            <span><span class="market-value">$91.87</span><span class="market-change negative">-7.57% ▼</span></span>
+        </div>
+    </div>
+
+    <!-- Geopolitics Section -->
+    <div class="section">
+        <div class="section-title">⚔️ 地缘政治 · Geopolitics</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-red">BREAKING</span>
+            </div>
+            <div class="card-title">
+                <a href="https://apnews.com/live/iran-war-israel-trump-04-16-2026">以色列-黎巴嫩10天停火正式生效，中东局势现重大缓和</a>
+            </div>
+            <div class="card-desc">
+                以色列与黎巴嫩在美国斡旋下达成的10天停火协议于美东时间4月16日下午5点（北京时间4月17日凌晨）正式生效。此前以色列对黎巴嫩的空袭已造成近2,200名黎巴嫩人死亡。以色列总理内塔尼亚胡明确表示，以色列国防军将继续留驻黎巴嫩南部"安全区"。真主党发表声明表示"谨慎承诺"，但同时警告任何停火必须在全国全境执行。以特朗普已邀请内塔尼亚胡和黎巴嫩总统奥恩赴白宫举行会晤——这将是1983年以来的首次此类会谈。
+            </div>
+            <div class="card-source">
+                <a href="https://apnews.com/live/iran-war-israel-trump-04-16-2026">AP News · April 17, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-red">BREAKING</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">伊朗宣布霍尔木兹海峡"完全开放" · 特朗普感谢但强调封锁继续</a>
+            </div>
+            <div class="card-desc">
+                伊朗外长Abbas Araghchi于4月17日宣布，在以色列-黎巴嫩停火期间，霍尔木兹海峡"完全开放"，所有商业船只可通过伊朗指定的协调路线通行。特朗普随后在Truth Social上发文感谢伊朗，称海峡"完全开放，准备就绪"。然而特朗普同时强调，<strong>美国对伊朗港口和船只的海上封锁将继续有效，直至与伊朗的"交易100%完成"</strong>。伊朗议会发言人Mohammad Bagher Ghalibaf警告：如果美国不解除封锁，伊朗可能再次关闭霍尔木兹海峡。
+            </div>
+            <div class="card-source">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">CBS News · April 17, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-orange">核心争议</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">特朗普声称伊朗同意移交浓缩铀，伊朗立即否认</a>
+            </div>
+            <div class="card-desc">
+                特朗普在4月17日接受CBS电话采访时声称，伊朗"已经同意了一切"，包括将其浓缩铀移交给美国，且美国不会为此支付任何费用。他表示双方人员将合作运走铀材料，且不涉及美国地面部队。伊朗外交部发言人Esmaeil Baqaei随即通过国家电视台明确否认："伊朗的浓缩铀不会被转移到任何地方。"这一根本性分歧表明，美伊谈判仍面临重大障碍。
+            </div>
+            <div class="card-source">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">CBS News · April 17, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-blue">市场影响</span>
+            </div>
+            <div class="card-title">
+                <a href="https://tradingeconomics.com/commodity/brent-crude-oil">原油暴跌约10%：伊朗宣布海峡开放后油价创单日最大跌幅</a>
+            </div>
+            <div class="card-desc">
+                伊朗宣布霍尔木兹海峡开放后，国际油价应声暴跌。布伦特原油下跌7.57%至$91.87/桶（WTI $93.49/桶，-1.27%），创下近年来最大单日跌幅。特朗普在采访中为高油价辩护称，考虑到阻止伊朗获得核武器的重要性，$4/加仑的油价"并不是很高"。美伊为期两周的停火协议（原定4月20日到期）仍在继续，特朗普表示对谈判持乐观态度，并可能延长停火期限。
+            </div>
+            <div class="card-source">
+                <a href="https://tradingeconomics.com/commodity/brent-crude-oil">Trading Economics · April 17, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Economy Section -->
+    <div class="section">
+        <div class="section-title">📊 全球经济 · Global Economy</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-orange">IMF警告</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026">IMF下调2026年全球增长预期至3.1%，警告中东战争或致全球经济"脱轨"</a>
+            </div>
+            <div class="card-desc">
+                IMF于4月14日发布最新《世界经济展望》，将2026年全球增长预测下调至3.1%，较1月预测显著下调。IMF警告称，中东冲突——尤其是霍尔木兹海峡的实际关闭——正迫使全球经济预测全面修订。IMF首席经济学家指出："只有达成及时的政治解决方案，加上精心调整的国内政策和加强国际合作，世界经济才能实现软着陆。"亚行已上调中国2026年增长预期至4.6%（出口+高科技投资强劲），但全球整体前景趋于暗淡。
+            </div>
+            <div class="card-source">
+                <a href="https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026">IMF World Economic Outlook · April 14, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-purple">Trump政策</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/">特朗普升级钢铁、铝、铜关税，50%税率全面生效</a>
+            </div>
+            <div class="card-desc">
+                特朗普于4月2日发布总统公告，升级对钢铁、铝及其衍生产品的Section 232关税，同时将铜纳入同等50%税率。根据新框架，50%关税适用于完全或几乎完全由相关金属制成的产品的全部价值，而非仅对进口加工增值部分计税。铜关税于2025年7月首次征收，此番升级对全球金属贸易格局产生深远影响。新计算方式从根本上改变了进口商的成本暴露，对铜分销商打击尤甚。
+            </div>
+            <div class="card-source">
+                <a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/">White House Fact Sheet · April 2, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asia Markets Section -->
+    <div class="section">
+        <div class="section-title">🌏 亚太动态 · Asia Pacific</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-blue">市场日评</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.cnbc.com/2026/04/17/asia-markets-today-nikkei225-hang-seng-sensex-asx-ceasefire-oil.html">亚太市场谨慎静待中东局势明朗：日经-1.75%，恒生-1.01%</a>
+            </div>
+            <div class="card-desc">
+                4月17日亚太市场多数收跌。日经225指数下跌1.75%至58,475.90点，前一交易日创新高后出现获利了结；东证股价指数下跌1.41%至3,760.81点。韩国综合股价指数下跌0.55%至6,191.92点，但科斯达克指数上涨0.61%。恒生指数下跌1.01%，沪深300指数微跌0.17%。印度Nifty 50指数小幅上涨0.34%。杭州开发商Manycore Tech在香港交易所上市首日表现亮眼，开盘价较发行价飙升。投资者对中东脆弱停火的可持续性保持谨慎观望。
+            </div>
+            <div class="card-source">
+                <a href="https://www.cnbc.com/2026/04/17/asia-markets-today-nikkei225-hang-seng-sensex-asx-ceasefire-oil.html">CNBC Asia · April 17, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="section">
+        <div class="section-title">💻 科技 · Technology</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-purple">AI战局</span>
+            </div>
+            <div class="card-title">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">Anthropic年化收入超300亿美元 · 美国政府将其列入供应链黑名单</a>
+            </div>
+            <div class="card-desc">
+                据Air Street Press最新报告，Anthropic的年化收入在数周内从140亿美元飙升至190亿美元，并已超过300亿美元。与此同时，2月27日白宫下令所有联邦机构在六个月内逐步停用Anthropic产品，并将其指定为"供应链风险"。3月9日Anthropic起诉特朗普政府，质疑黑名单为报复性行为。3月26日联邦法院暂时阻止了政府进一步惩罚。美国政府批评Anthropic在五角大楼合同中坚持限制条款（如禁止自主武器和国内大规模监控），认为这些约束是供应商越权行为。
+            </div>
+            <div class="card-source">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">Air Street Press · April 12, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-red">历史首次</span>
+            </div>
+            <div class="card-title">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">伊朗无人机首次袭击商业云基础设施：AWS阿联酋 Bahrain数据中心被炸</a>
+            </div>
+            <div class="card-desc">
+                2026年3月初，伊朗使用无人机袭击了位于阿拉伯联合酋长国（UAE）和巴林境内的亚马逊云服务（AWS）数据中心。这是历史上首次针对商业云基础设施的蓄意军事攻击。伊朗官方媒体称这些设施被袭击是因为美国军方正在AWS上运行用于情报分析和战争模拟的AI系统（包括Anthropic的Claude模型）。阿联酋区域的三个AWS可用区中有两个同时中断，打破了标准的冗余模型。云基础设施已成为战争舞台。伊朗伊斯兰革命卫队（IRGC）还威胁将攻击阿布扎比的Stargate数据中心。美国最终决定不对此袭击进行军事反击。
+            </div>
+            <div class="card-source">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">Air Street Press · April 12, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-yellow">芯片战</span>
+            </div>
+            <div class="card-title">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">英伟达全面停止对华合规芯片生产 · AI算力地缘竞争升级</a>
+            </div>
+            <div class="card-desc">
+                据Air Street Press报告，英伟达（NVIDIA）已完全停止生产针对中国市场的合规芯片。与此同时，美国出现针对数据中心建设的NIMBYism（邻避运动）反弹。OpenAI完成了1100亿美元的历史性融资；xAI与SpaceX合并。Anthropic公布证据称三家中国AI实验室（DeepSeek, Moonshot, MiniMax）对其进行了"工业规模"的能力蒸馏（distillation）攻击。AI监管战升级：xAI起诉科罗拉多州，佛罗里达州调查OpenAI。
+            </div>
+            <div class="card-source">
+                <a href="https://press.airstreet.com/p/state-of-ai-april-2026-newsletter">Air Street Press · April 12, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sovereign Fund Section -->
+    <div class="section">
+        <div class="section-title">🏦 主权基金投资 · Sovereign Fund</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-yellow">穆巴达拉</span>
+            </div>
+            <div class="card-title">
+                <a href="https://gulfnews.com/business/markets/mubadala-aum-hits-dh14-trillion-uae-investments-drive-growth-1.500501295">穆巴达拉AUM突破1.4万亿迪拉姆（3850亿美元），同比增长17%</a>
+            </div>
+            <div class="card-desc">
+                穆巴达拉投资公司在2025年实现强劲增长，资产管理规模（AUM）同比增长17%至1.4万亿迪拉姆（约合3850亿美元）。资本部署达1430亿迪拉姆，同比增长20%；投资退出收益达1380亿迪拉姆，同比增长27%。五年年化回报率10.7%，十年年化回报率10.3%。穆巴达拉阿联酋本土投资平台为阿布扎比非石油GDP贡献450亿迪拉姆（占5.7%），并支持约98,000个就业岗位（自2021年以来增长51%）。CEO Khaldoon Al Mubarak表示，强劲表现得益于在阿联酋及海外关键增长领域的长期投资战略。
+            </div>
+            <div class="card-source">
+                <a href="https://gulfnews.com/business/markets/mubadala-aum-hits-dh14-trillion-uae-investments-drive-growth-1.500501295">Gulf News · April 9, 2026 ↗</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-yellow">穆巴达拉</span>
+            </div>
+            <div class="card-title">
+                <a href="https://enterpriseam.com/uae/2026/04/10/mubadala-hits-aed-1-4-tn-aum-uae-investments-contribute-5-7-of-abu-dhabi-non-oil-gdp/">穆巴达拉AI和先进技术投资持续加码，通过MGX平台推进人工智能项目</a>
+            </div>
+            <div class="card-desc">
+                穆巴达拉在全球范围内进行大规模资本配置，重点投资私募信贷、基础设施、医疗保健和技术领域。代表性交易包括与Fortress的10亿美元信贷合作、对全球教育和能源效率平台的投资，以及通过MGX继续支持人工智能项目。公司计划将亚洲投资敞口翻倍至投资组合的约25%，聚焦中国、印度和东南亚市场。穆巴达ala已不再披露传统年度利润数据，转而采用滚动内部收益率（IRR）作为多年度业绩衡量指标。
+            </div>
+            <div class="card-source">
+                <a href="https://enterpriseam.com/uae/2026/04/10/mubadala-hits-aed-1-4-tn-aum-uae-investments-contribute-5-7-of-abu-dhabi-non-oil-gdp/">Enterprise App · April 10, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trump Twitter Signals -->
+    <div class="section">
+        <div class="section-title">📣 Trump Truth Social · 市场信号</div>
+
+        <div class="news-card">
+            <div class="card-header">
+                <span class="tag tag-orange">Truth Social</span>
+            </div>
+            <div class="card-title">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">Trump感谢伊朗宣布海峡开放，但称封锁将持续至"交易100%完成"</a>
+            </div>
+            <div class="card-desc">
+                <strong>信号解读：</strong>Trump在Truth Social上表示"感谢伊朗"，确认海峡"完全开放，准备就绪"，但紧接着强调"美国封锁继续有效"。这一"胡萝卜+大棒"策略表明，Trump并不打算立即解除对伊朗的制裁压力。"交易100%完成"的表述暗示，Trump希望将伊朗核问题与更广泛的贸易协议捆绑。此外，Trump声称愿赴巴基斯坦签署协议，显示其对达成协议的迫切渴望，但浓缩铀问题上的根本分歧仍是最大障碍。<br><br>
+                <strong>市场影响：</strong>Trump的表态导致原油暴跌约10%，全球风险资产大涨，美股期货触及历史新高。霍尔木兹航运恢复正常预期正在压制能源价格溢价。
+            </div>
+            <div class="card-source">
+                <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">CBS News · April 17, 2026 ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-text">
+            Generated by WorkBuddy · ☀️ News for Wenyan<br>
+            <a href="https://marvinchima723.github.io/NewsforWenyan/">View Online Archive</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mini sparkline chart for indices
+    function drawSparkline(canvasId, data, color) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const w = canvas.offsetWidth;
+        const h = canvas.offsetHeight;
+        canvas.width = w * 2;
+        canvas.height = h * 2;
+        ctx.scale(2, 2);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        const step = w / (data.length - 1);
+        data.forEach((v, i) => {
+            const x = i * step;
+            const y = h - (v / Math.max(...data) * h * 0.8 + h * 0.1);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+    }
+
+    // Approximate sparklines based on recent trend data
+    drawSparkline('chart-nikkei', [56500, 56200, 56450, 56850, 58800, 58700, 58476], '#ff453a');
+    drawSparkline('chart-hangsung', [25800, 25600, 25700, 25950, 26000, 25800, 25700], '#ff453a');
+    drawSparkline('chart-shanghai', [3280, 3260, 3270, 3290, 3300, 3280, 3250], '#ff453a');
+    drawSparkline('chart-nifty', [22500, 22600, 22750, 22800, 22700, 22850, 22800], '#30d158');
+</script>
+</body>
+</html>

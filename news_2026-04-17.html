@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenyan 每日新闻 · 2026-04-17</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-secondary: #141418;
+            --bg-tertiary: #1c1c22;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent: #0a84ff;
+            --accent-secondary: #30d158;
+            --border: #2c2c2e;
+            --card-bg: #1c1c22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 0 50px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 50px;
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Executive Summary */
+        .summary-section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+        }
+
+        .summary-section h2 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .summary-item {
+            text-align: center;
+            padding: 16px 12px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+        }
+
+        .summary-item .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .summary-item .label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .summary-item .sub {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Key Insights */
+        .insights-intro {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-left: auto;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .card-content {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .card-content ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .card-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .positive {
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #ff453a;
+            font-weight: 600;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .data-table th {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-align: left;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table .num {
+            font-variant-numeric: tabular-nums;
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        /* Source footer */
+        .source-note {
+            text-align: right;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        .footer p {
+            color: var(--text-tertiary);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* McKinsey Style Key Takeaways */
+        .key-takeaway {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(48, 209, 88, 0.1) 100%);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .key-takeaway-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .key-takeaway-text {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-tag">Daily Intelligence</div>
+            <h1>Wenyan 每日新闻</h1>
+            <p class="header-date">2026年4月17日 · 周五 · 08:00</p>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="summary-section">
+            <h2>核心数据</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="value">3.1%</div>
+                    <div class="label">IMF全球增长预期</div>
+                    <div class="sub negative">↓ 下调</div>
+                </div>
+                <div class="summary-item">
+                    <div class="value">$98.21</div>
+                    <div class="label">布伦特原油 (美元/桶)</div>
+                    <div class="sub positive">+3.45%</div>
+                </div>
+                <div class="summary-item">
+                    <div class="value">90%+</div>
+                    <div class="label">霍尔木兹航运降幅</div>
+                    <div class="sub negative">封锁影响</div>
+                </div>
+                <div class="summary-item">
+                    <div class="value">26,394</div>
+                    <div class="label">恒生指数 (4月16日)</div>
+                    <div class="sub positive">+1.72%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <div class="insights-intro">
+            <strong style="color: var(--text-primary)">本期要点：</strong>
+            中东冲突持续冲击全球能源航运，霍尔木兹海峡航运量锐减90%以上；IMF警告全球经济增长放缓至3.1%；斯坦福AI指数报告出炉，中国在论文数量等基础指标领先但顶级模型仍由美国主导；主权基金投资重心从AI"建设者"转向"应用者"，韧性成为关键词。
+        </div>
+
+        <!-- AI & Technology -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🤖</div>
+                <h2 class="section-title">AI & 科技</h2>
+                <span class="section-subtitle">Artificial Intelligence</span>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🧠 斯坦福2026AI指数报告：中国多项指标领先</h3>
+                <div class="card-content">
+                    <p>斯坦福大学4月13日发布《2026人工智能指数报告》，中美AI格局呈现"各有千秋"态势：</p>
+                    <ul>
+                        <li><span class="highlight">论文发表数量、论文被引频次、专利总量</span>：中国占据优势</li>
+                        <li><span class="positive">顶级AI模型产出、高影响力专利</span>：美国仍保持领先</li>
+                        <li><span class="highlight">工业机器人安装量</span>：中国居全球前列</li>
+                        <li>AI模型性能差距：中美正在快速缩小</li>
+                        <li>企业AI普及率达88%，但对全球人才吸引力美国有所下降</li>
+                    </ul>
+                    <div class="key-takeaway">
+                        <div class="key-takeaway-label">关键洞察</div>
+                        <div class="key-takeaway-text">中国在AI"量"上已超越美国，但在"质"（顶级模型、高影响力创新）上仍需追赶。AI正在从技术竞争走向治理竞争。</div>
+                    </div>
+                </div>
+                <div class="source-note">来源：斯坦福大学HAI研究所 · 2026-04-13</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">⚔️ OpenAI vs Anthropic：激战升级</h3>
+                <div class="card-content">
+                    <ul>
+                        <li><span class="highlight">OpenAI</span>：收购AI安全初创Promptfoo，强化Frontier模型测试与治理；推出强化版Codex，扩大桌面端控制能力</li>
+                        <li><span class="positive">Anthropic</span>：即将发布Claude Opus 4.7（本周）；已签署<span class="highlight">3.5GW算力协议</span>；Claude Mythos锁定50家企业客户</li>
+                        <li><span class="highlight">中国力量</span>：智谱GLM-5.1同日向开源社区发布，编程能力超越GPT-5.4</li>
+                        <li>OpenAI内部备忘录炮轰Anthropic："以显著更小的曲线运营"</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：TechCrunch, TheAITrack · 2026-04-16</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🔮 AI行业趋势：从"建设者"到"应用者"</h3>
+                <div class="card-content">
+                    <p>Invesco主权资产调查揭示重要转变：</p>
+                    <ul>
+                        <li>主权基金投资重心从<span class="highlight">AI技术"建设者"</span>（大型科技公司）转向<span class="positive">"应用者"</span>（各行业AI落地企业）</li>
+                        <li>韧性(Resilience)成为投资关键词</li>
+                        <li>对美科技股估值过高和基准指数集中度风险保持警惕</li>
+                        <li>内部AI应用主要用于研究分析、文档起草、代码编写，尚未大规模进入核心投资决策</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Invesco EMEA · 2026-04-09</div>
+            </div>
+        </section>
+
+        <!-- Geopolitics -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🌍</div>
+                <h2 class="section-title">地缘政治</h2>
+                <span class="section-subtitle">Geopolitics</span>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">⚓ 霍尔木兹海峡：封锁第46天，航运锐减90%</h3>
+                <div class="card-content">
+                    <ul>
+                        <li>美国封锁伊朗港口后，<span class="negative">每日航运交通量下降超90%</span></li>
+                        <li>6艘商船在接近该区域后选择掉头折返</li>
+                        <li>美伊谈判僵局：铀浓缩暂停时间、核设施拆除、立即开放海峡等核心议题分歧巨大</li>
+                        <li>以色列与黎巴嫩（真主党）冲突仍在继续，地区外溢风险加剧</li>
+                    </ul>
+                    <div class="key-takeaway">
+                        <div class="key-takeaway-label">关键洞察</div>
+                        <div class="key-takeaway-text">霍尔木兹封锁已从能源市场蔓延至全球供应链，鞋类、家具、电子产品等终端消费品将受冲击。谈判窗口期约一周。</div>
+                    </div>
+                </div>
+                <div class="source-note">来源：CNN · 2026-04-14/15</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🤝 习近平密集会晤四国政要</h3>
+                <div class="card-content">
+                    <p>4月14-15日，习近平在北京人民大会堂先后会晤：</p>
+                    <ul>
+                        <li><span class="highlight">阿联酋阿布扎比王储哈立德</span> — 能源与合作</li>
+                        <li><span class="highlight">西班牙首相桑切斯</span> — 经贸与投资</li>
+                        <li><span class="highlight">俄罗斯外长拉夫罗夫</span> — 中俄战略协作</li>
+                        <li><span class="highlight">越共中央总书记</span> — 周边外交与"战略自主"话语</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：央视新闻 · 2026-04-16</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🛡️ 澳大利亚：10年增加530亿澳元国防支出</h3>
+                <div class="card-content">
+                    <p>澳大利亚政府宣布2026年国防战略：</p>
+                    <ul>
+                        <li>未来10年<span class="highlight">增加530亿澳元（381亿美元）</span>军费</li>
+                        <li>聚焦印太地区安全威胁</li>
+                        <li>增强海空力量投射能力</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：新华社 · 2026-04-16</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">☢️ 亚洲核不扩散：20国雅加达会议</h3>
+                <div class="card-content">
+                    <p>20多个亚洲无核武器国家政府代表于4月17日在雅加达召开会议，讨论：</p>
+                    <ul>
+                        <li>推动核裁军与防扩散机制</li>
+                        <li>应对当前地缘紧张局势</li>
+                        <li>加强区域安全合作框架</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Post Courier · 2026-04-17</div>
+            </div>
+        </section>
+
+        <!-- Global Economy -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📊</div>
+                <h2 class="section-title">全球经济</h2>
+                <span class="section-subtitle">Global Economy</span>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">📉 IMF下调全球增长预期至3.1%</h3>
+                <div class="card-content">
+                    <p>IMF《世界经济展望》4月报告核心结论：</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>指标</th>
+                                <th>2026年</th>
+                                <th>2027年</th>
+                                <th>变化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>全球GDP增长</td>
+                                <td class="num">3.1%</td>
+                                <td class="num">3.2%</td>
+                                <td class="num negative">↓ 下调</td>
+                            </tr>
+                            <tr>
+                                <td>全球通胀</td>
+                                <td class="num">小幅上升</td>
+                                <td class="num">恢复下降</td>
+                                <td class="num">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>主要风险：</p>
+                    <ul>
+                        <li class="negative">中东冲突持续或扩大</li>
+                        <li>地缘政治分裂加剧</li>
+                        <li>AI生产率提升不及预期</li>
+                        <li>贸易紧张再度升级</li>
+                    </ul>
+                    <div class="key-takeaway">
+                        <div class="key-takeaway-label">报告主题</div>
+                        <div class="key-takeaway-text">"Global Economy in the Shadow of War"（战争阴影下的全球经济）</div>
+                    </div>
+                </div>
+                <div class="source-note">来源：IMF · 2026-04-14</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🛢️ 原油市场：布伦特升至$98.21</h3>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>品种</th>
+                                <th>价格</th>
+                                <th>日变化</th>
+                                <th>年变化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>布伦特原油</td>
+                                <td class="num highlight">$98.21/桶</td>
+                                <td class="num positive">+3.45%</td>
+                                <td class="num negative">+44.51%</td>
+                            </tr>
+                            <tr>
+                                <td>WTI原油</td>
+                                <td class="num">$90-100区间</td>
+                                <td class="num">—</td>
+                                <td class="num negative">历史高位</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>EIA预测：4月布伦特-WTI价差峰值达$15/桶（生产中断最严重时期）</li>
+                        <li>霍尔木兹封锁持续压缩供应预期</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Trading Economics, EIA · 2026-04-16</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">📦 全球贸易：增长延续但脆弱性上升</h3>
+                <div class="card-content">
+                    <ul>
+                        <li>UNCTAD《全球贸易更新》：全球贸易增长延续，但脆弱性上升</li>
+                        <li>柬埔寨、埃及、越南、印尼作为贸易枢纽发挥稳定器作用</li>
+                        <li>关税政策不确定性持续扰动供应链</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：UNCTAD · 2026-04-07</div>
+            </div>
+        </section>
+
+        <!-- Asia Pacific -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🌏</div>
+                <h2 class="section-title">亚太</h2>
+                <span class="section-subtitle">Asia Pacific</span>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">📈 亚洲股市：中国Q1 GDP强劲，恒指大涨</h3>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>指数</th>
+                                <th>最新点位</th>
+                                <th>日变化</th>
+                                <th>YTD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>恒生指数</td>
+                                <td class="num highlight">26,394</td>
+                                <td class="num positive">+1.72%</td>
+                                <td class="num positive">+23.37%</td>
+                            </tr>
+                            <tr>
+                                <td>日经指数</td>
+                                <td class="num">—</td>
+                                <td class="num">—</td>
+                                <td class="num positive">+71.89%</td>
+                            </tr>
+                            <tr>
+                                <td>上证指数</td>
+                                <td class="num highlight">4,685</td>
+                                <td class="num negative">-0.34%</td>
+                                <td class="num">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><span class="positive">恒生指数</span>4月16日上涨1.72%，沪指同步大涨</li>
+                        <li>中国一季度GDP数据超预期强劲增长</li>
+                        <li>日经指数年初至今涨幅71.89%，表现最为亮眼</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Trading Economics, CNBC · 2026-04-16</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🏭 亚洲制造：数字化转型加速</h3>
+                <div class="card-content">
+                    <ul>
+                        <li>世界银行《东亚太平洋经济更新》：工业政策迈入数字化时代</li>
+                        <li>亚洲开发银行《2026亚洲发展展望》：中东冲突给发展中亚洲增长前景蒙上阴影</li>
+                        <li>早期稳定情景下，亚洲经济仍具韧性</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：World Bank, ADB · 2026-04-10</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🚢 亚太货运：关税与供应链重组</h3>
+                <div class="card-content">
+                    <ul>
+                        <li>Dimerco《亚太货运报告》：全球关税政策扰动货运流向</li>
+                        <li>东南亚（越南、印尼）承接部分产能转移</li>
+                        <li>区域内贸易走廊价值上升</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Dimerco · 2026-04-01</div>
+            </div>
+        </section>
+
+        <!-- Sovereign Fund Investment -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">💰</div>
+                <h2 class="section-title">主权基金投资</h2>
+                <span class="section-subtitle">Sovereign Fund Investment</span>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🏛️ 主权基金投资新范式：从"建设者"到"应用者"</h3>
+                <div class="card-content">
+                    <ul>
+                        <li>Invesco调查（0.8万亿美元主权资产样本）：<span class="highlight">AI仍是最快增长的主题投资领域</span></li>
+                        <li>投资重心转移：从AI技术"建设者"转向<span class="positive">"应用者"</span>（将AI落地各行业的公司）</li>
+                        <li>投资机会集扩大：不再局限于少数科技巨头，而是遍布各行业</li>
+                    </ul>
+                    <div class="key-takeaway">
+                        <div class="key-takeaway-label">投资逻辑</div>
+                        <div class="key-takeaway-text">主权基金相信：AI的真正价值不在于技术本身，而在于对传统行业的赋能改造。"应用者"将分享AI红利的大部分果实。</div>
+                    </div>
+                </div>
+                <div class="source-note">来源：Invesco EMEA · 2026-04-09</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🛡️ 主权基金的"韧性"策略</h3>
+                <div class="card-content">
+                    <ul>
+                        <li><span class="negative">警惕估值泡沫</span>：对美国科技股估值过高和基准指数集中度风险保持谨慎</li>
+                        <li>预期AI投资可能经历"叙事驱动→泡沫→洗牌→真正赢家"的典型周期</li>
+                        <li>内部AI应用采取封闭测试环境，重点考虑安全、可审计性和运营稳定性</li>
+                        <li>尚未将AI大规模应用于核心投资决策</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Invesco EMEA · 2026-04-09</div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🌏 亚洲主权基金：AI竞赛加速</h3>
+                <div class="card-content">
+                    <ul>
+                        <li><span class="highlight">Khazanah（马来西亚主权基金）</span>：深耕柔佛数据走廊，布局AI基础设施</li>
+                        <li>东南亚主权基金普遍加大对数据中心、AI算力领域的投资</li>
+                        <li>Arc Media Global：亚洲主权基金正重塑AI投资格局</li>
+                    </ul>
+                </div>
+                <div class="source-note">来源：Lensbridge · 2026-02</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-brand">Wenyan 每日新闻</p>
+            <p>生成时间：2026-04-17 08:00</p>
+            <p style="margin-top: 16px; font-size: 11px; color: var(--text-tertiary);">
+                本报告由 AI 自动生成 · 数据来源：公开新闻与研究报告
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

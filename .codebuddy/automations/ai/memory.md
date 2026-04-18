@@ -38,3 +38,24 @@
 - 亚洲SWF单季度$101亿资本流入；日经指数年初至今累涨71.89%
 
 **技术备注：** 本次使用Python SMTP（send_email.py）发送成功，exit 0。
+
+## 2026-04-17 · 执行时间 08:00
+
+**状态：** ✅ 成功（sendmail exit 0）
+
+**执行摘要：**
+- 搜索过去24小时AI+地缘政治+主权基金新闻
+- 生成Apple风格深色主题HTML报告（news_2026-04-17.html）
+- 发送至 yoyozwy@gmail.com + marvin.cmma@gmail.com（sendmail）
+- 更新 news_sources_urls.md
+
+**本期重点：**
+- 斯坦福2026 AI指数报告：中国论文/专利领先，但顶级模型美国仍强
+- OpenAI vs Anthropic激战升级：OpenAI收购Promptfoo强化安全，Anthropic签署3.5GW算力协议，Claude Opus 4.7即将发布
+- 智谱GLM-5.1开源，编程能力超越GPT-5.4
+- 霍尔木兹封锁第46天：航运量下降90%以上，美伊谈判僵局
+- IMF下调2026年全球增长至3.1%，布伦特原油升至$98.21/桶
+- 恒生指数升至26,394点（+1.72%），日经YTD累涨71.89%
+- 主权基金投资重心从AI"建设者"转向"应用者"，韧性成为关键词
+
+**技术备注：** 使用Python sendmail发送，exit 0。

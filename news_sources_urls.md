@@ -222,6 +222,52 @@
 
 ---
 
+## 2026-04-17
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 霍尔木兹封锁第46天 · 航运量下降90%以上 | https://www.cnn.com/2026/04/14/world/live-news/iran-war-blockade-us-trump | CNN |
+| ⚔️ 地缘政治 | 习近平密集会晤四国政要（阿联酋/西班牙/俄罗斯/越南） | https://news.cctv.com/2026/04/16/ARTIY9GUYemhEcvXMawYWBKz260416.shtml | 央视新闻 |
+| ⚔️ 地缘政治 | 澳大利亚宣布10年增加530亿澳元国防支出 | https://english.news.cn/20260417/29fb419bda5f41b8a5e6bbb28b73a2cd/c.html | 新华社 |
+| ⚔️ 地缘政治 | 亚洲20多国雅加达讨论核不扩散 | https://www.postcourier.com.pg/asia-pacific-countries-to-meet-in-jakarta-to-discuss-security-concerns-related-to-nuclear-weapons/ | Post Courier |
+| 📊 全球经济 | IMF下调2026年全球增长至3.1% · 中东战争阴影 | https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026 | IMF |
+| 📊 全球经济 | 布伦特原油升至$98.21/桶 · 单日+3.45% | https://tradingeconomics.com/commodity/brent-crude-oil | Trading Economics |
+| 📊 全球经济 | UNCTAD全球贸易更新：增长延续但脆弱性上升 | https://unctad.org/publication/global-trade-update-april-2026-global-trade-growth-continues-fragility-rises | UNCTAD |
+| 💻 科技 | 斯坦福2026 AI指数报告：中国论文/专利领先，美国顶级模型仍强 | https://news.cctv.com/2026/04/15/ARTIigfeEmTEIzE50U21Z5OL260415.shtml | 央视新闻 |
+| 💻 科技 | OpenAI vs Anthropic激战升级：Codex强化、Claude Opus 4.7将发布 | https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/ | TechCrunch |
+| 💻 科技 | Anthropic签署3.5GW算力协议 | https://ai-infra.jimmysong.io/zh/brief/2026-04-10/ | AI Infra |
+| 💻 科技 | 智谱GLM-5.1开源 · 编程能力超越GPT-5.4 | https://whatllm.org/blog/new-ai-models-april-2026 | whatllm.org |
+| 🌏 亚太动态 | 恒生指数升至26,394点 · 单日+1.72% | https://tradingeconomics.com/hong-kong/stock-market | Trading Economics |
+| 🌏 亚太动态 | 中国Q1 GDP强劲增长 · 恒指沪指大涨 | https://invezz.com/news/2026/04/16/hang-seng-and-shanghai-composite-indices-jump-as-chinas-gdp-surges/ | Invezz |
+| 🌏 亚太动态 | 亚洲开发银行2026展望：冲突给发展中亚洲蒙上阴影 | https://www.adb.org/outlook/editions/april-2026 | ADB |
+| 🏦 主权基金 | 主权基金投资重心从AI"建设者"转向"应用者" | https://www.invesco.com/emea/en/insights/sovereign-investors-rush-to-gold-broaden-their-focus-to-ai-adopters.html | Invesco |
+| 🏦 主权基金 | 亚洲主权基金AI竞赛：Khazanah深耕数据走廊 | https://lensbridge.com/blog/southeast-asia-sovereign-wealth-funds-ai-race | Lensbridge |
+
+*URLs verified on 2026-04-17*
+
+---
+
+## 2026-04-18
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 以色列-黎巴嫩10天停火正式生效 | https://apnews.com/live/iran-war-israel-trump-04-16-2026 | AP News |
+| ⚔️ 地缘政治 | 伊朗宣布霍尔木兹海峡"完全开放" · 特朗普感谢但封锁继续 | https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/ | CBS News |
+| ⚔️ 地缘政治 | 特朗普声称伊朗同意移交浓缩铀 · 伊朗立即否认 | https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/ | CBS News |
+| 📊 全球经济 | IMF下调2026年全球增长预期至3.1% · 警告中东战争或致全球经济"脱轨" | https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026 | IMF |
+| 📊 全球经济 | 特朗普升级钢铁、铝、铜关税，50%税率全面生效 | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 📊 全球经济 | 原油暴跌约10%：霍尔木兹开放新闻后油价创单日最大跌幅 | https://tradingeconomics.com/commodity/brent-crude-oil | Trading Economics |
+| 🌏 亚太动态 | 亚太市场谨慎静待中东局势明朗：日经-1.75%，恒生-1.01% | https://www.cnbc.com/2026/04/17/asia-markets-today-nikkei225-hang-seng-sensex-asx-ceasefire-oil.html | CNBC |
+| 💻 科技 | Anthropic年化收入超300亿美元 · 美国政府将其列入供应链黑名单 | https://press.airstreet.com/p/state-of-ai-april-2026-newsletter | Air Street Press |
+| 💻 科技 | 伊朗无人机首次袭击商业云基础设施：AWS阿联酋/Bahrain数据中心被炸 | https://press.airstreet.com/p/state-of-ai-april-2026-newsletter | Air Street Press |
+| 💻 科技 | 英伟达全面停止对华合规芯片生产 | https://press.airstreet.com/p/state-of-ai-april-2026-newsletter | Air Street Press |
+| 🏦 穆巴达拉 | 穆巴达拉AUM突破1.4万亿迪拉姆（3850亿美元），同比增长17% | https://gulfnews.com/business/markets/mubadala-aum-hits-dh14-trillion-uae-investments-drive-growth-1.500501295 | Gulf News |
+| 🏦 穆巴达拉 | 穆巴达拉AI和先进技术投资持续加码，MGX平台推进人工智能项目 | https://enterpriseam.com/uae/2026/04/10/mubadala-hits-aed-1-4-tn-aum-uae-investments-contribute-5-7-of-abu-dhabi-non-oil-gdp/ | EnterpriseAM |
+
+*URLs verified on 2026-04-18*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
@@ -233,3 +279,6 @@
 | 🏦 穆巴达拉 | ADNOC计划100亿美元收购穆巴达拉能源资产（战略退出能源转向科技） | https://www.akm.ru/eng/news/emirati-adnoc-plans-to-acquire-mubadala-energy-assets/ | AK&M | 2026-04-05 |
 | 🏦 穆巴达拉 | 穆巴达拉7500万美元投资WHOOP，进军健康可穿戴领域 | https://secretabudhabi.ae/mubadala-invests-75-million-in-whoop/ | Secret Abu Dhabi | 2026-04-01 |
 | 🏦 穆巴达拉 | 穆巴达拉出售CoolIT少数股权给Ecolab，估值47.5亿美元 | https://www.mubadala.com/en/news/mubadala-agrees-to-sell-minority-stake-in-coolit-to-ecolab-in-kkr-led-4-75-billion-transaction | 穆巴达拉官网 | 2026-04-03 |
+| 🏦 穆巴达拉 | 穆巴达拉资管规模增长17%至3850亿美元（2025年投资390亿美元创七年新高） | https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/ | AGBI | 2026-04-09 |
+| 🏦 穆巴达拉 | 战争持续下穆巴达拉保持投资但策略开始转变（Q1部署250亿美元） | https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/ | EnterpriseAM | 2026-04-14 |
+| 🏦 穆巴达拉 | 穆巴达拉170亿美元投资Property Finder（BECO Capital跟投） | https://www.mubadala.com/ | 穆巴达拉官网 | 2026-02-12 |
