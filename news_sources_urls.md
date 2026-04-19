@@ -268,6 +268,33 @@
 
 ---
 
+## 2026-04-19
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 伊朗重新封锁霍尔木兹 · 伊朗快艇向油轮开火 | https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/ | CBS News |
+| ⚔️ 地缘政治 | 以色列-黎巴嫩10天停火生效 · 地区局势仍脆弱 | https://apnews.com/live/iran-war-israel-trump-04-16-2026 | AP News |
+| ⚔️ 地缘政治 | 美伊谈判陷入僵局 · 特朗普拒绝解除海军封锁 | https://www.telegraph.co.uk/world-news/2026/04/18/iran-war-latest-news-trump-ceasefire-strait-of-hormuz-open/ | The Telegraph |
+| 📊 全球经济 | IMF警告：全球经济的"脱轨"风险 | https://www.npr.org/2026/04/18/nx-s1-5786835/amid-wars-and-soaring-energy-prices-imf-says-the-global-economy-is-on-the-brink-of-recession | NPR |
+| 📊 全球经济 | 布伦特原油暴跌9.07%至$90.38/桶 | https://tradingeconomics.com/commodity/brent-crude-oil | Trading Economics |
+| 📊 全球经济 | 特朗普维持50%铜关税 · 全值计税全面实施 | https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-strengthens-tariffs-on-steel-aluminum-and-copper-imports/ | White House |
+| 🌏 亚太动态 | 亚太市场4月17日普跌 · 日经-0.90% 恒生-1.40% | https://www.icmarkets-vnk.com/blog/friday-17th-april-2026-asia-markets-slip-as-middle-east-caution-offsets-wall-street-record-rally/ | IC Markets |
+| 🌏 亚太动态 | AGIBOT宣布2026为"部署元年" — 具身智能商业化提速 | https://www.prnewswire.com/apac/news-releases/agibot-declares-2026-deployment-year-one--at-apc-2026-accelerating-the-era-of-embodied-ai-productivity-302746179.html | PRNewswire |
+| 💻 科技 | DeepSeek洽谈3亿美元融资 · 估值约100亿美元 | https://aitoolly.com/ai-news/2026-04-18 | AIToolly |
+| 💻 科技 | AI编程工具Cursor洽谈500亿美元融资 | https://aitoolly.com/ai-news/2026-04-18 | AIToolly |
+| 💻 科技 | OpenAI关闭Sora视频项目 · 高管Bill Peebles离职 | https://aitoolly.com/ai-news/2026-04-18 | AIToolly |
+| 💻 科技 | Netflix本月推出垂直短视频 · 整合AI创作技术 | https://aitoolly.com/ai-news/2026-04-18 | AIToolly |
+| 💻 科技 | Meta与Broadcom合作开发1GW MTIA芯片 · 2nm工艺 | https://oplexa.com/meta-broadcom-ai-chip-deal-2026/ | OPlexa |
+| 💻 科技 | Hesai发布全球首款彩色激光雷达传感器 | https://aitoolly.com/ai-news/2026-04-18 | AIToolly |
+| 🏦 主权基金 | 海湾主权基金Q1维持250亿美元投资节奏 | https://harici.com.tr/en/gulf-sovereign-wealth-funds-maintain-25-billion-investment-pace-despite-regional-conflict/ | Harici |
+| 🏦 主权基金 | 主权基金投资重心从AI"建设者"转向"应用者" | https://www.invesco.com/emea/en/insights/sovereign-investors-rush-to-gold-broaden-their-focus-to-ai-adopters.html | Invesco |
+| 🏦 穆巴达拉 | 穆巴达拉推进UAE-Africa投资走廊 | https://thevoiceofafrica.com/2026/04/18/mubadala-and-the-uae-africa-investment-corridor-building-the-future-through-strategic-capital-and-institutional-bridges/ | The Voice of Africa |
+| 🏦 穆巴达拉 | 战争持续下穆巴达拉保持投资节奏 · Q1部署250亿美元 | https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/ | EnterpriseAM |
+
+*URLs verified on 2026-04-19*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |
