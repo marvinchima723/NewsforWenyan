@@ -295,6 +295,26 @@
 
 ---
 
+## 2026-04-25
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊谈判破裂：Trump取消特使行程，伊朗外长提前离巴 | https://apnews.com/article/us-iran-war-hormuz-israel-pakistan-ceasefire-april-25-2026-7e52d208e7b517c615fc178280ca57d0 | AP News |
+| ⚔️ 地缘政治 | Trump警告：军事行动升级风险加剧 | https://fortune.com/2026/04/25/trump-witkoff-kushner-pakistan-ceasefire-talks-iran-war-hormuz/ | Fortune |
+| ⚔️ 地缘政治 | 以色列-黎巴嫩停火动摇：双方互相发动袭击 | https://www.thenationalnews.com/news/mena/2026/04/25/live-us-iran-war-islamabad-talks/ | The National |
+| 🤖 科技 | Google宣布向Anthropic投资高达400亿美元 | https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html | CNBC |
+| 🤖 科技 | 2026年4月AI密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro | https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/ | Kersai |
+| 🤖 科技 | Google发布新AI agents挑战OpenAI和Anthropic | https://www.mercurynews.com/2026/04/22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic/ | The Mercury News |
+| 🏦 穆巴达拉 | 阿布扎比考虑合并L'Imad和Mubadala中国资产 | https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/ | AGBI |
+| 🏦 主权基金 | 全球主权基金资产管理规模首次突破15万亿美元 | https://globalswf.beehiiv.com/p/global-swf-2026-annual-report | Global SWF |
+| 🏦 穆巴达拉 | 穆巴达拉深化亚洲布局：整合中国资产+推进UAE-Africa走廊 | https://enterpriseam.com/uae/2026/04/20/this-morning-abu-dhabi-eyes-bringing-mubadala-and-limads-china-focused-assets-under-one-umbrella-reports-swirl-of-uae-egypt-eyeing-moroccan-tourism/ | EnterpriseAM |
+| 📊 全球经济 | IMF中东地区经济展望：2026年4月更新 | https://www.imf.org/-/media/files/publications/reo/mcd-cca/2026/english/text.pdf | IMF |
+| 📊 全球经济 | EIA：第一季度原油和石油产品价格大幅上涨 | https://www.eia.gov/todayinenergy/detail.php?id=67424 | EIA |
+
+*URLs verified on 2026-04-25*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |

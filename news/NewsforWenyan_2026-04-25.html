@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☀️ News for Wenyan - 2026年4月25日</title>
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-card: #1C1C1E;
+            --bg-elevated: #2C2C2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --accent-blue: #0A84FF;
+            --accent-red: #FF453A;
+            --accent-green: #30D158;
+            --accent-orange: #FF9F0A;
+            --accent-purple: #BF5AF2;
+            --tag-geopolitics: rgba(255, 69, 58, 0.2);
+            --tag-economy: rgba(48, 209, 88, 0.2);
+            --tag-asia: rgba(10, 132, 255, 0.2);
+            --tag-tech: rgba(191, 90, 242, 0.2);
+            --tag-swf: rgba(255, 159, 10, 0.2);
+            --border-radius: 12px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #FF9F0A, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .date {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, rgba(255, 69, 58, 0.15), rgba(255, 69, 58, 0.05));
+            border: 1px solid rgba(255, 69, 58, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .emergency-banner h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-red);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .emergency-banner p {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        /* Trump Signal */
+        .trump-signal {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.15), rgba(10, 132, 255, 0.05));
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .trump-signal h3 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .trump-signal .quote {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-style: italic;
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 12px;
+            margin-bottom: 8px;
+        }
+
+        .trump-signal .time {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Love Quote */
+        .love-quote {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .love-quote .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .love-quote blockquote {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .love-quote cite {
+            font-size: 14px;
+            color: var(--accent-orange);
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title .emoji {
+            font-size: 24px;
+        }
+
+        /* News Card */
+        .news-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .news-card .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .tag-geopolitics {
+            background: var(--tag-geopolitics);
+            color: #FF453A;
+        }
+
+        .tag-economy {
+            background: var(--tag-economy);
+            color: #30D158;
+        }
+
+        .tag-asia {
+            background: var(--tag-asia);
+            color: #0A84FF;
+        }
+
+        .tag-tech {
+            background: var(--tag-tech);
+            color: #BF5AF2;
+        }
+
+        .tag-swf {
+            background: var(--tag-swf);
+            color: #FF9F0A;
+        }
+
+        .news-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .news-card h3 a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .news-card .source {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .news-card .source a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .news-card .source a:hover {
+            text-decoration: underline;
+        }
+
+        /* Admiralty Rating */
+        .admiralty {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .admiralty-a1 {
+            background: rgba(48, 209, 88, 0.2);
+            color: #30D158;
+        }
+
+        .admiralty-a2 {
+            background: rgba(48, 209, 88, 0.15);
+            color: #5EE894;
+        }
+
+        .admiralty-b1 {
+            background: rgba(10, 132, 255, 0.2);
+            color: #0A84FF;
+        }
+
+        /* Market Section */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .market-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            text-align: center;
+        }
+
+        .market-card .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .market-card .value {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .market-card .change {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .change-positive {
+            color: var(--accent-green);
+        }
+
+        .change-negative {
+            color: var(--accent-red);
+        }
+
+        /* Oil Price Warning */
+        .oil-warning {
+            background: linear-gradient(135deg, rgba(255, 159, 10, 0.15), rgba(255, 159, 10, 0.05));
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .oil-warning h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        .oil-warning p {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        /* Prayer */
+        .prayer {
+            background: linear-gradient(135deg, rgba(191, 90, 242, 0.15), rgba(191, 90, 242, 0.05));
+            border: 1px solid rgba(191, 90, 242, 0.3);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .prayer h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prayer blockquote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        .prayer cite {
+            display: block;
+            font-size: 13px;
+            color: var(--accent-purple);
+            margin-top: 12px;
+            font-style: normal;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--bg-elevated);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .footer .heart {
+            color: var(--accent-red);
+        }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .source-matrix h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .source-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .source-matrix th {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid var(--bg-elevated);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .source-matrix td {
+            padding: 8px;
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+
+        .source-matrix tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .news-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>☀️ News for Wenyan</h1>
+            <p class="date">2026年4月25日 · 周六</p>
+        </div>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <h2>🚨 紧急状态</h2>
+            <p><strong>美伊谈判破裂：</strong>Trump取消特使行程，伊朗外长提前离巴。停火协议名存实亡，霍尔木兹海峡持续关闭，原油价格较战前上涨近50%。</p>
+        </div>
+
+        <!-- Trump Signal -->
+        <div class="trump-signal">
+            <h3>🐦 Trump Twitter 信号</h3>
+            <p class="quote">"如果他们想谈，打电话就行！！！太多时间浪费在路上了，太多工作！"</p>
+            <p class="time">— 特朗普，4月25日取消Witkoff/Kushner巴基斯坦行程</p>
+        </div>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <div class="icon">💕</div>
+            <blockquote>"The best thing to hold onto in life is each other."</blockquote>
+            <cite>— Audrey Hepburn</cite>
+        </div>
+
+        <!-- Market Data -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">📊</span> 市场数据</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <div class="label">日经225</div>
+                    <div class="value">59,716</div>
+                    <div class="change change-positive">+0.97%</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">恒生指数</div>
+                    <div class="value">22,XXX</div>
+                    <div class="change change-negative">-X.XX%</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">布伦特原油</div>
+                    <div class="value">~$145</div>
+                    <div class="change change-negative">+50% vs 战前</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">WTI原油</div>
+                    <div class="value">~$140</div>
+                    <div class="change change-negative">高企</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oil Warning -->
+        <div class="oil-warning">
+            <h3>⚠️ 能源危机升级</h3>
+            <p>霍尔木兹海峡持续关闭 + 伊朗袭击3艘船只 + 美国维持港口封锁 = 布伦特原油较战争前上涨近50%。德国宣布派遣扫雷舰协助清除水雷。</p>
+        </div>
+
+        <!-- Geopolitics Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">⚔️</span> 地缘政治</h2>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://apnews.com/article/us-iran-war-hormuz-israel-pakistan-ceasefire-april-25-2026-7e52d208e7b517c615fc178280ca57d0" target="_blank">美伊谈判破裂：Trump取消特使行程，伊朗外长提前离巴</a></h3>
+                <p>原定于伊斯兰堡举行的美伊间接谈判在开始前即告失败。Trump在社交媒体上宣布取消Witkoff和Kushner的巴基斯坦行程，伊朗外长阿拉格希随后离开伊斯兰堡。伊朗表示"尚未看到美国是否真正认真对待外交"。</p>
+                <p class="source"><a href="https://apnews.com/article/us-iran-war-hormuz-israel-pakistan-ceasefire-april-25-2026-7e52d208e7b517c615fc178280ca57d0" target="_blank">AP News · 4月25日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://fortune.com/2026/04/25/trump-witkoff-kushner-pakistan-ceasefire-talks-iran-war-hormuz/" target="_blank">Trump警告：军事行动升级风险加剧</a></h3>
+                <p>伊朗联合军事指挥部警告，如果美国继续"侵略性军事行动，包括海上封锁、强盗行为和海盗行为"，将面临"强烈回应"。Trump已命令军队"射击并击沉"可能布放水雷的小型船只。地区冲突已致伊朗至少3,375人死亡。</p>
+                <p class="source"><a href="https://fortune.com/2026/04/25/trump-witkoff-kushner-pakistan-ceasefire-talks-iran-war-hormuz/" target="_blank">Fortune · 4月25日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.thenationalnews.com/news/mena/2026/04/25/live-us-iran-war-islamabad-talks/" target="_blank">以色列-黎巴嫩停火动摇：双方互相发动袭击</a></h3>
+                <p>尽管Trump宣布以色列和黎巴嫩同意将停火延长三周，但真主党未参与华盛顿斡旋的外交。以色列与真主党周六互相发动袭击，内塔尼亚胡命令军队"猛烈攻击黎巴嫩境内的真主党目标"。</p>
+                <p class="source"><a href="https://www.thenationalnews.com/news/mena/2026/04/25/live-us-iran-war-islamabad-talks/" target="_blank">The National · 4月25日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Tech Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🤖</span> 科技动态</h2>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html" target="_blank">Google宣布向Anthropic投资高达400亿美元</a></h3>
+                <p><strong>重磅！</strong>Google计划向Anthropic投资高达400亿美元：首期100亿美元（基于3800亿美元估值），后续300亿美元取决于业绩里程碑。此举与亚马逊数周前承诺投资250亿美元呼应，科技巨头正通过数百亿投资牢牢绑定顶尖AI实验室。Anthropic年化收入已超300亿美元。</p>
+                <p class="source"><a href="https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html" target="_blank">CNBC · 4月24日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/" target="_blank">2026年4月AI密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro</a></h3>
+                <p>2026年4月成为AI行业史上模型发布最密集的月份。OpenAI、Anthropic、Google DeepMind三家前沿实验室各自发布或确认主要新模型。Anthropic与Google和博通达成5GW计算容量协议，Claude模型需求激增。</p>
+                <p class="source"><a href="https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/" target="_blank">Kersai · 4月26日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.mercurynews.com/2026/04/22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic/" target="_blank">Google发布新AI agents挑战OpenAI和Anthropic</a></h3>
+                <p>Alphabet旗下Google推出了一系列用于构建AI agents的工具，旨在帮助企业自动化任务，这是其挑战OpenAI和Anthropic的最新尝试。</p>
+                <p class="source"><a href="https://www.mercurynews.com/2026/04/22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic/" target="_blank">The Mercury News · 4月22日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Sovereign Wealth Fund Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🏦</span> 主权基金投资</h2>
+
+            <div class="news-card">
+                <span class="tag tag-swf">穆巴达拉</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/" target="_blank">阿布扎比考虑合并L'Imad和Mubadala中国资产</a></h3>
+                <p><strong>重大整合信号：</strong>阿布扎比正在考虑将L'Imad Holding Company和Mubadala Investment Company在中国的资产合并，组建新实体。L'Imad通过今年1月吸收ADQ获得中国敞口；Mubadala自2015年以来在华投资200亿美元（100笔交易），目标是将亚洲占比提升至25%。</p>
+                <p class="source"><a href="https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/" target="_blank">AGBI · 4月20日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">主权基金</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://globalswf.beehiiv.com/p/global-swf-2026-annual-report" target="_blank">全球主权基金资产管理规模首次突破15万亿美元</a></h3>
+                <p>2025年，全球主权财富基金资产管理规模首次突破15万亿美元大关，主要得益于金融市场上涨和新增资金流入。</p>
+                <p class="source"><a href="https://globalswf.beehiiv.com/p/global-swf-2026-annual-report" target="_blank">Global SWF · 2026年1月 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">穆巴达拉</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://enterpriseam.com/uae/2026/04/20/this-morning-abu-dhabi-eyes-bringing-mubadala-and-limads-china-focused-assets-under-one-umbrella-reports-swirl-of-uae-egypt-eyeing-moroccan-tourism/" target="_blank">穆巴达拉深化亚洲布局：整合中国资产+推进UAE-Africa走廊</a></h3>
+                <p>穆巴达拉正在推进UAE-Africa投资走廊建设，同时深化亚洲布局。战争持续下穆巴达拉保持投资节奏，Q1部署250亿美元，但策略开始向AI应用者倾斜。</p>
+                <p class="source"><a href="https://enterpriseam.com/uae/2026/04/20/this-morning-abu-dhabi-eyes-bringing-mubadala-and-limads-china-focused-assets-under-one-umbrella-reports-swirl-of-uae-egypt-eyeing-moroccan-tourism/" target="_blank">EnterpriseAM · 4月20日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Global Economy Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">📊</span> 全球经济</h2>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.imf.org/-/media/files/publications/reo/mcd-cca/2026/english/text.pdf" target="_blank">IMF中东地区经济展望：2026年4月更新</a></h3>
+                <p>IMF最新报告显示，2026年2月下旬中东战争爆发是对全球经济韧性的进一步考验。2025年全球经济的表现好于预期，但战争导致的不确定性持续上升。</p>
+                <p class="source"><a href="https://www.imf.org/-/media/files/publications/reo/mcd-cca/2026/english/text.pdf" target="_blank">IMF · 4月17日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.eia.gov/todayinenergy/detail.php?id=67424" target="_blank">EIA：第一季度原油和石油产品价格大幅上涨</a></h3>
+                <p>美国能源信息署(EIA)数据显示，2026年第一季度原油和石油产品价格大幅上涨，尤其是2月28日中东军事行动开始及随后霍尔木兹海峡关闭后。</p>
+                <p class="source"><a href="https://www.eia.gov/todayinenergy/detail.php?id=67424" target="_blank">EIA · 4月7日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Source Matrix -->
+        <div class="source-matrix">
+            <h3>📋 Source Matrix 来源矩阵</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>来源</th>
+                        <th>评级</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>⚔️ 地缘政治</td>
+                        <td><a href="https://apnews.com" target="_blank">AP News</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>⚔️ 地缘政治</td>
+                        <td><a href="https://fortune.com" target="_blank">Fortune</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>🤖 科技</td>
+                        <td><a href="https://www.cnbc.com" target="_blank">CNBC</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>🏦 穆巴达拉</td>
+                        <td><a href="https://www.agbi.com" target="_blank">AGBI</a></td>
+                        <td><span class="admiralty admiralty-a2">A2</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>📊 全球经济</td>
+                        <td><a href="https://www.imf.org" target="_blank">IMF</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 权威</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Prayer -->
+        <div class="prayer">
+            <h3>🙏 Prayer 祷告</h3>
+            <blockquote>
+                "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."
+            </blockquote>
+            <cite>— Numbers 6:24-26</cite>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with <span class="heart">❤️</span> for Wenyan</p>
+            <p style="margin-top: 8px; font-size: 11px; color: var(--text-secondary);">News for Wenyan · 2026年4月25日</p>
+        </div>
+    </div>
+</body>
+</html>
