@@ -315,6 +315,37 @@
 
 ---
 
+## 2026-04-25
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 美伊谈判进入最后冲刺阶段，霍尔木兹局势仍高度紧张 | https://news.china.com.cn/2026-04/22/content_118451202.shtml | 中国新闻网 |
+| ⚔️ 地缘政治 | 美国众议院通过MATCH法案，对华芯片管制全面升级 | https://xueqiu.com/1335687090/385788996 | 雪球 |
+| ⚔️ 地缘政治 | 斯坦福报告：中美顶尖AI模型性能差距已缩小至2.7% | https://news.qq.com/rain/a/20260422A07DLF00 | 腾讯新闻 |
+| 📊 全球经济 | 美伊和谈预期改善，布伦特原油4月24日暴跌3.14%至$105.78 | https://www.jujindata.com/commodity/detail/crude-oil-brent | 聚金数据 |
+| 📊 全球经济 | 俄罗斯央行宣布年内第三次降息50个基点至14.5% | https://news.qq.com/rain/a/20260425A025AN00 | 腾讯新闻 |
+| 📊 全球经济 | 上交所、北交所修订交易规则，盘后固定价格交易范围扩大至全部A股 | https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml | 新浪财经 |
+| 📊 全球经济 | 英特尔Q1营收超预期同比增7%，数据中心与AI业务营收增22% | https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml | 新浪财经 |
+| 🌏 亚太动态 | A股4月24日走势分化，锂矿概念爆发 | https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml | 新浪财经 |
+| 🌏 亚太动态 | 上海交大安泰发布《2026"人工智能+"行业发展蓝皮书》 | https://difang.gmw.cn/sh/2026-04/24/content_38728423.htm | 光明网 |
+| 💻 科技 | DeepSeek V4正式发布：1.6T参数MoE全开源，华为昇腾首发适配 | https://www.ai-insight.org/reports/deepseek-v4-2026 | AI Insight |
+| 💻 科技 | OpenAI发布GPT-5.5：最智能、最直觉的旗舰模型 | https://www.caixin.com/2026-04-25/102437791.html | 财新网 |
+| 💻 科技 | 库克9月卸任，约翰·特努斯接任苹果CEO | https://aitoolly.com/zh/ai-news/article/2026-04-25-apple-leadership-transition-john-ternus-to-succeed-tim-cook-as-elon-musk-eyes-cursor-acquisition | AIToolly |
+| 💻 科技 | 特斯拉将2026年资本支出上调至250亿美元，增幅178% | https://www.tmtpost.com/7965078.html | 钛媒体 |
+| 💻 科技 | 谷歌计划向Anthropic投资400亿美元 | https://aitoolly.com/zh/ai-news/2026-04-25 | AIToolly |
+| 💻 科技 | Hugging Face发布开源机器学习工程师ml-intern | https://aitoolly.com/zh/ai-news/2026-04-25 | AIToolly |
+| 💻 科技 | AI需求激增导致Mac mini缺货，eBay出现高溢价二手转售潮 | https://aitoolly.com/zh/ai-news/2026-04-25 | AIToolly |
+| 💻 科技 | 马斯克600亿美元收购Cursor：史上最高"分手费"100亿美元 | https://news.qq.com/rain/a/20260422A02Y7M00 | 腾讯新闻 |
+| 🏦 主权基金 | 中东主权基金押注中国AI企业获创纪录回报 | https://jedda.mofcom.gov.cn/scxx/art/2026/art_bfd366420a054270a9448ed423f2d305.html | 商务部 |
+| 🏦 主权基金 | GIC加码AI投资，锁定长期价值企业 | https://www.fortunetimes.sg/cn/?p=52127 | 时代财智 |
+| 🏦 主权基金 | TEMASEK AI 2026年正式落地中国，聚焦AI基础设施 | https://www.sohu.com/a/972418015_122372381 | 搜狐 |
+| 🏦 主权基金 | 3.5万亿美元中东和亚洲主权基金推动全球并购热潮 | https://www.cls.cn/detail/2178122 | 参考消息 |
+| 🏦 穆巴达拉 | GIC与ADIA联合向Vantage Data Centers追加16亿美元投资 | https://finance.sina.com.cn/roll/2025-09-12/doc-infqfstc0654692.shtml | 新浪财经 |
+
+*URLs verified on 2026-04-25*
+
+---
+
 ## 穆巴达拉专栏 URL（持续更新）
 
 | 分类 | 标题 | 原文链接 | 来源 | 更新日期 |

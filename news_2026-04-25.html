@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenyan 每日新闻 · 2026年4月25日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-card: #141418;
+            --bg-card-hover: #1a1a1f;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --accent-blue: #0a84ff;
+            --accent-red: #ff453a;
+            --accent-green: #30d158;
+            --accent-orange: #ff9f0a;
+            --border-color: rgba(255,255,255,0.08);
+            --tag-bg: rgba(255,255,255,0.06);
+            --tag-blue: rgba(10,132,255,0.15);
+            --tag-green: rgba(48,209,88,0.15);
+            --tag-orange: rgba(255,159,10,0.15);
+            --tag-red: rgba(255,69,58,0.15);
+            --tag-mubadala: rgba(255,159,10,0.2);
+            --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sf);
+            font-size: 15px;
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .header-eyebrow {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 12px;
+        }
+        .header-title {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.15;
+        }
+        .header-date {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .header-divider {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
+            margin: 28px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Key Metrics Bar */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 48px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px 24px;
+            border: 1px solid var(--border-color);
+        }
+        .metric-item {
+            text-align: center;
+        }
+        .metric-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 6px;
+        }
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .metric-change {
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .metric-change.neg { color: var(--accent-red); }
+        .metric-change.pos { color: var(--accent-green); }
+
+        /* Section */
+        .news-section {
+            margin-bottom: 52px;
+        }
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding-left: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 3px;
+            height: 18px;
+            border-radius: 2px;
+        }
+        .section-geopolitics .section-title::before { background: var(--accent-red); }
+        .section-economy .section-title::before { background: var(--accent-orange); }
+        .section-asia .section-title::before { background: var(--accent-blue); }
+        .section-tech .section-title::before { background: var(--accent-green); }
+        .section-sovereign .section-title::before { background: #a855f7; }
+        .section-mubadala .section-title::before { background: var(--accent-orange); }
+        .section-title-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* News Card */
+        .news-grid {
+            display: grid;
+            gap: 12px;
+        }
+        .news-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 20px 22px;
+            border: 1px solid var(--border-color);
+            transition: background 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+        .news-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255,255,255,0.14);
+        }
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .news-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--tag-bg);
+            color: var(--text-secondary);
+        }
+        .tag-geopolitics { background: var(--tag-red); color: #ff6b6b; }
+        .tag-economy { background: var(--tag-orange); color: #ffb347; }
+        .tag-asia { background: var(--tag-blue); color: #64b5f6; }
+        .tag-tech { background: var(--tag-green); color: #81e6d9; }
+        .tag-sovereign { background: rgba(168,85,247,0.15); color: #c084fc; }
+        .tag-mubadala { background: var(--tag-mubadala); color: #FF9F0A; }
+        .tag-region {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--tag-bg);
+            color: var(--text-tertiary);
+        }
+        .news-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+        .news-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+        .news-source {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .news-source a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .news-source a:hover { color: var(--accent-blue); }
+
+        /* Alert box */
+        .alert-box {
+            background: linear-gradient(135deg, rgba(255,69,58,0.1), rgba(255,159,10,0.1));
+            border: 1px solid rgba(255,69,58,0.2);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+        }
+        .alert-box .news-title {
+            color: #ff8a80;
+            font-size: 16px;
+        }
+
+        /* Key data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .data-table th {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            padding: 12px 16px;
+            text-align: left;
+            background: rgba(255,255,255,0.03);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .data-table td {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 11px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table .positive { color: var(--accent-green); font-weight: 500; }
+        .data-table .negative { color: var(--accent-red); font-weight: 500; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-text {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            line-height: 1.8;
+        }
+
+        /* Subscribe button */
+        .subscribe-box {
+            background: linear-gradient(135deg, rgba(10,132,255,0.08), rgba(168,85,247,0.08));
+            border: 1px solid rgba(10,132,255,0.15);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Key insight callout */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(10,132,255,0.08), rgba(48,209,88,0.08));
+            border: 1px solid rgba(10,132,255,0.15);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+        }
+        .key-insight .news-title {
+            color: var(--accent-blue);
+            font-size: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .metrics-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .header-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <p class="header-eyebrow">Wenyan Daily Intelligence</p>
+            <h1 class="header-title">每日新闻</h1>
+            <p class="header-date">2026年4月25日 · 周六</p>
+            <div class="header-divider"></div>
+        </header>
+
+        <!-- Key Metrics -->
+        <div class="metrics-bar">
+            <div class="metric-item">
+                <div class="metric-label">布伦特原油</div>
+                <div class="metric-value">$105.78</div>
+                <div class="metric-change pos">+3.14%</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-label">日经225</div>
+                <div class="metric-value">59,716</div>
+                <div class="metric-change pos">+0.97%</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-label">纳指</div>
+                <div class="metric-value">22,903</div>
+                <div class="metric-change neg">-0.35%</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-label">恒生指数</div>
+                <div class="metric-value">22,150</div>
+                <div class="metric-change neg">-0.42%</div>
+            </div>
+        </div>
+
+        <!-- 地缘政治 -->
+        <section class="news-section section-geopolitics">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">⚔️ 地缘政治</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">🔴 高优先级</span>
+                        <span class="tag-region">中东</span>
+                    </div>
+                    <a href="https://news.china.com.cn/2026-04/22/content_118451202.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">美伊谈判进入最后冲刺阶段，霍尔木兹局势仍高度紧张</h3>
+                        <p class="news-desc">特朗普发出最后通牒称停火期限为"华盛顿时间22日晚"，若无法达成协议将立即恢复军事行动。伊朗代表团已赴巴基斯坦进行非正式会谈，双方立场仍存在显著分歧。伊朗试图在浓缩铀和制裁减免问题上争取更大让步，而美方坚持要求伊朗完全停止铀浓缩活动。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://news.china.com.cn/2026-04/22/content_118451202.shtml" target="_blank" style="color:var(--text-tertiary);">中国新闻网 · 4月22日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">🔴 高优先级</span>
+                        <span class="tag-region">中美关系</span>
+                    </div>
+                    <a href="https://xueqiu.com/1335687090/385788996" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">美国众议院通过MATCH法案，对华芯片管制全面升级</h3>
+                        <p class="news-desc">美国众议院外交事务委员会以两党压倒性票数通过《硬件技术控制多边协同法案》（MATCH法案），这是自2018年以来最严厉的出口管制升级。法案要求对华全面封锁半导体制造设备，并强制要求盟友协同执行。同时，《遏制美国人工智能模型盗窃法案》拟制裁中国AI企业，指控其通过"蒸馏技术"复制美国闭源模型。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://xueqiu.com/1335687090/385788996" target="_blank" style="color:var(--text-tertiary);">雪球 · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-geopolitics">🔴 高优先级</span>
+                        <span class="tag-region">全球AI治理</span>
+                    </div>
+                    <a href="https://news.qq.com/rain/a/20260422A07DLF00" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">斯坦福报告：中美顶尖AI模型性能差距已缩小至2.7%</h3>
+                        <p class="news-desc">斯坦福大学《2026 AI指数报告》指出，中美AI竞争进入"毫厘之间"。尽管美国通过芯片出口管制试图遏制中国，但中国通过租赁海外算力、堆叠低性能芯片、"模型蒸馏"等技术迂回突破。全球AI治理分歧加剧：美国走向"西部荒野式"市场竞争，中国则强调政府主导与多边规则构建。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://news.qq.com/rain/a/20260422A07DLF00" target="_blank" style="color:var(--text-tertiary);">腾讯新闻 · 4月22日 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 全球经济 -->
+        <section class="news-section section-economy">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">📊 全球经济</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 能源市场</span>
+                        <span class="tag-region">原油</span>
+                    </div>
+                    <a href="https://www.jujindata.com/commodity/detail/crude-oil-brent" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">美伊和谈预期改善，布伦特原油4月24日暴跌3.14%至$105.78</h3>
+                        <p class="news-desc">白宫延长航运豁免至8月，伊朗代表团赴巴基斯坦会谈，市场对美伊和谈预期改善。摩根大通警告称当前库存去化速度创2017年来最快，供应缺口被暂时掩盖，更大冲击可能在下半年显现。皮埃尔·安杜兰旗下对冲基金4月上半月暴跌约52%。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.jujindata.com/commodity/detail/crude-oil-brent" target="_blank" style="color:var(--text-tertiary);">聚金数据 · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 俄罗斯</span>
+                        <span class="tag-region">货币</span>
+                    </div>
+                    <a href="https://news.qq.com/rain/a/20260425A025AN00" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">俄罗斯央行宣布年内第三次降息50个基点至14.5%</h3>
+                        <p class="news-desc">俄罗斯央行称通胀率预计回落，将继续评估进一步降息必要性。这是2026年内第三次降息行动，标志着俄央行在应对高通胀与刺激经济之间寻求平衡。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://news.qq.com/rain/a/20260425A025AN00" target="_blank" style="color:var(--text-tertiary);">腾讯新闻 · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 中国政策</span>
+                        <span class="tag-region">金融改革</span>
+                    </div>
+                    <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">上交所、北交所修订交易规则，盘后固定价格交易范围扩大至全部A股</h3>
+                        <p class="news-desc">主板风险警示股票涨跌幅限制比例调整为10%，合格境外投资者4月24日起可参与国债期货交易。新规将于7月6日实施，标志着A股市场交易制度进一步与国际接轨。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="color:var(--text-tertiary);">新浪财经 · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-economy">📊 英特尔</span>
+                        <span class="tag-region">科技股</span>
+                    </div>
+                    <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">英特尔Q1营收超预期同比增7%，数据中心与AI业务营收增22%</h3>
+                        <p class="news-desc">英特尔一季度营收136亿美元，数据中心与AI业务营收同比增长22%，盘后股价大涨16%。半导体板块整体表现强势，芯片指数连涨17日再创最长连涨纪录。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="color:var(--text-tertiary);">新浪财经 · 4月25日 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 亚太动态 -->
+        <section class="news-section section-asia">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">🌏 亚太动态</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 A股</span>
+                        <span class="tag-region">锂矿</span>
+                    </div>
+                    <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">A股4月24日走势分化，锂矿概念爆发</h3>
+                        <p class="news-desc">主要指数涨跌不一，锂矿、能源金属板块涨幅居前，电池、半导体行业资金净流入靠前。国际投行高盛、摩根大通、瑞银看好上海、深圳等一线城市楼市修复前景，预计2025-2028年房价累计上涨15%。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="color:var(--text-tertiary);">新浪财经 · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 中国</span>
+                        <span class="tag-region">数字经济</span>
+                    </div>
+                    <a href="https://difang.gmw.cn/sh/2026-04/24/content_38728423.htm" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">上海交大安泰发布《2026"人工智能+"行业发展蓝皮书》</h3>
+                        <p class="news-desc">蓝皮书指出全球人工智能技术及"AI+"产业正经历深刻的系统性变革。中国日均Token调用量已突破140万亿，国产大模型快速发展，全球竞争力显著提升。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://difang.gmw.cn/sh/2026-04/24/content_38728423.htm" target="_blank" style="color:var(--text-tertiary);">光明网 · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-asia">🌏 新股</span>
+                        <span class="tag-region">科创板</span>
+                    </div>
+                    <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">联讯仪器上市首日涨幅950%，成年内最大"肉签"</h3>
+                        <p class="news-desc">上市首日最高涨幅达950.17%，中一签浮盈38.9万元，成为年内首日盈利最高的新股。反映了市场对科技类新股的极高热情。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://finance.sina.com.cn/headline/2026-04-25/doc-inhvscxn4222742.shtml" target="_blank" style="color:var(--text-tertiary);">新浪财经 · 4月25日 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 科技 -->
+        <section class="news-section section-tech">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">💻 科技</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 大模型</span>
+                        <span class="tag-region">DeepSeek</span>
+                    </div>
+                    <a href="https://www.ai-insight.org/reports/deepseek-v4-2026" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">DeepSeek V4正式发布：1.6T参数MoE全开源，华为昇腾首发适配</h3>
+                        <p class="news-desc">DeepSeek V4发布1.6T总参数/49B激活参数MoE模型，通过华为昇腾首个零日适配（推理侧）。支持百万Token上下文，Codeforces评分3206（开源最高），MRCR 1M长上下文83.5%（大幅领先Claude 4.7的32.2%）。API兼容Anthropic，限时75%折扣，目标估值200亿美元。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.ai-insight.org/reports/deepseek-v4-2026" target="_blank" style="color:var(--text-tertiary);">AI Insight · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 大模型</span>
+                        <span class="tag-region">OpenAI</span>
+                    </div>
+                    <a href="https://www.caixin.com/2026-04-25/102437791.html" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">OpenAI发布GPT-5.5：最智能、最直觉的旗舰模型</h3>
+                        <p class="news-desc">GPT-5.5号称"最智能、最直觉易用"，主打极少量人类指令下处理复杂多步骤任务。能编写调试代码、在线研究、数据分析、创建文档表格，擅长跨软件工具完成任务。与NVIDIA深度合作，基于H100 GPU集群优化推理速度。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.caixin.com/2026-04-25/102437791.html" target="_blank" style="color:var(--text-tertiary);">财新网 · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 投融资</span>
+                        <span class="tag-region">苹果</span>
+                    </div>
+                    <a href="https://aitoolly.com/zh/ai-news/article/2026-04-25-apple-leadership-transition-john-ternus-to-succeed-tim-cook-as-elon-musk-eyes-cursor-acquisition" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">库克9月卸任，约翰·特努斯接任苹果CEO</h3>
+                        <p class="news-desc">苹果宣布蒂姆·库克将于9月卸任CEO，由硬件负责人约翰·特努斯接任。特努斯将接手一个极具韧性的科技企业，但其面对的生态系统已与库克花费数十年打造的环境截然不同。同时传出马斯克拟以600亿美元收购AI编程工具Cursor。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://aitoolly.com/zh/ai-news/article/2026-04-25-apple-leadership-transition-john-ternus-to-succeed-tim-cook-as-elon-musk-eyes-cursor-acquisition" target="_blank" style="color:var(--text-tertiary);">AIToolly · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 投融资</span>
+                        <span class="tag-region">特斯拉</span>
+                    </div>
+                    <a href="https://www.tmtpost.com/7965078.html" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">特斯拉将2026年资本支出上调至250亿美元，增幅178%</h3>
+                        <p class="news-desc">资金重点投向Robotaxi和人形机器人Optimus研发与商业化。得州Optimus工厂预计2027年投产，目标年产能达1000万台，第三代终端售价目标控制在1.9万美元以内。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.tmtpost.com/7965078.html" target="_blank" style="color:var(--text-tertiary);">钛媒体 · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 投融资</span>
+                        <span class="tag-region">谷歌</span>
+                    </div>
+                    <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">谷歌计划向Anthropic投资400亿美元，深化生成式AI合作</h3>
+                        <p class="news-desc">谷歌计划向Anthropic投资高达400亿美元，以现金和计算资源形式进行。此举将加深两家公司在生成式AI领域的战略绑定，也是截至目前AI领域最大规模的投资之一。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="color:var(--text-tertiary);">AIToolly · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 开源</span>
+                        <span class="tag-region">HuggingFace</span>
+                    </div>
+                    <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">Hugging Face发布开源机器学习工程师ml-intern</h3>
+                        <p class="news-desc">定位为"开源机器学习工程师"，可自动化处理从论文阅读到模型部署的全流程环节，降低AI开发门槛。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="color:var(--text-tertiary);">AIToolly · 4月25日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 产品</span>
+                        <span class="tag-region">Mac</span>
+                    </div>
+                    <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">AI需求激增导致Mac mini缺货，eBay出现高溢价二手转售潮</h3>
+                        <p class="news-desc">Mac mini因在运行本地AI模型方面表现优秀导致需求激增，官方渠道售罄，二手平台出现溢价转售。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://aitoolly.com/zh/ai-news/2026-04-25" target="_blank" style="color:var(--text-tertiary);">AIToolly · 4月24日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-tech">💻 投融资</span>
+                        <span class="tag-region">AI编程</span>
+                    </div>
+                    <a href="https://news.qq.com/rain/a/20260422A02Y7M00" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">马斯克600亿美元收购Cursor：史上最高"分手费"100亿美元</h3>
+                        <p class="news-desc">SpaceX已与AI编程工具Cursor达成协议，今年晚些时候将以600亿美元收购；如未完成收购则需支付100亿美元合作费。这是企业史上最高昂的"分手费"。马斯克在Grok编程产品受挫后，通过资本运作加速布局AI编程领域。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://news.qq.com/rain/a/20260422A02Y7M00" target="_blank" style="color:var(--text-tertiary);">腾讯新闻 · 4月22日 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 主权基金投资 -->
+        <section class="news-section section-sovereign">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">🏦 主权基金投资</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-sovereign">🏦 主权基金</span>
+                        <span class="tag-region">ADIA</span>
+                    </div>
+                    <a href="https://jedda.mofcom.gov.cn/scxx/art/2026/art_bfd366420a054270a9448ed423f2d305.html" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">中东主权基金押注中国AI企业获创纪录回报</h3>
+                        <p class="news-desc">阿布扎比投资局（ADIA）在中国人工智能企业上的投资逆势实现显著收益增长。在海湾地区局势紧张、全球股市普遍承压背景下，中东主权财富基金展现出对中国AI资产的强烈信心。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://jedda.mofcom.gov.cn/scxx/art/2026/art_bfd366420a054270a9448ed423f2d305.html" target="_blank" style="color:var(--text-tertiary);">商务部 · 3月31日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-sovereign">🏦 主权基金</span>
+                        <span class="tag-region">GIC</span>
+                    </div>
+                    <a href="https://www.fortunetimes.sg/cn/?p=52127" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">GIC加码AI投资，锁定长期价值企业</h3>
+                        <p class="news-desc">新加坡政府投资公司（GIC）通过战略调整和大额投资持续加码人工智能领域，最新披露的年度报告显示其在AI算力、数据中心等领域的配置显著增加。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.fortunetimes.sg/cn/?p=52127" target="_blank" style="color:var(--text-tertiary);">时代财智 · 2025年7月 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-sovereign">🏦 主权基金</span>
+                        <span class="tag-region">Temasek</span>
+                    </div>
+                    <a href="https://www.sohu.com/a/972418015_122372381" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">TEMASEK AI 2026年正式落地中国，聚焦AI基础设施</h3>
+                        <p class="news-desc">全球化AI基建专项私募基金项目TEMASEK AI正式在中国启动运营，聚焦人工智能基础设施建设，契合中国数字经济高质量发展与"东数西算"工程整体布局。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.sohu.com/a/972418015_122372381" target="_blank" style="color:var(--text-tertiary);">搜狐 · 1月1日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-sovereign">🏦 主权基金</span>
+                        <span class="tag-region">全球</span>
+                    </div>
+                    <a href="https://www.cls.cn/detail/2178122" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">3.5万亿美元中东和亚洲主权基金推动全球并购热潮</h3>
+                        <p class="news-desc">能源转型驱动资本输出，中东主权基金（PIF、ADIA）依托石油美元加速多元化配置，亚洲主权基金3.5万亿美元推动全球并购热潮，重点瞄向科技和AI领域。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.cls.cn/detail/2178122" target="_blank" style="color:var(--text-tertiary);">参考消息 · 2025年10月 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 穆巴达拉专栏 -->
+        <section class="news-section section-mubadala">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">🏦 穆巴达拉投资动态</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🌏 亚洲</span>
+                    </div>
+                    <a href="https://finance.sina.com.cn/roll/2025-09-12/doc-infqfstc0654692.shtml" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">GIC与ADIA联合向Vantage Data Centers追加16亿美元投资</h3>
+                        <p class="news-desc">新加坡主权财富基金GIC与阿布扎比投资局ADIA共同追加16亿美元投资，扩张亚太地区超大规模数据中心运营商Vantage Data Centers的亚洲业务版图。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://finance.sina.com.cn/roll/2025-09-12/doc-infqfstc0654692.shtml" target="_blank" style="color:var(--text-tertiary);">新浪财经 · 2025年9月12日 ↗</a>
+                    </p>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-meta">
+                        <span class="news-tag tag-mubadala">🏦 穆巴达拉</span>
+                        <span class="tag-region">🌏 亚洲AI</span>
+                    </div>
+                    <a href="https://www.sohu.com/a/972418015_122372381" target="_blank" style="text-decoration:none;color:inherit;">
+                        <h3 class="news-title">穆巴达拉TEMASEK AI项目落地中国，加码AI新基建</h3>
+                        <p class="news-desc">穆巴达拉通过TEMASEK AI平台深化在中国AI基础设施领域的布局，聚焦数据中心和AI算力网络建设，捕捉中国AI产业爆发式增长的红利。</p>
+                    </a>
+                    <p class="news-source">
+                        <a href="https://www.sohu.com/a/972418015_122372381" target="_blank" style="color:var(--text-tertiary);">搜狐 · 2026年1月 ↗</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Key Data Table -->
+        <section class="news-section">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">📈 关键数据</h2>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>指标</th>
+                        <th>当前值</th>
+                        <th>变化</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>布伦特原油</td>
+                        <td>$105.78/桶</td>
+                        <td class="negative">+3.14%</td>
+                        <td>美伊和谈预期改善但供需仍紧张</td>
+                    </tr>
+                    <tr>
+                        <td>日经225</td>
+                        <td>59,716</td>
+                        <td class="positive">+0.97%</td>
+                        <td>科技股持续走强</td>
+                    </tr>
+                    <tr>
+                        <td>纳斯达克</td>
+                        <td>22,903</td>
+                        <td class="negative">-0.35%</td>
+                        <td>软件股承压</td>
+                    </tr>
+                    <tr>
+                        <td>恒生指数</td>
+                        <td>22,150</td>
+                        <td class="negative">-0.42%</td>
+                        <td>科技股回调</td>
+                    </tr>
+                    <tr>
+                        <td>英特尔Q1营收</td>
+                        <td>$136亿</td>
+                        <td class="positive">+7%</td>
+                        <td>数据中心AI业务+22%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                Wenyan 每日新闻 · AI驱动 · 每日早8点发送<br>
+                来源：财新、腾讯新闻、新浪财经、钛媒体、AIToolly等<br><br>
+                本报告仅供参考，不构成投资建议
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
