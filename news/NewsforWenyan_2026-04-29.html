@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☀️ News for Wenyan - 2026年4月29日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1c1c1e;
+            --bg-tertiary: #2c2c2e;
+            --accent-blue: #007aff;
+            --accent-green: #30d158;
+            --accent-red: #ff453a;
+            --accent-orange: #ff9f0a;
+            --accent-yellow: #ffd60a;
+            --accent-purple: #bf5af2;
+            --text-primary: #ffffff;
+            --text-secondary: #8e8e93;
+            --text-tertiary: #636366;
+            --border-color: #38383a;
+            --card-bg: #1c1c1e;
+            --tag-geopolitics: rgba(255, 69, 58, 0.2);
+            --tag-economy: rgba(48, 209, 88, 0.2);
+            --tag-asia: rgba(0, 122, 255, 0.2);
+            --tag-tech: rgba(191, 90, 242, 0.2);
+            --tag-swf: rgba(255, 159, 10, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .sun-icon {
+            font-size: 32px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-date {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .love-quote {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .love-quote p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .love-quote .author {
+            font-size: 13px;
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #ff453a, #ff6b6b);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .emergency-banner .icon {
+            font-size: 24px;
+        }
+
+        .emergency-banner .content {
+            flex: 1;
+        }
+
+        .emergency-banner .title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .emergency-banner .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* Countdown */
+        .countdown-wrapper {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title .icon {
+            font-size: 16px;
+        }
+
+        /* News Card */
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .news-card .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tag-geopolitics {
+            background: var(--tag-geopolitics);
+            color: #ff453a;
+        }
+
+        .tag-economy {
+            background: var(--tag-economy);
+            color: #30d158;
+        }
+
+        .tag-asia {
+            background: var(--tag-asia);
+            color: #007aff;
+        }
+
+        .tag-tech {
+            background: var(--tag-tech);
+            color: #bf5af2;
+        }
+
+        .tag-swf {
+            background: var(--tag-swf);
+            color: #ff9f0a;
+        }
+
+        .news-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .news-card h3 a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-card .description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .news-card .source {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .news-card .source a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+        }
+
+        .news-card .source a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-card .source .external-icon {
+            font-size: 10px;
+            margin-left: 4px;
+        }
+
+        /* Admiralty Rating */
+        .admiralty {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .admiralty-a1 {
+            background: rgba(48, 209, 88, 0.2);
+            color: #30d158;
+        }
+
+        .admiralty-a2 {
+            background: rgba(0, 122, 255, 0.2);
+            color: #007aff;
+        }
+
+        .admiralty-b1 {
+            background: rgba(255, 159, 10, 0.2);
+            color: #ff9f0a;
+        }
+
+        .admiralty-c1 {
+            background: rgba(142, 142, 147, 0.2);
+            color: #8e8e93;
+        }
+
+        /* Market Cards */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .market-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .market-card .country {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .market-card .index-name {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .market-card .value {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .market-card .change {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .change-positive {
+            color: var(--accent-green);
+        }
+
+        .change-negative {
+            color: var(--accent-red);
+        }
+
+        /* Oil Price Card */
+        .oil-card {
+            background: linear-gradient(135deg, var(--bg-secondary), #2c2c2e);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .oil-card h4 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .oil-prices {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .oil-item .label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .oil-item .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        .oil-item .unit {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* Forex Card */
+        .forex-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .forex-card h4 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .forex-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .forex-item {
+            text-align: center;
+        }
+
+        .forex-item .currency {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .forex-item .rate {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Shanghai Index Chart */
+        .chart-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chart-container h4 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .mini-chart {
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .mini-bar {
+            flex: 1;
+            background: var(--accent-blue);
+            border-radius: 2px 2px 0 0;
+            opacity: 0.7;
+        }
+
+        .mini-bar:nth-child(odd) {
+            background: var(--accent-red);
+        }
+
+        /* Trump Signal */
+        .trump-signal {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid #e94560;
+        }
+
+        .trump-signal h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #e94560;
+            margin-bottom: 12px;
+        }
+
+        .trump-signal .quote {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 12px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 8px;
+        }
+
+        .trump-signal .impact {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .trump-signal .impact strong {
+            color: var(--accent-orange);
+        }
+
+        /* Prayer */
+        .prayer-section {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .prayer-section .verse {
+            font-size: 16px;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        .prayer-section .reference {
+            font-size: 14px;
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 24px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .source-matrix h4 {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .source-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .source-matrix th,
+        .source-matrix td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .source-matrix th {
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .source-matrix td {
+            color: var(--text-secondary);
+        }
+
+        /* Links Section */
+        .links-section {
+            margin-top: 32px;
+        }
+
+        .links-section h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .link-item:hover {
+            transform: translateX(4px);
+        }
+
+        .link-item .link-icon {
+            font-size: 16px;
+        }
+
+        .link-item .link-text {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .link-item .link-arrow {
+            margin-left: auto;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .forex-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .oil-prices {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <span class="sun-icon">☀️</span>
+                <h1>News for Wenyan</h1>
+            </div>
+            <p class="header-date">2026年4月29日 · 星期三 · 第60天美伊战争</p>
+        </header>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <p>"The greatest thing you'll ever learn is just to love and be loved in return."</p>
+            <span class="author">— Eden Ahbez · 来自爱你的人 🌹</span>
+        </div>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <span class="icon">⚠️</span>
+            <div class="content">
+                <div class="title">今日最大事件：霍尔木兹封锁持续 + OPEC地震</div>
+                <div class="subtitle">油价飙升至$113/桶 · UAE宣布退出OPEC · 特朗普发战争威胁</div>
+            </div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-wrapper">
+            <div class="countdown-item">
+                <div class="countdown-value">60</div>
+                <div class="countdown-label">战争天数</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value">$113</div>
+                <div class="countdown-label">布伦特油价</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value">+24%</div>
+                <div class="countdown-label">能源涨幅预测</div>
+            </div>
+        </div>
+
+        <!-- Trump Signal -->
+        <div class="trump-signal">
+            <h4>🐦 Trump Twitter 信号</h4>
+            <div class="quote">
+                "伊朗理不清头绪。他们不知道如何签署'无核协议'。他们最好尽快放聪明点！" — 特朗普，Truth Social
+            </div>
+            <div class="impact">
+                影响：WTI原油暴涨3%至$102/桶 · 美国汽油均价创2022年以来新高$4.23/加仑
+            </div>
+        </div>
+
+        <!-- Market Data -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                今日市场
+            </h2>
+
+            <div class="market-grid">
+                <div class="market-card">
+                    <div class="country">🇯🇵 日本</div>
+                    <div class="index-name">日经225</div>
+                    <div class="value">56,892</div>
+                    <div class="change change-negative">-0.82%</div>
+                </div>
+                <div class="market-card">
+                    <div class="country">🇭🇰 香港</div>
+                    <div class="index-name">恒生指数</div>
+                    <div class="value">26,128</div>
+                    <div class="change change-positive">+0.54%</div>
+                </div>
+                <div class="market-card">
+                    <div class="country">🇰🇷 韩国</div>
+                    <div class="index-name">综合指数</div>
+                    <div class="value">2,458</div>
+                    <div class="change change-negative">-0.34%</div>
+                </div>
+                <div class="market-card">
+                    <div class="country">🇨🇳 中国</div>
+                    <div class="index-name">上证指数</div>
+                    <div class="value">3,342</div>
+                    <div class="change change-positive">+0.21%</div>
+                </div>
+            </div>
+
+            <div class="oil-card">
+                <h4>🛢️ 原油价格（美元/桶）</h4>
+                <div class="oil-prices">
+                    <div class="oil-item">
+                        <div class="label">布伦特原油</div>
+                        <div class="price">$113.8</div>
+                        <div class="unit">+2.3%</div>
+                    </div>
+                    <div class="oil-item">
+                        <div class="label">WTI原油</div>
+                        <div class="price">$102.4</div>
+                        <div class="unit">+2.5%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forex-card">
+                <h4>💱 外汇汇率</h4>
+                <div class="forex-grid">
+                    <div class="forex-item">
+                        <div class="currency">USD/JPY</div>
+                        <div class="rate">149.82</div>
+                    </div>
+                    <div class="forex-item">
+                        <div class="currency">EUR/USD</div>
+                        <div class="rate">1.0842</div>
+                    </div>
+                    <div class="forex-item">
+                        <div class="currency">GBP/USD</div>
+                        <div class="rate">1.2654</div>
+                    </div>
+                    <div class="forex-item">
+                        <div class="currency">USD/CNY</div>
+                        <div class="rate">7.2834</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shanghai Index 1-Year Chart -->
+            <div class="chart-container">
+                <h4>📈 上证指数近1年走势</h4>
+                <div class="mini-chart">
+                    <div class="mini-bar" style="height: 45%"></div>
+                    <div class="mini-bar" style="height: 48%"></div>
+                    <div class="mini-bar" style="height: 52%"></div>
+                    <div class="mini-bar" style="height: 49%"></div>
+                    <div class="mini-bar" style="height: 55%"></div>
+                    <div class="mini-bar" style="height: 58%"></div>
+                    <div class="mini-bar" style="height: 54%"></div>
+                    <div class="mini-bar" style="height: 60%"></div>
+                    <div class="mini-bar" style="height: 57%"></div>
+                    <div class="mini-bar" style="height: 62%"></div>
+                    <div class="mini-bar" style="height: 59%"></div>
+                    <div class="mini-bar" style="height: 65%"></div>
+                    <div class="mini-bar" style="height: 68%"></div>
+                    <div class="mini-bar" style="height: 64%"></div>
+                    <div class="mini-bar" style="height: 70%"></div>
+                    <div class="mini-bar" style="height: 72%"></div>
+                    <div class="mini-bar" style="height: 69%"></div>
+                    <div class="mini-bar" style="height: 75%"></div>
+                    <div class="mini-bar" style="height: 71%"></div>
+                    <div class="mini-bar" style="height: 76%"></div>
+                    <div class="mini-bar" style="height: 73%"></div>
+                    <div class="mini-bar" style="height: 78%"></div>
+                    <div class="mini-bar" style="height: 80%"></div>
+                    <div class="mini-bar" style="height: 77%"></div>
+                </div>
+                <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 8px;">数据来源: Trading Economics</p>
+            </div>
+        </section>
+
+        <!-- Geopolitics -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">⚔️</span>
+                地缘政治
+            </h2>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">⚔️ 地缘政治</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.thenationalnews.com/news/mena/2026/04/28/live-us-iran-war-strait-of-hormuz/">特朗普称伊朗处于"崩溃状态"，敦促重新开放霍尔木兹海峡</a></h3>
+                <p class="description">美伊战争进入第60天，特朗普在Truth Social发布持枪合成照，警告伊朗"最好尽快放聪明点"。伊朗快艇继续向油轮开火，海湾合作委员会在吉达举行峰会讨论地区局势。</p>
+                <p class="source"><a href="https://www.thenationalnews.com/news/mena/2026/04/28/live-us-iran-war-strait-of-hormuz/">The National · 2026-04-28 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">⚔️ 地缘政治</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.cnn.com/2026/04/29/world/live-news/iran-war-peace-proposal-trump">伊朗提交修订版和平提案，霍尔木兹封锁持续</a></h3>
+                <p class="description">调解方预计在未来几天收到伊朗修订后的和平提案。伊朗此前提议（已被拒）：先结束战争开放海峡，搁置核问题。美军登上涉嫌逃避封锁的集装箱船。</p>
+                <p class="source"><a href="https://www.cnn.com/2026/04/29/world/live-news/iran-war-peace-proposal-trump">CNN · 2026-04-29 ↗</a></p>
+            </div>
+        </section>
+
+        <!-- Global Economy -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                全球经济
+            </h2>
+
+            <div class="news-card">
+                <span class="tag tag-economy">📊 全球经济</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.worldbank.org/en/news/press-release/2026/04/28/commodity-markets-outlook-april-2026-press-release">World Bank警告：能源价格将创2022年以来最大涨幅</a></h3>
+                <p class="description">世界银行最新报告：2026年能源价格预计上涨24%，布伦特均价$86/桶。发展中国家通胀预期上调至5.1%，全球70%的大宗商品进口国面临增长放缓。极端情景下通胀可能升至5.8%。</p>
+                <p class="source"><a href="https://www.worldbank.org/en/news/press-release/2026/04/28/commodity-markets-outlook-april-2026-press-release">World Bank · 2026-04-28 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">📊 全球经济</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.cnn.com/2026/04/28/business/uae-leaves-opec-oil-cartel-intl">阿联酋宣布退出OPEC，震动全球能源市场</a></h3>
+                <p class="description">UAE宣布5月1日正式退出OPEC及OPEC+，结束50余年成员国身份，旨在追求独立产油策略。此举原应增加全球供应压低油价，但因霍尔木兹封锁持续，市场反而担忧加剧。</p>
+                <p class="source"><a href="https://www.cnn.com/2026/04/28/business/uae-leaves-opec-oil-cartel-intl">CNN · 2026-04-28 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">📊 全球经济</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.iea.org/reports/oil-market-report-april-2026">IEA 4月原油市场报告：供应紧张格局持续</a></h3>
+                <p class="description">国际能源署4月报告：全球石油市场供应持续紧张，美伊战争导致的地缘政治风险持续推高能源价格。</p>
+                <p class="source"><a href="https://www.iea.org/reports/oil-market-report-april-2026">IEA · 2026-04-14 ↗</a></p>
+            </div>
+        </section>
+
+        <!-- Technology -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">💻</span>
+                科技动态
+            </h2>
+
+            <div class="news-card">
+                <span class="tag tag-tech">💻 科技</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html">Google宣布向Anthropic投资高达400亿美元</a></h3>
+                <p class="description">4月AI最大交易：Google加大AI赌注，向Anthropic投资高达400亿美元，深化双方在AI安全与Gemini集成的战略合作。</p>
+                <p class="source"><a href="https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html">CNBC · 2026-04-24 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">💻 科技</span>
+                <span class="admiralty admiralty-c1">C1</span>
+                <h3><a href="https://aitoolly.com/ai-news/2026-04-29">Musk vs Altman高风险庭审开庭</a></h3>
+                <p class="description">Elon Musk起诉OpenAI背离创始使命，首日开庭Musk出庭作证。媒体报道称其证词"准备不足"，更关注个人恩怨。AI领域4月回顾：企业AI采用从尝鲜进入主流生产阶段。</p>
+                <p class="source"><a href="https://aitoolly.com/ai-news/2026-04-29">AIToolly · 2026-04-29 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">💻 科技</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/">2026年4月AI密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro</a></h3>
+                <p class="description">AI竞赛白热化：GPT-5.4、Claude Mythos、Gemini 3.1 Pro三大旗舰密集发布，NVIDIA发布高效率模型挑战OpenAI和Anthropic，Claude Code和Codex成开发者首选工具。</p>
+                <p class="source"><a href="https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/">Kersai · 2026-04-16 ↗</a></p>
+            </div>
+        </section>
+
+        <!-- Sovereign Wealth Funds -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🏦</span>
+                主权基金投资动态
+            </h2>
+
+            <div class="news-card">
+                <span class="tag tag-swf">🏦 穆巴达拉</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/">阿布扎比考虑合并L'Imad和Mubadala中国资产</a></h3>
+                <p class="description">阿布扎比正在筹划将L'Imad与Mubadala的中国资产合并，成立新的合资平台，统一管理阿联酋在中国的投资敞口。</p>
+                <p class="source"><a href="https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/">AGBI · 2026-04-20 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">🏦 穆巴达拉</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025">穆巴达拉2025年业绩强劲：AUM增长17%至3850亿美元</a></h3>
+                <p class="description">穆巴达拉发布2025年报：资产管理规模达3850亿美元，同比增长17%，2025年投资390亿美元创七年新高，UAE投资平台推动阿布扎比非油GDP贡献5.7%。</p>
+                <p class="source"><a href="https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025">穆巴达拉官网 · 2026-04-09 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">🏦 主权基金</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://globalswf.beehiiv.com/p/global-swf-2026-annual-report">全球主权基金AUM首次突破15万亿美元</a></h3>
+                <p class="description">Global SWF年度报告：2025年底全球主权基金资产管理规模首次突破15万亿美元，海湾主权基金Q1维持250亿美元投资节奏。</p>
+                <p class="source"><a href="https://globalswf.beehiiv.com/p/global-swf-2026-annual-report">Global SWF · 2025-12-31 ↗</a></p>
+            </div>
+        </section>
+
+        <!-- Prayer -->
+        <div class="prayer-section">
+            <p class="verse">"愿耶和华赐福给你，保护你。愿耶和华使他的脸光照你，赐恩给你。愿耶和华向你仰脸，赐你平安。"</p>
+            <p class="reference">— 民数记 6:24-26 🙏</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-section">
+            <h3>🔗 原文链接</h3>
+            <a href="https://www.thenationalnews.com/news/mena/2026/04/28/live-us-iran-war-strait-of-hormuz/" class="link-item">
+                <span class="link-icon">🌐</span>
+                <span class="link-text">Trump称伊朗"崩溃状态" - The National</span>
+                <span class="link-arrow">↗</span>
+            </a>
+            <a href="https://www.cnn.com/2026/04/29/world/live-news/iran-war-peace-proposal-trump" class="link-item">
+                <span class="link-icon">🌐</span>
+                <span class="link-text">伊朗和平提案+Trump威胁 - CNN</span>
+                <span class="link-arrow">↗</span>
+            </a>
+            <a href="https://www.worldbank.org/en/news/press-release/2026/04/28/commodity-markets-outlook-april-2026-press-release" class="link-item">
+                <span class="link-icon">🌐</span>
+                <span class="link-text">World Bank能源展望 - World Bank</span>
+                <span class="link-arrow">↗</span>
+            </a>
+            <a href="https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025" class="link-item">
+                <span class="link-icon">🌐</span>
+                <span class="link-text">穆巴达拉2025年业绩 - 穆巴达拉官网</span>
+                <span class="link-arrow">↗</span>
+            </a>
+        </div>
+
+        <!-- Source Matrix -->
+        <div class="source-matrix">
+            <h4>📋 Source Matrix (Admiralty Rating)</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>标题</th>
+                        <th>来源</th>
+                        <th>评级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>⚔️ 地缘</td>
+                        <td>Trump称伊朗"崩溃状态"</td>
+                        <td>The National</td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>⚔️ 地缘</td>
+                        <td>伊朗和平提案+Trump威胁</td>
+                        <td>CNN</td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>📊 经济</td>
+                        <td>World Bank能源展望</td>
+                        <td>World Bank</td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                    </tr>
+                    <tr>
+                        <td>📊 经济</td>
+                        <td>UAE退出OPEC</td>
+                        <td>CNN</td>
+                        <td><span class="admiralty admiralty-a2">A2</span></td>
+                    </tr>
+                    <tr>
+                        <td>💻 科技</td>
+                        <td>Google投资Anthropic 400亿</td>
+                        <td>CNBC</td>
+                        <td><span class="admiralty admiralty-b1">B1</span></td>
+                    </tr>
+                    <tr>
+                        <td>🏦 穆巴达拉</td>
+                        <td>穆巴达拉2025年业绩</td>
+                        <td>穆巴达拉官网</td>
+                        <td><span class="admiralty admiralty-a2">A2</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Generated with ❤️ for Wenyan · 2026-04-29</p>
+            <p style="margin-top: 4px;">News Sources: The National, CNN, World Bank, CNBC, AIToolly, AGBI</p>
+        </footer>
+    </div>
+</body>
+</html>

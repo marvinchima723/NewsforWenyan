@@ -342,7 +342,27 @@
 | 🏦 主权基金 | 3.5万亿美元中东和亚洲主权基金推动全球并购热潮 | https://www.cls.cn/detail/2178122 | 参考消息 |
 | 🏦 穆巴达拉 | GIC与ADIA联合向Vantage Data Centers追加16亿美元投资 | https://finance.sina.com.cn/roll/2025-09-12/doc-infqfstc0654692.shtml | 新浪财经 |
 
-*URLs verified on 2026-04-25*
+*URLs verified on 2026-04-29*
+
+---
+
+## 2026-04-29
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 特朗普称伊朗处于"崩溃状态"，敦促重新开放霍尔木兹海峡 | https://www.thenationalnews.com/news/mena/2026/04/28/live-us-iran-war-strait-of-hormuz/ | The National |
+| ⚔️ 地缘政治 | 伊朗提交修订版和平提案，霍尔木兹封锁持续 | https://www.cnn.com/2026/04/29/world/live-news/iran-war-peace-proposal-trump | CNN |
+| 📊 全球经济 | World Bank警告：能源价格将创2022年以来最大涨幅 | https://www.worldbank.org/en/news/press-release/2026/04/28/commodity-markets-outlook-april-2026-press-release | World Bank |
+| 📊 全球经济 | 阿联酋宣布退出OPEC，震动全球能源市场 | https://www.cnn.com/2026/04/28/business/uae-leaves-opec-oil-cartel-intl | CNN |
+| 📊 全球经济 | IEA 4月原油市场报告：供应紧张格局持续 | https://www.iea.org/reports/oil-market-report-april-2026 | IEA |
+| 💻 科技 | Google宣布向Anthropic投资高达400亿美元 | https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html | CNBC |
+| 💻 科技 | Musk vs Altman高风险庭审开庭 | https://aitoolly.com/ai-news/2026-04-29 | AIToolly |
+| 💻 科技 | 2026年4月AI密集发布：GPT-5.4、Claude Mythos、Gemini 3.1 Pro | https://kersai.com/ai-breakthroughs-april-2026-models-funding-shifts/ | Kersai |
+| 🏦 穆巴达拉 | 阿布扎比考虑合并L'Imad和Mubadala中国资产 | https://www.agbi.com/finance/2026/04/abu-dhabi-may-merge-china-assets-of-limad-and-mubadala/ | AGBI |
+| 🏦 穆巴达拉 | 穆巴达拉2025年业绩强劲：AUM增长17%至3850亿美元 | https://www.mubadala.com/en/news/strong-performance-by-uae-portfolio-drives-mubadalas-growth-in-2025 | 穆巴达拉官网 |
+| 🏦 主权基金 | 全球主权基金AUM首次突破15万亿美元 | https://globalswf.beehiiv.com/p/global-swf-2026-annual-report | Global SWF |
+
+*URLs verified on 2026-04-29*
 
 ---
 
@@ -360,3 +380,30 @@
 | 🏦 穆巴达拉 | 穆巴达拉资管规模增长17%至3850亿美元（2025年投资390亿美元创七年新高） | https://www.agbi.com/finance/2026/04/mubadala-assets-under-management-rise-to-385bn/ | AGBI | 2026-04-09 |
 | 🏦 穆巴达拉 | 战争持续下穆巴达拉保持投资但策略开始转变（Q1部署250亿美元） | https://enterpriseam.com/uae/2026/04/14/war-or-not-gulf-sovereign-funds-keep-investing-but-the-strategy-is-starting-to-shift/ | EnterpriseAM | 2026-04-14 |
 | 🏦 穆巴达拉 | 穆巴达拉170亿美元投资Property Finder（BECO Capital跟投） | https://www.mubadala.com/ | 穆巴达拉官网 | 2026-02-12 |
+
+*URLs verified on 2026-04-29*
+
+---
+
+## 2026-04-29
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 斯坦福HAI报告：中美AI差距缩小至2.7% | https://fortune.com/2026/04/16/stanford-study-how-has-china-gained-on-us-ai-war/ | Fortune |
+| ⚔️ 地缘政治 | 美国MATCH法案全面升级芯片管制 | https://fortune.com/2026/04/16/stanford-study-how-has-china-gained-on-us-ai-war/ | Fortune |
+| ⚔️ 地缘政治 | 中国AI企业用卫星+AI监控美国航母编队 | https://aiweekly.co/learning-ai/artificial-intelligence/ai-geopolitics-news-china-ai-intelligence-us-forces-deepseek | AI Weekly |
+| 📊 全球经济 | 主权基金2025年660亿美元投入AI，资产突破15万亿 | https://gulfnews.com/business/markets/sovereign-wealth-funds-pour-66-billion-into-ai-as-assets-hit-15-trillion-1.500395812 | Gulf News |
+| 📊 全球经济 | 霍尔木兹封锁第59天，油价$105+/桶 | https://tradingeconomics.com/commodity/crude-oil | Trading Economics |
+| 🌏 亚太动态 | 韩国-新加坡签署3亿美元AI联盟 | https://www.techi.com/singapore-south-korea-ai-partnership-300-million/ | Techi |
+| 🌏 亚太动态 | 广东AI大会：华为昇腾、腾讯智能体集体亮相 | https://www.sznews.com/news/content/2026-04/28/content_32030637.htm | 深圳新闻网 |
+| 🌏 亚太动态 | 亚洲AI政策：日韩印越马泰监管框架成型 | https://digitalinasia.com/2026/04/08/asia-ai-policy-tracker/ | Digital Asia |
+| 💻 科技 | OpenAI完成1220亿美元融资，GPT-5.5发布 | https://www.aitoolbox.hk/articles/openai-122b-funding-gpt-5-4-veo-3-1-2026/ | AI ToolBox |
+| 💻 科技 | DeepSeek V4：1.6T参数MoE全开源，华为昇腾首发 | https://www.cnblogs.com/shenchuanchao/p/19936784/ai-weekly-report-april-20-26-2026 | 博客园 |
+| 💻 科技 | 谷歌拟向Anthropic投资400亿美元 | https://writingmate.ai/blog/ai-news-week-of-2026-04-27 | WritingMate |
+| 💻 科技 | SpaceX以600亿美元收购Cursor | https://www.cnblogs.com/shenchuanchao/p/19936784/ai-weekly-report-april-20-26-2026 | 博客园 |
+| 💻 科技 | 百度AI生态升级：Master Agent发布 | https://finance.sina.com.cn/roll/2026-04-29/doc-inhwaxzu7002312.shtml | 新浪财经 |
+| 💻 科技 | AMD AdvancingAI 2026大会7月举办 | https://news.zol.com.cn/1173/11730405.html | ZOL |
+| 🏦 主权基金 | 主权基金AI基础设施投资突破1200亿美元 | https://titaninvestors.com/insights/sovereign-wealth-funds-ai-infrastructure-2026 | Titan Investors |
+| 🏦 主权基金 | 穆巴达拉推进UAE-Africa投资走廊 | https://gulfnews.com/business/markets/sovereign-wealth-funds-pour-66-billion-into-ai-as-assets-hit-15-trillion-1.500395812 | Gulf News |
+
+*URLs verified on 2026-04-29*
