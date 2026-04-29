@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenyan AI Daily · 2026年4月29日</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-secondary: #121214;
+            --bg-card: #18181b;
+            --bg-card-hover: #1f1f23;
+            --accent-blue: #0A84FF;
+            --accent-purple: #BF5AF2;
+            --accent-green: #30D158;
+            --accent-orange: #FF9F0A;
+            --accent-red: #FF453A;
+            --accent-yellow: #FFD60A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --text-tertiary: #636366;
+            --border: #38383A;
+            --font-main: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .edition {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .exec-summary-title {
+            font-size: 11px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .exec-summary p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .exec-summary .highlight {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Key Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .metric-value.green { color: var(--accent-green); }
+        .metric-value.blue { color: var(--accent-blue); }
+        .metric-value.orange { color: var(--accent-orange); }
+        .metric-value.purple { color: var(--accent-purple); }
+
+        .metric-label {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .section-icon.geopolitics { background: rgba(255, 69, 58, 0.15); }
+        .section-icon.economy { background: rgba(255, 159, 10, 0.15); }
+        .section-icon.asia { background: rgba(10, 132, 255, 0.15); }
+        .section-icon.tech { background: rgba(191, 90, 242, 0.15); }
+        .section-icon.fund { background: rgba(48, 209, 88, 0.15); }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-count {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-left: auto;
+        }
+
+        /* News Card */
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .news-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-tertiary);
+        }
+
+        .news-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .news-tag {
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .tag-hot {
+            background: rgba(255, 69, 58, 0.2);
+            color: var(--accent-red);
+        }
+
+        .tag-new {
+            background: rgba(48, 209, 88, 0.2);
+            color: var(--accent-green);
+        }
+
+        .tag-break {
+            background: rgba(255, 159, 10, 0.2);
+            color: var(--accent-orange);
+        }
+
+        .tag-fund {
+            background: rgba(10, 132, 255, 0.2);
+            color: var(--accent-blue);
+        }
+
+        .news-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .news-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Key Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: var(--bg-secondary);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table .positive {
+            color: var(--accent-green);
+        }
+
+        .data-table .negative {
+            color: var(--accent-red);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+
+        .footer-sources {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            line-height: 1.8;
+        }
+
+        /* McKinsey Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(191, 90, 242, 0.1) 100%);
+            border-left: 3px solid var(--accent-blue);
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-label {
+            font-size: 10px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .insight-text {
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .main-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <span class="edition">AI DAILY</span>
+                <span class="date">2026年4月29日 · 星期三</span>
+            </div>
+            <h1 class="main-title">Wenyan 每日新闻</h1>
+            <p class="subtitle">AI · 地缘政治 · 全球经济 · 亚太 · 科技 · 主权基金投资</p>
+        </header>
+
+        <!-- Executive Summary -->
+        <div class="exec-summary">
+            <div class="exec-summary-title">Executive Summary</div>
+            <p>
+                <span class="highlight">AI军备竞赛升级：OpenAI GPT-5.5与DeepSeek V4同日发布</span>，开源与闭源旗舰正面碰撞，
+                标志着AI正式进入"5万亿美元时代"。<span class="highlight">斯坦福HAI报告显示中美AI差距缩小至2.7%</span>，
+                美国私人投资额达2860亿美元但领先优势加速收窄。
+                <span class="highlight">主权财富基金2025年投入AI达660亿美元</span>，中东主权基金崛起为硅谷AI最大金主之一。
+                地缘政治层面，<span class="highlight">霍尔木兹海峡封锁进入第59天</span>，油价波动牵动全球AI基础设施成本。
+            </p>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value blue">$1220亿</div>
+                <div class="metric-label">OpenAI 新融资</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value green">2.7%</div>
+                <div class="metric-label">中美AI差距</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value orange">$660亿</div>
+                <div class="metric-label">SWF AI投资</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value purple">$8520亿</div>
+                <div class="metric-label">OpenAI 估值</div>
+            </div>
+        </div>
+
+        <!-- 地缘政治 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon geopolitics">🌍</div>
+                <h2 class="section-title">地缘政治</h2>
+                <span class="section-count">3 条</span>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">斯坦福HAI报告：中美AI差距缩小至2.7%，美国领先地位加速收窄</h3>
+                    <span class="news-tag tag-hot">重磅</span>
+                </div>
+                <p class="news-description">
+                    斯坦福大学以人为本AI研究所（HAI）发布《2026人工智能指数报告》。报告显示，中国在AI性能、人才、论文引用等多维度与美国差距显著缩小，综合差距仅2.7%。美国私人AI投资达2860亿美元远超中国，但中国在专利数量、模型开源贡献、AI应用落地速度方面正在赶超。业界称之为"AI冷战"的临界点。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Stanford HAI</span>
+                    <span>📅 4月13日</span>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-label">麦肯锡洞察</div>
+                <p class="insight-text">
+                    中美AI竞争从"单点突破"转向"系统博弈"——算力自主、数据主权、监管标准正成为新战场。
+                    企业需要构建"中国+美国"双轨AI战略以应对地缘风险。
+                </p>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">美国MATCH法案全面升级芯片管制，出口管制成AI冷战主武器</h3>
+                    <span class="news-tag tag-break">政策</span>
+                </div>
+                <p class="news-description">
+                    美国升级芯片出口管制法案（MATCH），进一步限制AI芯片及半导体设备流向。管制范围从中国扩展至部分亚洲国家，
+                    旨在切断中国获取先进算力的渠道。同时，中国加快自主研发步伐，华为昇腾系列实现规模化落地。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Fortune</span>
+                    <span>📅 4月16日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">中国AI企业用卫星+AI监控美国航母编队，全球情报战进入AI时代</h3>
+                    <span class="news-tag tag-new">新动态</span>
+                </div>
+                <p class="news-description">
+                    据报道，中国私营企业正公开营销基于卫星数据+AI分析的美国军事基地及航母编队活动情报服务。
+                    AI驱动开源情报（OSINT）正在重塑全球军事侦察格局，传统情报优势面临根本性挑战。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：AI Weekly</span>
+                    <span>📅 4月7日</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 全球经济 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon economy">📊</div>
+                <h2 class="section-title">全球经济</h2>
+                <span class="section-count">2 条</span>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">主权基金AI投资格局：2025年660亿美元入局，资产突破15万亿美元</h3>
+                    <span class="news-tag tag-fund">资金</span>
+                </div>
+                <p class="news-description">
+                    全球主权财富基金资产规模突破15万亿美元，2025年在AI及数字化领域投资达660亿美元。
+                    中东主权基金尤为活跃：沙特阿美旗下基金投资250兆瓦超大规模AI数据中心（12亿美元），
+                    阿联酋穆巴达拉成为Anthropic最大外部投资者，过去4年达成8项AI交易。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Gulf News / 36Kr</span>
+                    <span>📅 1月1日</span>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-label">麦肯锡洞察</div>
+                <p class="insight-text">
+                    主权基金正从"财务投资者"转型为"战略AI基础设施建造者"。
+                    中东油元资本+中国场景+美国技术正在形成新的全球AI三角格局。
+                </p>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">霍尔木兹封锁第59天：油价波动如何影响AI基础设施成本</h3>
+                    <span class="news-tag tag-hot">供应链</span>
+                </div>
+                <p class="news-description">
+                    伊朗封锁霍尔木兹海峡进入第59天，全球航运量下降90%以上。布伦特原油价格飙升至$105/桶区间，
+                    数据中心电力成本随之攀升。AI基础设施作为电力密集型产业，首当其冲承受能源价格冲击。
+                    分析人士指出，能源成本已成为AI竞争的关键变量。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Bloomberg</span>
+                    <span>📅 4月28日</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 亚太 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon asia">🌏</div>
+                <h2 class="section-title">亚太科技</h2>
+                <span class="section-count">3 条</span>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">韩国-新加坡签署3亿美元AI联盟：自动驾驶与公共卫生成突破口</h3>
+                    <span class="news-tag tag-new">新合作</span>
+                </div>
+                <p class="news-description">
+                    韩国与新加坡在Korea-Singapore AI Connect峰会上签署3亿美元AI战略合作协议。
+                    合作聚焦自动驾驶、公共卫生AI、智慧城市三大领域，韩国制造业优势与新加坡治理能力形成互补。峰会汇聚来自110个国家AI领袖。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Techi / Digital Asia</span>
+                    <span>📅 3月9日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">广东AI大会：华为昇腾、腾讯智能体、晶泰科技集体亮相</h3>
+                    <span class="news-tag tag-new">国内</span>
+                </div>
+                <p class="news-description">
+                    2026广东省人工智能应用对接大会在深圳举办，汇聚华为昇腾系列、腾讯智能体、晶泰科技等头部企业。
+                    华为昇腾AI芯片实现规模化落地，腾讯发布新一代企业智能体平台，广东正成为中国AI产业化的核心引擎。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：深圳新闻网</span>
+                    <span>📅 4月27日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">亚洲AI政策全景图：日本、韩国、印度、东南亚监管框架成型</h3>
+                    <span class="news-tag tag-break">政策</span>
+                </div>
+                <p class="news-description">
+                    斯坦福报告显示阿里巴巴位列2025年全球顶级模型贡献榜第三，入选重要模型数量中国前三。
+                    亚洲各国AI立法加速：印度出台国家AI使命文件，越南、泰国、马来西亚相继发布AI监管框架。
+                    东南亚46%企业已进入AI规模化应用阶段，超越全球平均水平。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Digital Asia / Asia Pacific AI</span>
+                    <span>📅 4月8日</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 科技 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon tech">🚀</div>
+                <h2 class="section-title">科技动态</h2>
+                <span class="section-count">4 条</span>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">OpenAI完成1220亿美元融资，估值8520亿美元，GPT-5.5正式发布</h3>
+                    <span class="news-tag tag-hot">重磅</span>
+                </div>
+                <p class="news-description">
+                    OpenAI宣布完成1220亿美元新一轮融资，估值达8520亿美元，月收入突破20亿美元。
+                    GPT-5.5同步发布，在多项测试中超越Claude 4.7，实力重返行业前列。
+                    此外OpenAI还发布Veo 3.1 Lite视频生成模型，与NVIDIA深度合作，芯片巨头为OpenAI定制算力方案。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：IT ToolBox</span>
+                    <span>📅 4月1日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">DeepSeek V4发布：1.6万亿参数MoE全开源，华为昇腾首发适配</h3>
+                    <span class="news-tag tag-hot">开源</span>
+                </div>
+                <p class="news-description">
+                    DeepSeek V4正式发布，采用1.6万亿参数混合专家（MoE）架构，Codeforces评分3206（开源最高）。
+                    华为昇腾芯片首发适配，DeepSeek V4与GPT-5.5形成"闭源旗舰vs开源普惠"的正面碰撞。
+                    业界评价：中国AI开源生态实现关键跨越。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：CSDN / 博客园</span>
+                    <span>📅 4月24日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">谷歌拟向Anthropic投资400亿美元，Claude Opus 4.7发布</h3>
+                    <span class="news-tag tag-fund">融资</span>
+                </div>
+                <p class="news-description">
+                    谷歌与Anthropic深化合作，计划投资400亿美元。Anthropic年化收入突破300亿美元，反超OpenAI。
+                    Claude Opus 4.7版本发布，在编程和复杂推理任务上表现卓越。
+                    Anthropic同时获得650亿美元新增投资承诺，估值持续攀升。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：WritingMate</span>
+                    <span>📅 4月21日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">SpaceX以600亿美元收购Cursor，史上最高"分手费"100亿美元</h3>
+                    <span class="news-tag tag-new">并购</span>
+                </div>
+                <p class="news-description">
+                    马斯克旗下SpaceX宣布以600亿美元收购AI编程工具Cursor，史上最高"分手费"达100亿美元。
+                    Cursor估值达500亿美元，成为AI编程领域新独角兽。AI编程工具赛道竞争白热化。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：博客园AI周报</span>
+                    <span>📅 4月21日</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主权基金投资 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon fund">💰</div>
+                <h2 class="section-title">主权基金投资</h2>
+                <span class="section-count">2 条</span>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">全球主权基金AI基础设施投资突破1200亿美元，中国AI企业获中东资本青睐</h3>
+                    <span class="news-tag tag-fund">战略</span>
+                </div>
+                <p class="news-description">
+                    主权财富基金正成为全球AI基础设施的最大资本来源，2025-2026年承诺投入超1200亿美元。
+                    中东主权基金（ADIA、穆巴达拉、沙特公共投资基金）押注中国AI企业获创纪录回报。
+                    MGX基金（阿联酋）成为美国AI开放生态系统的重要投资者。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Titan Investors / Gulf News</span>
+                    <span>📅 4月15日</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-title">穆巴达拉推进UAE-Africa投资走廊，主权基金第三极崛起</h3>
+                    <span class="news-tag tag-break">新兴</span>
+                </div>
+                <p class="news-description">
+                    阿布扎比主权基金穆巴达拉宣布推进UAE-Africa投资走廊，布局非洲AI基础设施。
+                    中东油元资本寻求多元化布局，非洲年轻人口红利与AI结合成为新增长极。
+                    穆巴达拉过去4年在AI领域完成8笔投资，成为全球最活跃AI主权投资者。
+                </p>
+                <div class="news-meta">
+                    <span>📍 来源：Bloomberg</span>
+                    <span>📅 4月19日</span>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>资产类别</th>
+                        <th>最新价格</th>
+                        <th>日涨跌</th>
+                        <th>AI相关影响</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>布伦特原油</td>
+                        <td>$105.78/桶</td>
+                        <td class="positive">+3.14%</td>
+                        <td>霍尔木兹封锁持续，电力成本↑</td>
+                    </tr>
+                    <tr>
+                        <td>日经225</td>
+                        <td>59,417点</td>
+                        <td class="positive">+2.21%</td>
+                        <td>AI板块领涨，年初至今+70%</td>
+                    </tr>
+                    <tr>
+                        <td>恒生指数</td>
+                        <td>22,500点</td>
+                        <td class="negative">-0.83%</td>
+                        <td>科技股承压，AI概念分化</td>
+                    </tr>
+                    <tr>
+                        <td>NVIDIA</td>
+                        <td>$185/股</td>
+                        <td class="positive">+4.2%</td>
+                        <td>数据中心AI芯片需求强劲</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Wenyan AI Daily · 每日早8点自动发送</p>
+            <p class="footer-sources">
+                新闻来源：Stanford HAI · Fortune · Bloomberg · Gulf News · CSDN · 博客园 · 深圳新闻网 ·<br>
+                36Kr · 知乎 · WritingMate AI · Digital Asia · Techi · AI Weekly · Titan Investors
+            </p>
+            <p class="footer-sources" style="margin-top: 12px;">
+                GitHub Pages: https://marvinchima723.github.io/NewsforWenyan/<br>
+                联系订阅: yoyozwy@gmail.com / marvin.cmma@gmail.com
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
