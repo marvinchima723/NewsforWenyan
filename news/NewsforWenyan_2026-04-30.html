@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☀️ News for Wenyan - 2026年4月30日</title>
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-card: #1C1C1E;
+            --bg-elevated: #2C2C2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --accent-blue: #0A84FF;
+            --accent-red: #FF453A;
+            --accent-green: #30D158;
+            --accent-orange: #FF9F0A;
+            --accent-purple: #BF5AF2;
+            --tag-geopolitics: rgba(255, 69, 58, 0.2);
+            --tag-economy: rgba(48, 209, 88, 0.2);
+            --tag-asia: rgba(10, 132, 255, 0.2);
+            --tag-tech: rgba(191, 90, 242, 0.2);
+            --tag-swf: rgba(255, 159, 10, 0.2);
+            --border-radius: 12px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #FF9F0A, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .date {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, rgba(255, 69, 58, 0.15), rgba(255, 69, 58, 0.05));
+            border: 1px solid rgba(255, 69, 58, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .emergency-banner h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-red);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .emergency-banner p {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        /* Trump Signal */
+        .trump-signal {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.15), rgba(10, 132, 255, 0.05));
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .trump-signal h3 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .trump-signal .quote {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-style: italic;
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 12px;
+            margin-bottom: 8px;
+        }
+
+        .trump-signal .time {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Love Quote */
+        .love-quote {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .love-quote .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .love-quote blockquote {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .love-quote cite {
+            font-size: 14px;
+            color: var(--accent-orange);
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title .emoji {
+            font-size: 24px;
+        }
+
+        /* News Card */
+        .news-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .news-card .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .tag-geopolitics {
+            background: var(--tag-geopolitics);
+            color: #FF453A;
+        }
+
+        .tag-economy {
+            background: var(--tag-economy);
+            color: #30D158;
+        }
+
+        .tag-asia {
+            background: var(--tag-asia);
+            color: #0A84FF;
+        }
+
+        .tag-tech {
+            background: var(--tag-tech);
+            color: #BF5AF2;
+        }
+
+        .tag-swf {
+            background: var(--tag-swf);
+            color: #FF9F0A;
+        }
+
+        .news-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-card h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .news-card h3 a:hover {
+            color: var(--accent-blue);
+        }
+
+        .news-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .news-card .source {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .news-card .source a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .news-card .source a:hover {
+            text-decoration: underline;
+        }
+
+        /* Admiralty Rating */
+        .admiralty {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .admiralty-a1 {
+            background: rgba(48, 209, 88, 0.2);
+            color: #30D158;
+        }
+
+        .admiralty-a2 {
+            background: rgba(48, 209, 88, 0.15);
+            color: #5EE894;
+        }
+
+        .admiralty-b1 {
+            background: rgba(10, 132, 255, 0.2);
+            color: #0A84FF;
+        }
+
+        /* Market Section */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .market-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            text-align: center;
+        }
+
+        .market-card .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .market-card .value {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .market-card .change {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .change-positive {
+            color: var(--accent-green);
+        }
+
+        .change-negative {
+            color: var(--accent-red);
+        }
+
+        /* Oil Price Warning */
+        .oil-warning {
+            background: linear-gradient(135deg, rgba(255, 159, 10, 0.15), rgba(255, 159, 10, 0.05));
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: var(--border-radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .oil-warning h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        .oil-warning p {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        /* Prayer */
+        .prayer {
+            background: linear-gradient(135deg, rgba(191, 90, 242, 0.15), rgba(191, 90, 242, 0.05));
+            border: 1px solid rgba(191, 90, 242, 0.3);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .prayer h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prayer blockquote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        .prayer cite {
+            display: block;
+            font-size: 13px;
+            color: var(--accent-purple);
+            margin-top: 12px;
+            font-style: normal;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--bg-elevated);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .footer .heart {
+            color: var(--accent-red);
+        }
+
+        /* Source Matrix */
+        .source-matrix {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .source-matrix h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .source-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .source-matrix th {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid var(--bg-elevated);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .source-matrix td {
+            padding: 8px;
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+
+        .source-matrix tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .news-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>☀️ News for Wenyan</h1>
+            <p class="date">2026年4月30日 · 周四</p>
+        </div>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <h2>🚨 紧急状态</h2>
+            <p><strong>油价剧烈波动：</strong>布伦特原油飙升至$126/桶后回落至$122+。霍尔木兹海峡局势高度紧张，伊朗最高领袖表示将确保波斯湾安全。美国持续评估对伊军事行动方案。</p>
+        </div>
+
+        <!-- Trump Signal -->
+        <div class="trump-signal">
+            <h3>🐦 Trump Twitter 信号</h3>
+            <p class="quote">"在德国考虑削减美军部署——这是对德国在伊朗问题上反美立场的回应。"</p>
+            <p class="time">— 特朗普，4月30日</p>
+        </div>
+
+        <!-- Love Quote -->
+        <div class="love-quote">
+            <div class="icon">💕</div>
+            <blockquote>"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</blockquote>
+            <cite>— Maya Angelou</cite>
+        </div>
+
+        <!-- Market Data -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">📊</span> 市场数据</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <div class="label">日经225</div>
+                    <div class="value">58,652</div>
+                    <div class="change change-negative">-632 (-1.07%)</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">恒生指数</div>
+                    <div class="value">22,062</div>
+                    <div class="change change-negative">-0.64%</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">上证指数</div>
+                    <div class="value">3,261</div>
+                    <div class="change change-negative">-1.54%</div>
+                </div>
+                <div class="market-card">
+                    <div class="label">美元/日元</div>
+                    <div class="value">155.50</div>
+                    <div class="change change-positive">-3.02 (日元急升)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oil Warning -->
+        <div class="oil-warning">
+            <h3>⚠️ 能源市场剧烈波动</h3>
+            <p>布伦特原油期货突破$122/桶，盘中曾飙升至$126。伊朗最高领袖表示将确保波斯湾安全，但霍尔木兹局势仍高度紧张。高市首相与伊朗总统通话寻求航行安全。</p>
+        </div>
+
+        <!-- Geopolitics Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">⚔️</span> 地缘政治</h2>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.xinhuanet.com/2026/04/30/" target="_blank">伊朗最高领袖：波斯湾和霍尔木兹海峡正在开启新篇章</a></h3>
+                <p>伊朗最高领袖哈梅内伊表示，伊朗将确保波斯湾区域安全，称波斯湾和霍尔木兹海峡正在开启新篇章。这一表态被视为伊朗对地区安全的重大承诺，但美国持续评估对伊军事行动方案。</p>
+                <p class="source"><a href="https://www.xinhuanet.com/2026/04/30/" target="_blank">新华网 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.xinhuanet.com/2026/04/30/" target="_blank">Trump将听取对伊朗军事行动新方案汇报</a></h3>
+                <p>美国政府持续评估对伊朗政策。Trump即将听取军事行动新方案汇报。美国已命令军队"射击并击沉"可能布放水雷的小型船只。</p>
+                <p class="source"><a href="https://www.xinhuanet.com/2026/04/30/" target="_blank">新华网 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.globaltimes.cn/page/202604/1360138.shtml" target="_blank">中国发布日本核武装工作文件，呼吁国际警惕</a></h3>
+                <p>中国外交部发布《日本核武装问题工作文件》，呼吁国际社会对日本的核野心保持高度警惕。这是中国首次发布此类专项工作文件。</p>
+                <p class="source"><a href="https://www.globaltimes.cn/page/202604/1360138.shtml" target="_blank">环球时报 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-geopolitics">地缘政治</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.globaltimes.cn/page/202604/1360141.shtml" target="_blank">日本计划恢复战时军衔，中方强烈谴责</a></h3>
+                <p>日本高市政权计划恢复"大开"等战时军衔称呼，中方称这是"在受害国伤口上撒盐"。与此同时，解放军南部战位在黄岩岛组织战备警巡。</p>
+                <p class="source"><a href="https://www.globaltimes.cn/page/202604/1360141.shtml" target="_blank">环球时报 · 4月30日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Tech Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🤖</span> 科技动态</h2>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">Google领衔Big Tech：AI支出计划达$7250亿</a></h3>
+                <p><strong>重磅！</strong>大型科技公司AI支出计划已达$7250亿美元，Google领先于竞争对手。Alphabet因增加AI支出获得市场认可，股价表现强劲。投资者对Google在AI投资上的信任度高于Meta。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.cnbc.com/2026/04/30/" target="_blank">SoftBank计划分拆AI机器人业务在美IPO，估值$1000亿</a></h3>
+                <p>软银正考虑为其新分拆的AI和机器人业务进行美国IPO，新公司名为"Roze"，估值可能达到1000亿美元。此举是软银深化AI布局的战略举措。</p>
+                <p class="source"><a href="https://www.cnbc.com/2026/04/30/" target="_blank">CNBC · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-a2">A2</span>
+                <h3><a href="https://www.cnbc.com/2026/04/30/" target="_blank">三星Q1利润暴增8倍：AI推动内存芯片需求飙升</a></h3>
+                <p>三星电子第一季度利润增长超过八倍，远超市场预期，主要受AI繁荣带动内存芯片需求增长。三星和SK海力士均警告存储器市场将出现供应紧张。</p>
+                <p class="source"><a href="https://www.cnbc.com/2026/04/30/" target="_blank">CNBC · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.cnbc.com/2026/04/30/" target="_blank">Meta因AI支出预期被JPMorgan降级</a></h3>
+                <p>JPMorgan因Meta对AI的大规模支出预测而下调了其评级。分析师担心Meta在AI基础设施上的巨额投入短期内难以获得相应回报。</p>
+                <p class="source"><a href="https://www.cnbc.com/2026/04/30/" target="_blank">CNBC · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-tech">科技</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.globaltimes.cn/page/202604/1360003.shtml" target="_blank">中国LLM企业加速转向国产芯片</a></h3>
+                <p>面对美国芯片限制，中国大型语言模型企业正在加速适配国内计算力芯片。分析师称这将加速中国AI产业生态系统的发展。</p>
+                <p class="source"><a href="https://www.globaltimes.cn/page/202604/1360003.shtml" target="_blank">Global Times · 4月30日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Global Economy Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">📊</span> 全球经济</h2>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">英国央行维持利率3.75%，应对中东能源冲击</a></h3>
+                <p>英国央行在能源冲击背景下维持利率不变，货币政策委员会表示已准备好应对通胀威胁。同时，三位鹰派官员反对宽松倾向。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-a1">A1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">美联储维持利率，三位鹰派反对宽松</a></h3>
+                <p>美联储宣布维持利率不变，三位鹰派官员投票反对"宽松倾向"。市场预期美联储将继续保持鹰派立场，直至通胀明确回落。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">伊朗通胀率达50%，战争冲击经济</a></h3>
+                <p>伊朗因地区冲突面临严重通胀，消费价格指数同比上涨50%。与此同时，StanChart因伊朗战争计提1.9亿美元费用。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-economy">全球经济</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">欧元区面临滞胀压力</a></h3>
+                <p>欧洲央行报告指出欧元区面临滞胀压力。能源价格飙升和供应链中断正在侵蚀企业利润，同时抑制消费需求。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Asia Pacific Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🌏</span> 亚太动态</h2>
+
+            <div class="news-card">
+                <span class="tag tag-asia">亚太</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.nikkei.com/" target="_blank">日元急升：财务相警告"断然的措施"时机临近</a></h3>
+                <p>日元汇率急剧升值至155円水平，片山财务相表示"断然的措施的时机正在接近"，财务官三村淳警告"这是最后的退避劝告"。</p>
+                <p class="source"><a href="https://www.nikkei.com/" target="_blank">日经 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-asia">亚太</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.nikkei.com/" target="_blank">高市首相与伊朗总统通话：寻求航行安全"早日实现"</a></h3>
+                <p>日本高市早苗首相与伊朗总统通话，寻求霍尔木兹海峡航行安全的"早日实现"。日本Nafta供应可通过替代采购维持至年后。</p>
+                <p class="source"><a href="https://www.nikkei.com/" target="_blank">日经 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-asia">亚太</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.nikkei.com/" target="_blank">SBI与State Street合作对抗"万能角"，设立低佣金基金</a></h3>
+                <p>SBI Holdings与美国资产管理巨头State Street合作，设立新公司提供低佣金投资基金，对抗日本版"万能角"（即低佣金指数基金）。</p>
+                <p class="source"><a href="https://www.nikkei.com/" target="_blank">日经 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-asia">亚太</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.globaltimes.cn/page/202604/1360050.shtml" target="_blank">中国在机器人及AI专利申请上领先全球</a></h3>
+                <p>根据最新报告，中国在机器人相关和AI专利申请方面位居世界第一，显示其在技术创新领域的持续突破。</p>
+                <p class="source"><a href="https://www.globaltimes.cn/page/202604/1360050.shtml" target="_blank">Global Times · 4月30日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Sovereign Wealth Fund Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="emoji">🏦</span> 主权基金投资</h2>
+
+            <div class="news-card">
+                <span class="tag tag-swf">主权基金</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.ft.com/" target="_blank">新兴市场股市创历史新高：亚洲芯片制造商领涨</a></h3>
+                <p>新兴市场股市创下历史新高，亚洲芯片制造商表现突出。尽管地缘政治紧张，SWF资金持续流入新兴市场资产。</p>
+                <p class="source"><a href="https://www.ft.com/" target="_blank">FT · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">主权基金</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.nikkei.com/" target="_blank">沙特PIF削减LIV高尔夫赞助，或影响LIV巡回赛</a></h3>
+                <p>沙特主权财富基金（PIF）正在考虑削减对LIV高尔夫的赞助，这一决定可能对LIV巡回赛的财务可持续性产生影响。</p>
+                <p class="source"><a href="https://www.nikkei.com/" target="_blank">日经 · 4月30日 ↗</a></p>
+            </div>
+
+            <div class="news-card">
+                <span class="tag tag-swf">主权基金</span>
+                <span class="admiralty admiralty-b1">B1</span>
+                <h3><a href="https://www.nikkei.com/" target="_blank">日本制铁向US Steel投资3000亿日元</a></h3>
+                <p>日本制铁宣布向美国钢铁公司（US Steel）投资3000亿日元，用于电炉用铁钢原料的稳定调配。此举旨在确保美国市场的供应链安全。</p>
+                <p class="source"><a href="https://www.nikkei.com/" target="_blank">日经 · 4月30日 ↗</a></p>
+            </div>
+        </div>
+
+        <!-- Source Matrix -->
+        <div class="source-matrix">
+            <h3>📋 Source Matrix 来源矩阵</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>来源</th>
+                        <th>评级</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>⚔️ 地缘政治</td>
+                        <td><a href="https://www.xinhuanet.com" target="_blank">新华网</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 权威</td>
+                    </tr>
+                    <tr>
+                        <td>⚔️ 地缘政治</td>
+                        <td><a href="https://www.globaltimes.cn" target="_blank">环球时报</a></td>
+                        <td><span class="admiralty admiralty-b1">B1</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>🤖 科技</td>
+                        <td><a href="https://www.ft.com" target="_blank">FT</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 权威</td>
+                    </tr>
+                    <tr>
+                        <td>🤖 科技</td>
+                        <td><a href="https://www.cnbc.com" target="_blank">CNBC</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 可靠</td>
+                    </tr>
+                    <tr>
+                        <td>🌏 亚太</td>
+                        <td><a href="https://www.nikkei.com" target="_blank">日经</a></td>
+                        <td><span class="admiralty admiralty-a1">A1</span></td>
+                        <td>✅ 权威</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Prayer -->
+        <div class="prayer">
+            <h3>🙏 Prayer 祷告</h3>
+            <blockquote>
+                "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."
+            </blockquote>
+            <cite>— Numbers 6:24-26</cite>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with <span class="heart">❤️</span> for Wenyan</p>
+            <p style="margin-top: 8px; font-size: 11px; color: var(--text-secondary);">News for Wenyan · 2026年4月30日</p>
+        </div>
+    </div>
+</body>
+</html>

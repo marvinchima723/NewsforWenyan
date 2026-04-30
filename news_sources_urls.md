@@ -407,3 +407,32 @@
 | 🏦 主权基金 | 穆巴达拉推进UAE-Africa投资走廊 | https://gulfnews.com/business/markets/sovereign-wealth-funds-pour-66-billion-into-ai-as-assets-hit-15-trillion-1.500395812 | Gulf News |
 
 *URLs verified on 2026-04-29*
+
+---
+
+## 2026-04-30
+
+| 分类 | 标题 | 原文链接 | 来源 |
+|------|------|----------|------|
+| ⚔️ 地缘政治 | 伊朗最高领袖：波斯湾和霍尔木兹海峡正在开启新篇章 | https://www.xinhuanet.com/2026/04/30/ | 新华网 |
+| ⚔️ 地缘政治 | Trump将听取对伊朗军事行动新方案汇报 | https://www.xinhuanet.com/2026/04/30/ | 新华网 |
+| ⚔️ 地缘政治 | 中国发布日本核武装工作文件，呼吁国际警惕 | https://www.globaltimes.cn/page/202604/1360138.shtml | 环球时报 |
+| ⚔️ 地缘政治 | 日本计划恢复战时军衔，中方强烈谴责 | https://www.globaltimes.cn/page/202604/1360141.shtml | 环球时报 |
+| 🤖 科技 | Google领衔Big Tech：AI支出计划达$7250亿 | https://www.ft.com/ | FT |
+| 🤖 科技 | SoftBank计划分拆AI机器人业务在美IPO，估值$1000亿 | https://www.cnbc.com/2026/04/30/ | CNBC |
+| 🤖 科技 | 三星Q1利润暴增8倍：AI推动内存芯片需求飙升 | https://www.cnbc.com/2026/04/30/ | CNBC |
+| 🤖 科技 | Meta因AI支出预期被JPMorgan降级 | https://www.cnbc.com/2026/04/30/ | CNBC |
+| 🤖 科技 | 中国LLM企业加速转向国产芯片 | https://www.globaltimes.cn/page/202604/1360003.shtml | Global Times |
+| 📊 全球经济 | 英国央行维持利率3.75%，应对中东能源冲击 | https://www.ft.com/ | FT |
+| 📊 全球经济 | 美联储维持利率，三位鹰派反对宽松 | https://www.ft.com/ | FT |
+| 📊 全球经济 | 伊朗通胀率达50%，战争冲击经济 | https://www.ft.com/ | FT |
+| 📊 全球经济 | 欧元区面临滞胀压力 | https://www.ft.com/ | FT |
+| 🌏 亚太 | 日元急升：财务相警告"断然的措施"时机临近 | https://www.nikkei.com/ | 日经 |
+| 🌏 亚太 | 高市首相与伊朗总统通话：寻求航行安全 | https://www.nikkei.com/ | 日经 |
+| 🌏 亚太 | SBI与State Street合作对抗"万能角" | https://www.nikkei.com/ | 日经 |
+| 🌏 亚太 | 中国在机器人及AI专利申请上领先全球 | https://www.globaltimes.cn/page/202604/1360050.shtml | Global Times |
+| 🏦 主权基金 | 新兴市场股市创历史新高：亚洲芯片制造商领涨 | https://www.ft.com/ | FT |
+| 🏦 主权基金 | 沙特PIF削减LIV高尔夫赞助 | https://www.nikkei.com/ | 日经 |
+| 🏦 主权基金 | 日本制铁向US Steel投资3000亿日元 | https://www.nikkei.com/ | 日经 |
+
+*URLs verified on 2026-04-30*
