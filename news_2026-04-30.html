@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenyan每日新闻 · 2026年4月30日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-secondary: #141418;
+            --bg-card: #1c1c22;
+            --bg-card-hover: #232329;
+            --accent-red: #ff3b30;
+            --accent-green: #30d158;
+            --accent-blue: #0a84ff;
+            --accent-orange: #ff9500;
+            --accent-purple: #bf5af2;
+            --accent-cyan: #32d9fe;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --text-tertiary: #6e6e73;
+            --border-color: #2c2c2e;
+            --divider: #38383a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--divider);
+            margin-bottom: 48px;
+        }
+
+        .header-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .header-title {
+            font-size: 44px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .header-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Category Nav */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            padding: 0 20px;
+        }
+
+        .category-tag {
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .category-tag.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .section-icon.geo { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); }
+        .section-icon.economy { background: linear-gradient(135deg, #ffd93d 0%, #ff9500 100%); }
+        .section-icon.asia { background: linear-gradient(135deg, #6bcb77 0%, #30d158 100%); }
+        .section-icon.tech { background: linear-gradient(135deg, #4d96ff 0%, #0a84ff 100%); }
+        .section-icon.sovereign { background: linear-gradient(135deg, #bf5af2 0%, #af52de 100%); }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-tertiary);
+            transform: translateY(-2px);
+        }
+
+        .card-headline {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .card-headline span.tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .tag.hot { background: rgba(255, 59, 48, 0.2); color: var(--accent-red); }
+        .tag.new { background: rgba(10, 132, 255, 0.2); color: var(--accent-blue); }
+        .tag.alert { background: rgba(255, 149, 0, 0.2); color: var(--accent-orange); }
+        .tag.data { background: rgba(48, 209, 88, 0.2); color: var(--accent-green); }
+
+        .card-summary {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* Data Table */
+        .data-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+
+        .data-table h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--divider);
+            font-size: 14px;
+        }
+
+        th {
+            color: var(--text-tertiary);
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td { color: var(--text-primary); }
+
+        .up { color: var(--accent-red); }
+        .down { color: var(--accent-green); }
+
+        /* Key Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(191, 90, 242, 0.1) 100%);
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .insight-box .label {
+            font-size: 11px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .insight-box p {
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--divider);
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .footer-text a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-title { font-size: 32px; }
+            .section-title { font-size: 18px; }
+            .card { padding: 20px; }
+            .category-nav { gap: 6px; }
+            .category-tag { padding: 6px 12px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-date">2026年4月30日 · 星期四</div>
+            <h1 class="header-title">Wenyan每日新闻</h1>
+            <p class="header-subtitle">AI · 地缘政治 · 全球经济 · 亚太 · 主权基金</p>
+        </header>
+
+        <!-- Category Navigation -->
+        <nav class="category-nav">
+            <span class="category-tag active">全部</span>
+            <span class="category-tag">🌏 地缘政治</span>
+            <span class="category-tag">📊 全球经济</span>
+            <span class="category-tag">🗾 亚太</span>
+            <span class="category-tag">💻 科技</span>
+            <span class="category-tag">🏦 主权基金</span>
+        </nav>
+
+        <!-- 地缘政治 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon geo">🌏</div>
+                <h2 class="section-title">地缘政治</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag alert">警报</span>
+                    霍尔木兹海峡持续封锁 · 美伊谈判陷入僵局
+                </div>
+                <div class="card-summary">
+                    霍尔木兹海峡目前处于完全封闭状态，美军持续封锁伊朗海上交通。特朗普明确表示，将维持对伊朗海上交通封锁，直到伊朗接受包含核议题的长期协议。伊朗方面通过巴基斯坦向美国提交最新方案，但美方对协议内容仍不满意；伊朗外交部拒绝明确是否进行第二轮谈判，国内高层对谈判存在分歧，部分实权人物反对妥协。美军已在阿曼湾等地多次拦截伊朗船只（如"TOUSKA"号）。伊朗最高领导人哈梅尼已下令霍尔木兹海峡不得恢复战前状态。
+                </div>
+                <div class="card-meta">
+                    <span>📍 霍尔木兹海峡</span>
+                    <span>🕐 封锁第60天</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag new">新局</span>
+                    阿联酋宣布退出欧佩克+ · 能源格局生变
+                </div>
+                <div class="card-summary">
+                    阿联酋宣布将自2026年5月1日起退出石油输出国组织（欧佩克）及"欧佩克+"合作机制。阿联酋能源部长苏海勒·马兹鲁伊表示，此举是在"审视霍尔木兹海峡局势以及战略储备投放规模"后做出的，鉴于海峡封锁对产油国造成的制约，此举将利好石油进口国，同时不会对油价产生重大影响。分析指出，阿联酋退群标志着海湾产油国战略分化，中东能源格局正经历深刻调整。
+                </div>
+                <div class="card-meta">
+                    <span>📍 阿联酋</span>
+                    <span>🕐 5月1日生效</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 全球经济 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon economy">📊</div>
+                <h2 class="section-title">全球经济</h2>
+            </div>
+
+            <div class="insight-box">
+                <div class="label">关键数据</div>
+                <p>世界银行《大宗商品市场展望》2026年4月版：受中东战事影响，2026年全球能源价格预计上涨<strong>24%</strong>，大宗商品价格平均涨幅达<strong>16%</strong>（为2022年以来首次年度上涨）。即使中东冲突激烈阶段于5月结束，能源价格仍将大幅上涨，对发展中经济体构成尤为严峻的冲击。</p>
+            </div>
+
+            <div class="data-table">
+                <h4>📈 关键数据一览</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>最新值</th>
+                            <th>变动</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>布伦特原油</td>
+                            <td>$105.78/桶</td>
+                            <td class="up">+3.14%</td>
+                        </tr>
+                        <tr>
+                            <td>WTI原油</td>
+                            <td>$94.40/桶</td>
+                            <td>高位震荡</td>
+                        </tr>
+                        <tr>
+                            <td>美联储利率</td>
+                            <td>3.50%-3.75%</td>
+                            <td>连续第三次按兵不动</td>
+                        </tr>
+                        <tr>
+                            <td>日经225</td>
+                            <td>59,917点</td>
+                            <td class="down">-1.02%</td>
+                        </tr>
+                        <tr>
+                            <td>恒生指数</td>
+                            <td>25,776点</td>
+                            <td class="down">-1.28%</td>
+                        </tr>
+                        <tr>
+                            <td>恒生科技指数</td>
+                            <td>—</td>
+                            <td class="down">-0.79%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag data">数据</span>
+                    美联储内部分歧创34年纪录 · 利率决议8比4
+                </div>
+                <div class="card-summary">
+                    美联储宣布维持基准利率在3.50%-3.75%不变，连续第三次会议按兵不动，符合市场预期。以8比4的投票结果通过了该决议——美联储理事米兰投了反对票，支持降息0.25个百分点；克利夫兰联储行长贝丝·哈马克、明尼阿波利斯联储行长尼尔·卡什卡里以及达拉斯联储行长洛丽·洛根也投下反对票，虽支持维持利率不变，但不同意在当前声明中加入表明宽松倾向的措辞。这一分歧程度为1989年以来最大，显示美联储内部对货币政策路径的争论日趋激烈。
+                </div>
+                <div class="card-meta">
+                    <span>📊 美联储</span>
+                    <span>🕐 34年来最大内部分歧</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag data">政策</span>
+                    中共中央政治局：实施更加积极财政政策和适度宽松货币政策
+                </div>
+                <div class="card-summary">
+                    中共中央政治局4月28日召开会议，分析研究当前经济形势和经济工作。会议强调，要精准有效实施更加积极的财政政策和适度宽松的货币政策，用好用足宏观政策，持续优化财政支出结构，深入挖掘内需潜力，保持制造业合理比重，深入整治"内卷式"竞争，系统应对外部冲击挑战，提高能源资源安全保障水平。
+                </div>
+            </div>
+        </section>
+
+        <!-- 亚太 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon asia">🗾</div>
+                <h2 class="section-title">亚太</h2>
+            </div>
+
+            <div class="data-table">
+                <h4>📈 亚洲股市表现（2026年4月）</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>指数</th>
+                            <th>4月涨幅</th>
+                            <th>30日涨跌</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>恒生指数</td>
+                            <td class="up">+3.99%</td>
+                            <td class="down">-1.28%</td>
+                        </tr>
+                        <tr>
+                            <td>恒生科技指数</td>
+                            <td class="up">+4.76%</td>
+                            <td class="down">-0.79%</td>
+                        </tr>
+                        <tr>
+                            <td>国企指数</td>
+                            <td class="up">+3.67%</td>
+                            <td class="down">-1.41%</td>
+                        </tr>
+                        <tr>
+                            <td>日经225</td>
+                            <td>年初至今累涨超70%</td>
+                            <td class="down">-1.02%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag hot">热点</span>
+                    港股4月收官 · 半导体股为最强主线
+                </div>
+                <div class="card-summary">
+                    港股4月交易正式收官，回顾这个月，恒生指数先扬后抑——上半月在美伊停火预期下强势反弹，下半月因局势反复、油价飙升而承压回调。本月三大指数总体录得上涨，半导体股、存储概念股、光通讯概念股涨幅靠前，尤其是半导体股为4月最强主线，次新股天数智芯飙涨超120%持续创新高。盘面上，科网股跌多涨少，小米、阿里巴巴跌超3%，哔哩哔哩、腾讯跌超2%，网易涨超2%。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag new">动态</span>
+                    深圳全球人工智能终端展 · 5月14日启幕
+                </div>
+                <div class="card-summary">
+                    2026全球人工智能终端展暨第七届深圳国际人工智能展览会的新闻发布会于4月29日在深圳举行，展会定于5月14日至16日在深圳会展中心（福田）隆重召开。本届展会将聚焦AI终端最新技术与应用，吸引全球AI产业链上下游企业参与。
+                </div>
+            </div>
+        </section>
+
+        <!-- 科技 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon tech">💻</div>
+                <h2 class="section-title">科技</h2>
+            </div>
+
+            <div class="insight-box">
+                <div class="label">核心事件</div>
+                <p>美东时间4月29日，Alphabet、亚马逊、Meta、微软四大科技巨头罕见同日发布财报——四家总市值超10万亿美元，集中披露AI战略成果与资本支出计划，被视为AI商业化能力的"大考"。</p>
+            </div>
+
+            <div class="data-table">
+                <h4>📊 科技四巨头Q1财报（2026年4月29日）</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公司</th>
+                            <th>总营收</th>
+                            <th>云业务</th>
+                            <th>资本支出</th>
+                            <th>股价反应</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Alphabet</strong></td>
+                            <td>$1,099亿 <span class="up">+22%</span></td>
+                            <td>$200亿 <span class="up">+63%</span></td>
+                            <td>$1,750-1,850亿（全年预期）</td>
+                            <td class="up">+7%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>亚马逊</strong></td>
+                            <td>$1,815亿</td>
+                            <td>$376亿（AWS）</td>
+                            <td>~$2,000亿（整体）</td>
+                            <td class="down">-2.1%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>微软</strong></td>
+                            <td>$829亿 <span class="up">+18.3%</span></td>
+                            <td>Azure+Copilot驱动</td>
+                            <td>AI相关支出$400亿（2024年）</td>
+                            <td class="up">上涨</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Meta</strong></td>
+                            <td>$563亿 <span class="up">+33%</span></td>
+                            <td>—</td>
+                            <td>$1,350亿（2026年上限）<span class="up">+87%</span></td>
+                            <td class="down">-5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag hot">焦点</span>
+                    谷歌云营收首破200亿美元 · AI变现能力获验证
+                </div>
+                <div class="card-summary">
+                    Alphabet一季度营收1098.96亿美元（+22％），净利润同比增长81％，最引人注目的是Google Cloud营收首次单季突破200亿美元大关（+63％），Gemini企业版付费用户环比增长40％。谷歌云63%的增速远超Azure（42%）和AWS（35%），AI相关云服务需求成为核心驱动力。财报后Alphabet股价盘后大涨7%。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag alert">警示</span>
+                    Meta资本支出上限1350亿美元引担忧 · 股价重挫5%
+                </div>
+                <div class="card-summary">
+                    Meta 2026年资本支出上限上调至1,350亿美元，较2025年增长约87%，主要用于AI基础设施（GPU、数据中心）建设。尽管营收同比增长33%至563亿美元，但市场对如此大规模的支出感到不安——Meta盘后股价下跌超5%，引发科技股整体承压。Meta同时透露AI生成广告素材使用率环比增长12%，AI优化广告转化率提升4.3%。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag new">生态</span>
+                    百度AI生态升级 · Master Agent驱动用户增长1.6倍
+                </div>
+                <div class="card-summary">
+                    百度于4月24日在创作者大会上宣布升级搜索AI引擎，核心是Master Agent，旨在将搜索从信息查找升级为任务执行。数据显示，百度App主动日活用户同比增长1.6倍，百家号创作者规模同比增长23%。4月22日，百度联盟启动"星云计划"，向合作伙伴开放猎户座AI引擎，小米、荣耀、vivo等头部厂商首批接入。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag new">监管</span>
+                    中央网信办发布《人工智能应用伦理安全指引（1.0版）》
+                </div>
+                <div class="card-summary">
+                    4月29日，国新办就相关问题举行发布会，中央网信办透露《人工智能应用伦理安全指引（1.0版）》即将发布。此前，国家网信办等五部门联合发布《人工智能拟人化互动服务管理暂行办法》，自2026年7月15日起施行，聚焦AI情感互动服务，禁止生成鼓励自残、语言暴力、诱导犯罪等内容。
+                </div>
+            </div>
+        </section>
+
+        <!-- 主权基金投资 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon sovereign">🏦</div>
+                <h2 class="section-title">主权基金投资</h2>
+            </div>
+
+            <div class="insight-box">
+                <div class="label">行业洞察</div>
+                <p>Global SWF数据显示，主权财富基金2025年投入AI领域达<strong>660亿美元</strong>，管理资产总规模突破<strong>15万亿美元</strong>。中东主权基金正从"传统能源持有者"向"AI基础设施投资者"转型，在全球AI产业链中占据越来越重要的战略位置。</p>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag hot">突破</span>
+                    阿里千问登顶全球调用榜首 · 中东资金持续押注中国AI
+                </div>
+                <div class="card-summary">
+                    2026年4月，中国AI企业取得重大突破：阿里千问（Qwen）登顶全球调用榜，成为调用量最大的AI模型之一。与此同时，中东主权基金在中国人工智能企业的投资逆势实现显著回报——在海湾地区局势紧张、全球股市普遍承压背景下，中国AI企业的中东投资组合表现亮眼。分析认为，中国AI企业在应用层和模型层的双重突破，正吸引更多主权基金目光。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag data">布局</span>
+                    沙特PIF旗下HUMAIN加速AI全栈布局
+                </div>
+                <div class="card-summary">
+                    沙特公共投资基金（PIF）旗下AI全栈公司HUMAIN与沙特国家基础设施基金深度协同，正在构建覆盖芯片、模型、应用、数据的AI产业链闭环。沙特主权基金已将AI列为"2030愿景"核心支柱，计划在未来数年投入超千亿美元。HUMAIN的快速崛起标志着海湾国家从"能源石油换资本"转向"资本换AI技术话语权"的战略升级。
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-headline">
+                    <span class="tag new">动态</span>
+                    中东资金狂飙A股 · Q1创纪录流入
+                </div>
+                <div class="card-summary">
+                    2026年一季度，中东两大主权基金——阿布达比投资局（ADIA）和科威特政府投资局（KIA）继续在A股市场积极布局。数据显示，仅3月首周，中东资金流入香港就超380亿美元，接近2024-2025两年总和。权益类资产成为中东资金的主要配置方向，半导体、AI、新能源板块获重点加仓。
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                Wenyan每日新闻 · 2026年4月30日<br>
+                <a href="https://github.com/marvinchima723/NewsforWenyan">GitHub Repo</a> ·
+                <a href="https://marvinchima723.github.io/NewsforWenyan/">Web Version</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
